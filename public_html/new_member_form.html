@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Antarctica</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/script.js"></script>
+</head>
+<body id="main">
+    <nav id="shoppingNav">
+        <a href="home.php">Home</a>
+        <a href="new_member_form.html">Create Account</a>        
+        <a href="sign_in.php">Sign In</a>
+        <a href="#">Shopping Cart</a>
+        <a href="#">Checkout</a>        
+    </nav>       
+    <span id='navmenu' onclick="openNav()">&#9776; Nav Menu</span>
+    <nav id="websiteNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Cruises</a>
+        <a href="#">News</a>
+        <a href="my_robThree_2FA.php">2FA Demo</a>
+    </nav>          
+        <form action="add_member.php" method="post" id="mainForm">
+            <fieldset>
+                <legend>Chasing Arctic - New Member Register</legend>
+                <p><label for="name">Username: </label>
+                    <input type="text" id="name" name="name" maxlength="25" size="13" class="required hilightable"/>
+                </p>
+                <p><label for="pswd">Password: </label>
+                    <input type="password" id="pswd" name="pswd" maxlength="25" size="13" class="required hilightable"/>
+                </p>
+            </fieldset>
+            <p><input type="submit" value="create account" class="btn"/></p>
+        </form>
+        <footer>
+            <p>&copy; Chasing the Arctic.<br />
+                Please see our other information
+            <a href="#">Other info</a>.</p>
+        </footer>
+    </body>
+</html>
