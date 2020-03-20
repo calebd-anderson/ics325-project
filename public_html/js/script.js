@@ -1,13 +1,14 @@
 //nav menu
-function openNav() {
-    document.getElementById("websiteNav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "260px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+function toggleNav() {
+    document.getElementById("websiteNav").style.width == "280px" ?
+    (document.getElementById("websiteNav").style.width = "0",
+    document.getElementById("main").style.marginRight = "0%") : 
+    (document.getElementById("websiteNav").style.width = "280px",
+    document.getElementById("main").style.marginRight = "170px");
 }
 function closeNav() {
     document.getElementById("websiteNav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "10%";
-    document.body.style.backgroundColor = "white";
+    document.getElementById("main").style.marginRight = "0%";
 }
 
 //event listening for form errors
