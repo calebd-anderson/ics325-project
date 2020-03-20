@@ -70,7 +70,7 @@ include 'header.php';
 
   } else if(password_verify($pswd, $value)) {
       // visitor's name and password combination are correct
-      echo '<fieldset><legend>You\'re Signed In</legend>
+      echo '<fieldset class="fieldset"><legend>You\'re Signed In</legend>
       <p>I bet you\'re glad you can see this secret page.</p>';
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -105,8 +105,8 @@ include 'header.php';
           <form method="post" action="2fa_sign-in.php" id="mainForm">
             <p><label for="code">Code:</label>
             <input type="text" name="code" id="id" size="15" class="required hilightable"/></p>
-            </fieldset>
             <p><button type="submit" name="submit" class="btn">Verify Code</button></p>
+            </fieldset>            
           </form>          
           <?php
           $_SESSION['secret'] = $value;
@@ -115,7 +115,7 @@ include 'header.php';
 
   } else {
     // visitor's name and password combination are not correct
-    echo '<fieldset><h1>Go Away!</h1>
+    echo '<fieldset class="fieldset"><h1>Go Away!</h1>
           <p>You are not authorized to use this resource.</p></fieldset>';
   }
   include 'footer.php';
