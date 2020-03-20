@@ -54,7 +54,7 @@ include 'header.php';
     // visitor needs to enter a name and password
 ?>
 
-<fieldset>
+<fieldset class="fieldset">
   <legend>Please Log In</legend>
   <!-- <p>This page is secret.</p> -->
   <form method="post" action="sign_in.php" id="mainForm">
@@ -62,8 +62,8 @@ include 'header.php';
     <input type="text" name="name" id="name" size="13" class="required hilightable"/></p>
     <p><label for="pswd">Password:</label>
     <input type="password" name="pswd" id="pswd" size="13" class="required hilightable"/></p>
-</fieldset>
     <p><button type="submit" name="submit" class="btn">Log In</button></p>
+</fieldset>    
   </form>
     
 <?php
