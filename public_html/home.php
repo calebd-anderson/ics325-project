@@ -1,14 +1,18 @@
 <?php
 require('header.php');
 ?>
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 <!-- page content -->
 <article class="fieldset">
-    <h1>Home</h1>
+    <h1>Welcom to Chasing the Arctic NPO 501(c)</h1>
     <section>
-        <h2>Welcom to Arctic Expedition NPO 501(c).</h2>
+        <h2>This website provides up to date information on environmental issues.</h2>
     </slection>
 </article>
-
 <?php
 require('footer.php');
 ?>
