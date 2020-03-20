@@ -1,7 +1,7 @@
 <?php
-ini_set('display_startup_errors',1); 
-ini_set('display_errors',1);
-error_reporting(-1);
+// ini_set('display_startup_errors',1); 
+// ini_set('display_errors',1);
+// error_reporting(-1);
 session_start();
 include 'header.php';
   $servername = "localhost";
@@ -35,12 +35,12 @@ include 'header.php';
           // if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
           //     $nameErr = "Only letters and white space allowed. ";
           // }
-      }
-      
+      }      
     $sql = "SELECT pswd FROM member_credentials WHERE username = '$name' LIMIT 1";
     $result = $conn->query($sql);
     $value = mysqli_fetch_object($result);
-    $value = $value->pswd;
+    if($value == null){echo '<fieldset class="fieldset"><p>Username or password is not correct.</p>';}
+    else{$value = $value->pswd;}
     $conn->close();
   }
 
@@ -115,8 +115,11 @@ include 'header.php';
 
   } else {
     // visitor's name and password combination are not correct
-    echo '<fieldset class="fieldset"><h1>Go Away!</h1>
-          <p>You are not authorized to use this resource.</p></fieldset>';
+    if($value == null){
+      echo'<h1>Go Away!</h1></fieldset>';
+    }
+    else{echo '<fieldset class="fieldset">
+          <p>You are not authorized to use this resource.</p></fieldset>';}
   }
   include 'footer.php';
 ?>

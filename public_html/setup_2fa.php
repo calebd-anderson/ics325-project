@@ -7,7 +7,7 @@
         $_SESSION["tfa"] = serialize($tfa);
         $_SESSION["secret"] = $secret;
 ?>
-        <fieldset><legend>MFA Setup</legend>
+        <fieldset class="fieldset"><legend>MFA Setup</legend>
 
     <?php
         //displays QR code
@@ -32,7 +32,7 @@
         </fieldset>
         
 <?php
-    }else {echo "<p><fieldset>No 2FA for you.</p></fieldset>";}
+    }else {echo "<p><fieldset class=\"fieldset\">No 2FA for you.</p></fieldset>";}
 
     // echo '<p> Your session ID: '.session_id().'</p>';  
     //     try {
