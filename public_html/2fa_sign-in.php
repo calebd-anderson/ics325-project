@@ -22,8 +22,8 @@ $result = $tfa->verifyCode($secret, $code);
 if (!isset($_POST['code'])){
     //code not entered
 }else if($result){
-    echo '<fieldset><p>You\'re authorized.</p></fieldset>';
+    echo '<fieldset class="fieldset"><p>You\'re authorized.</p></fieldset>';
 }else{
-    echo '<fieldset><p>You\'re not authorized.</p></fieldset>';
+    echo '<fieldset class="fieldset"><p>You\'re not authorized.</p></fieldset>';
 }
 ?>

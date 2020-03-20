@@ -5,11 +5,11 @@
     require('header.php');
 ?>
 
-<fieldset style="background-color: rgb(69, 96, 136);";>
+<fieldset style="background-color: rgb(69, 96, 136);"; class="fieldset">
     <?php
     
         echo '<h2>2FA Demo</h2>';
-        echo '<ul><li><b>Current PHP version: '.phpversion().'</b></li></ul>';
+        // echo '<ul><li><b>Current PHP version: '.phpversion().'</b></li></ul>';
         echo '<ol>';
 
         require_once 'autoload.php';
@@ -49,9 +49,9 @@
     <?php
     try {
         $tfa->ensureCorrectTime();
-        echo '<span style="color:#0c0"><b>Your hosts time seems to be correct / within margin.</b></span>';
+        echo '<span style="color:#0c0"><b>Your host\'s time seems to be correct / within margin.</b></span>';
     } catch (RobThree\Auth\TwoFactorAuthException $ex) {
-        echo '<b>Warning:</b> Your hosts time seems to be off: ' . $ex->getMessage();
+        echo '<b>Warning:</b> Your host\'s time seems to be off: ' . $ex->getMessage();
     }
     ?>    
     <br><br><button type="button" onclick="loadDoc()" class="btn">refresh page</button>
