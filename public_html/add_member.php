@@ -2,8 +2,8 @@
     session_start();
     require 'header.php';
 ?>
-<h1>Add Member Result</h1>
-<fieldset>
+<fieldset class="fieldset">
+<legend>Add Member Result</legend>
 <?php
     if(!isset($_POST['name']) || !isset($_POST['pswd'])){
         echo "<p>You have not entered all the required details.<br />
@@ -31,8 +31,10 @@
     if ($stmt->affected_rows > 0){
         echo "<p>Member added to database.</p>";
     }else{
-        echo "<p>An error has occured.<br/>
-            The item was not added.</p>";
+        echo "<p style='color: red'>An error has occured.<br/>
+            The item was not added.</p></fieldset>";
+            require 'footer.php';
+            exit;
     }
     $db->close();
 ?>
@@ -46,3 +48,6 @@
 <span><input name="no" type="submit" value="No" class="btn"/></span>
 </form>
 </fieldset>
+<?php
+    require 'footer.php';
+?>

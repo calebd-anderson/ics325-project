@@ -10,7 +10,7 @@ $tfa = unserialize($_SESSION["tfa"]);
 $code = $_POST['code'];
 $name = $_SESSION['name'];
 ?>
-<fieldset><legend>Verify Code</legend>
+<fieldset class="fieldset"><legend>Verify Code</legend>
     <!-- <p>The code entered was <?php echo $code; ?></p>
     <p>The secret was <?php echo chunk_split($secret, 4, ' '); ?></p> -->
 <?php
