@@ -21,6 +21,7 @@ include 'header.php';
       //$nameErr = "Name is required. ";
       } else {
           $name = test_input($_POST['name']);
+          $_SESSION['name'] = $name;
           // check if name only contains letters and whitespace
           if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
               $nameErr = "Only letters and white space allowed. ";
