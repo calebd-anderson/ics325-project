@@ -26,10 +26,8 @@
 <script>gsap.from(".logo", {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});</script>
     <nav id="shoppingNav">
         <a href="home.php">Home</a>
-        <a href="new_member_form.php">Create Account</a>        
-        <a href="sign_in.php">Sign In</a>
-        <a href="#">Shopping Cart</a>
-        <a href="#">Checkout</a>        
+        <a href="new_member_form.php">Become a Member</a>        
+        <a href="sign_in.php">Sign In</a>   
         <span id='navbtn' onclick="toggleNav()">&#9776; Nav Menu</span>           
     </nav>
     </div>
@@ -38,7 +36,8 @@
         <a href="javascript:void(0)" id="navclosebtn" onclick="closeNav()">&times;</a>
         <a href="#" id="expbtn">Expeditions</a>
         <a href="#" id="newsbtn">News</a>
-        <a href="#" id="mbrbtn">Membership</a>
+        <a href="#" id="mbrbtn">Membership</a>        
+        <a href="web_store.php">Store</a>
         <a href="my_robThree_2FA.php" id="">2FA Demo</a>
     </div>
     
