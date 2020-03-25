@@ -36,9 +36,9 @@ class NTPTimeProvider implements ITimeProvider
             socket_send($sock, $msg, strlen($msg), 0);
 
             /* Receive response and close socket */
-            if (socket_recv($sock, $recv, 48, MSG_WAITALL) === false)
-                throw new \Exception(socket_strerror(socket_last_error($sock)));
-            socket_close($sock);
+                if (socket_recv($sock, $recv, 48, MSG_WAITALL) === false)
+                    throw new \Exception(socket_strerror(socket_last_error($sock)));
+                socket_close($sock);
 
             /* Interpret response */
             $data = unpack('N12', $recv);
