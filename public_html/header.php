@@ -34,10 +34,11 @@
     
     <div id="websiteNav" class="sidenav">        
         <a href="javascript:void(0)" id="navclosebtn" onclick="closeNav()">&times;</a>
-        <a href="#" id="expbtn">Expeditions</a>
-        <a href="#" id="newsbtn">News</a>
-        <a href="#" id="mbrbtn">Membership</a>        
-        <a href="web_store.php">Store</a>
+        <!-- <a href="#" class="navicon" id="expicon">Expeditions</a> -->
+        <a href="#" class="navicon" id="newsicon">News</a>
+        <a href="#" class="navicon" id="mbricon">Membership</a>        
+        <a href="web_store.php" class="navicon" id="storeicon">Store</a>
+        <a href="#" class="navicon" id="discourseicon">Discourse</a>
         <a href="my_robThree_2FA.php" id="">2FA Demo</a>
     </div>
     

@@ -81,32 +81,30 @@ footer a {
   padding-top: 60px;
 }
 
-#expbtn{
-  background-image: url("../images/expd.png");
-  background-position: 0px center;
+.navicon{
+  background-position: 10px center;
   background-repeat: no-repeat;
   background-size: 50px auto;
-  margin-left: 20px;
   text-align: center;
+  position: relative;
 }
-#newsbtn{
+#expicon{
+  background-image: url("../images/expd.png");
+}
+#newsicon{
   background-image: url("../images/news.png");
-  background-position: 0px center;
-  background-repeat: no-repeat;
-  background-size: 45px auto;
-  margin-left: 20px;
-  text-align: center;
 }
-#mbrbtn{
+#mbricon{
   background-image: url("../images/membership.png");
-  background-position: 0px center;
-  background-repeat: no-repeat;
-  background-size: 45px auto;
-  margin-left: 20px;
-  text-align: center;
+}
+#storeicon{
+  background-image: url("../images/web-store.png");
+}
+#discourseicon{
+  background-image: url("../images/discourse_icon.png");
 }
 
-.sidenav a {  
+.sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
