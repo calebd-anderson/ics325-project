@@ -17,14 +17,14 @@ include 'header.php';
   }
   
   if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    if (empty($_POST['name'])) {
-      //$nameErr = "Name is required. ";
+    if (empty($_POST['username'])) {
+      //$usernameErr = "Name is required. ";
       } else {
-          $name = test_input($_POST['name']);
-          $_SESSION['name'] = $name;
+          $username = test_input($_POST['username']);
+          $_SESSION['username'] = $username;
           // check if name only contains letters and whitespace
-          if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-              $nameErr = "Only letters and white space allowed. ";
+          if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
+              $usernameErr = "Only letters and white space allowed. ";
           }
       }
 
@@ -33,11 +33,11 @@ include 'header.php';
       } else {
           $pswd = test_input($_POST['pswd']);
           // check if name only contains letters and whitespace
-          // if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-          //     $nameErr = "Only letters and white space allowed. ";
+          // if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
+          //     $usernameErr = "Only letters and white space allowed. ";
           // }
       }      
-    $sql = "SELECT pswd FROM member_credentials WHERE username = '$name' LIMIT 1";
+    $sql = "SELECT pswd FROM member_credentials WHERE username = '$username' LIMIT 1";
     $result = $conn->query($sql);
     $value = mysqli_fetch_object($result);
     if($value == null){echo '<fieldset class="fieldset"><p>Username or password is not correct.</p>';}
@@ -51,18 +51,22 @@ include 'header.php';
     $data = htmlspecialchars($data);
     return $data;
   }
-    if ((!isset($_POST['name'])) || (!isset($_POST['pswd']))) {
+    if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     // visitor needs to enter a name and password
 ?>
 
 <fieldset class="fieldset">
   <legend>Please Log In</legend>
   <!-- <p>This page is secret.</p> -->
-  <form method="post" action="sign_in.php" id="mainForm">
+  <form method="post" action="sign_in_form.php" id="mainForm">
     <p><label for="name">Username:</label>
-    <input type="text" name="name" id="name" size="13" class="required hilightable"/></p>
+    <input type="text" name="username" id="name" size="20" class="required highlightable"/></p>
     <p><label for="pswd">Password:</label>
-    <input type="password" name="pswd" id="pswd" size="13" class="required hilightable"/></p>
+      <span class="container"> 
+        <input type="password" name="pswd" id="pswd" size="20" class="required highlightable"/>
+        <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="30" id="EYE"></a>
+      </span>
+    </p>
     <p><button type="submit" name="submit" class="btn">Log In</button></p>
 </fieldset>    
   </form>
@@ -80,7 +84,7 @@ include 'header.php';
             die("Connection failed: " . $conn->connect_error);
         }
         //extract and decrypt secret
-        $sql = "SELECT AES_DECRYPT(secret,UNHEX('***REMOVED***')) FROM member_credentials WHERE member_credentials.username = '$name' LIMIT 1";
+        $sql = "SELECT AES_DECRYPT(secret,UNHEX('***REMOVED***')) FROM member_credentials WHERE member_credentials.username = '$username' LIMIT 1";
         $result = $conn->query($sql);
         //$value = mysqli_fetch_object($result);
         $row = $result -> fetch_array(MYSQLI_NUM);
@@ -105,7 +109,7 @@ include 'header.php';
           ?>
           <form method="post" action="2fa_sign-in.php" id="mainForm">
             <p><label for="code">Code:</label>
-            <input type="text" name="code" id="id" size="15" class="required hilightable"/></p>
+            <input type="text" name="code" id="id" size="15" class="required highlightable"/></p>
             <p><button type="submit" name="submit" class="btn">Verify Code</button></p>
             </fieldset>            
           </form>          

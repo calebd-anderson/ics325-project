@@ -20,19 +20,19 @@ class Loader
         static::$files = array(__FILE__);
     }
     
-    public static function register($path,$namespace) {
+    public static function register($path,$usernamespace) {
         if (!static::$initialized) static::initialize();
-        static::$paths[$namespace] = trim($path,DIRECTORY_SEPARATOR);
+        static::$paths[$usernamespace] = trim($path,DIRECTORY_SEPARATOR);
     }
     
     public static function load($class) {
         if (class_exists($class,false)) return;
         if (!static::$initialized) static::initialize();
         
-        foreach (static::$paths as $namespace => $path) {
-            if (!$namespace || $namespace.static::$nsChar === substr($class, 0, strlen($namespace.static::$nsChar))) {
+        foreach (static::$paths as $usernamespace => $path) {
+            if (!$usernamespace || $usernamespace.static::$nsChar === substr($class, 0, strlen($usernamespace.static::$nsChar))) {
                 
-                $fileName = substr($class,strlen($namespace.static::$nsChar)-1);
+                $fileName = substr($class,strlen($usernamespace.static::$nsChar)-1);
                 $fileName = str_replace(static::$nsChar, DIRECTORY_SEPARATOR, ltrim($fileName,static::$nsChar));
                 $fileName = static::$parentPath.DIRECTORY_SEPARATOR.$path.DIRECTORY_SEPARATOR.$fileName.'.php';
                 

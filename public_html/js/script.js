@@ -13,12 +13,11 @@ function closeNav() {
 
 //event listening for form errors
 window.addEventListener('load', function () {
-    const fields = document.getElementsByClassName('hilightable');
-    for (let i = 0; i < fields.length; i++) {
+    const fields = document.getElementsByClassName('highlightable');
+        for (let i = 0; i < fields.length; i++) {
         fields[i].addEventListener('focus', setBackground);
         fields[i].addEventListener('blur', setBackground);
     }
-
     // add listeners for classes with required ...
     var rfields = document.getElementsByClassName('required');
     //removes css class .error on change
@@ -39,7 +38,6 @@ window.addEventListener('load', function () {
                 }
             }
         });
-
 function setBackground() {
     this.classList.toggle('highlight');
 }

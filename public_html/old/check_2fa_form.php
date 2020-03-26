@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET" and isset($_GET['yes'])){
                     <p>Please enter the following code into your authenticator app: <?php echo chunk_split($secret, 4, ' '); ?> </p>
                     <p>Then check the secret using the field below.</p>
                     <p><label for="name">Enter the secret from the authenticator app:</label>
-                        <input type="text" id="code" name="code" maxlength="25" size="13" class="required hilightable"/>
+                        <input type="text" id="code" name="code" maxlength="25" size="13" class="required highlightable"/>
                     </p>
                 </fieldset>
                 <p><input type="submit" value="Check code" class="btn"/></p>
