@@ -11,12 +11,17 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/popover.css" />
     
     <meta name="theme-color" content="#fafafa">
 
     <script src="js/script.js"></script>
+    <script src="js/fields.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
     <title>Antarctica</title>    
 </head>
 <body id="main">
@@ -27,7 +32,7 @@
     <nav id="shoppingNav">
         <a href="home.php">Home</a>
         <a href="new_member_form.php">Become a Member</a>        
-        <a href="sign_in.php">Sign In</a>   
+        <a href="sign_in_form.php">Sign In</a>   
         <span id='navbtn' onclick="toggleNav()">&#9776; Nav Menu</span>           
     </nav>
     </div>
@@ -40,6 +45,4 @@
         <a href="web_store.php" class="navicon" id="storeicon">Store</a>
         <a href="#" class="navicon" id="discourseicon">Discourse</a>
         <a href="my_robThree_2FA.php" id="">2FA Demo</a>
-    </div>
-    
-    
+    </div> 

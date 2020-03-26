@@ -5,14 +5,14 @@
 <fieldset class="fieldset">
 <legend>Add Member Result</legend>
 <?php
-    if(!isset($_POST['name']) || !isset($_POST['pswd'])){
+    if(!isset($_POST['username']) || !isset($_POST['pswd'])){
         echo "<p>You have not entered all the required details.<br />
             Please go back and try again.</p>";
         exit;
     }
     // create short variable names
-    $name = $_POST['name'];
-    $_SESSION['name'] = $name;
+    $username = $_POST['username'];
+    $_SESSION['username'] = $username;
     $pswd = $_POST['pswd'];
     $db = new mysqli('localhost', 'caleb_tree', '***REMOVED***', '***REMOVED***');
     if(mysqli_connect_errno()){
@@ -26,7 +26,7 @@
     //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
     $query = "INSERT INTO member_credentials (username, pswd) VALUES (?, ?)";
     $stmt = $db->prepare($query);
-    $stmt->bind_param('ss', $name, $hash);
+    $stmt->bind_param('ss', $username, $hash);
     $stmt->execute();
     if ($stmt->affected_rows > 0){
         echo "<p>Member added to database.</p>";

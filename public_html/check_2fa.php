@@ -8,7 +8,7 @@ require('setup_2fa.inc');
 $secret = $_SESSION["secret"];
 $tfa = unserialize($_SESSION["tfa"]);
 $code = $_POST['code'];
-$name = $_SESSION['name'];
+$username = $_SESSION['username'];
 ?>
 <fieldset class="fieldset"><legend>Verify Code</legend>
     <!-- <p>The code entered was <?php echo $code; ?></p>
@@ -30,7 +30,7 @@ $name = $_SESSION['name'];
 
         //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
         
-        $query = "UPDATE member_credentials SET secret = AES_ENCRYPT('$secret', UNHEX('$key')) WHERE username = '$name'";
+        $query = "UPDATE member_credentials SET secret = AES_ENCRYPT('$secret', UNHEX('$key')) WHERE username = '$username'";
         if ($db->query($query) === TRUE) {
             echo "<p>Record updated successfully.";
             echo ' Congratulations! The secret is encrypted and stored with your account and multi-factor authentication setup is complete.</p>
@@ -54,4 +54,3 @@ $name = $_SESSION['name'];
     echo '</fieldset>';
     include('footer.php');
 ?>
-

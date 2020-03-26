@@ -13,11 +13,11 @@ require('header');
         </table>   
         <div><span class="texterror"><strong>* Required field:</strong></span></div>
         <span class="text">Please enter your name:</span>
-        <span class="texterror">* <?php echo $nameErr;?></span>
-        <input type="text" placeholder="Your name." name="user" size="20" maxlength="25" class="hilightable" />                
+        <span class="texterror">* <?php echo $usernameErr;?></span>
+        <input type="text" placeholder="Your name." name="user" size="20" maxlength="25" class="highlightable" />                
         <span class="text">Quantity(&lt;=20):</span>
         <span class="texterror">* <?php echo $quantityErr;?></span>
-        <input type="text" placeholder="<=20" name="quantity" size="2" maxlength="2" class="hilightable"/>
+        <input type="text" placeholder="<=20" name="quantity" size="2" maxlength="2" class="highlightable"/>
         <input type="submit" value="Submit Order" class="btn" />
     </form>
     </fieldset>
