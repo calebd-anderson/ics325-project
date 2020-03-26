@@ -54,7 +54,7 @@ include 'header.php';
     if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     // visitor needs to enter a name and password
 ?>
-
+<script src="js/fields.js"></script>
 <fieldset class="fieldset">
   <legend>Please Log In</legend>
   <!-- <p>This page is secret.</p> -->
