@@ -66,6 +66,7 @@ include 'header.php';
         <input type="password" name="pswd" id="pswd" size="20" class="required highlightable"/>
         <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="30" id="EYE"></a>
       </span>
+      <p id="text">WARNING! Caps lock is ON.</p>
     </p>
     <p><button type="submit" name="submit" class="btn">Log In</button></p>
 </fieldset>    
@@ -128,3 +129,16 @@ include 'header.php';
   }
   include 'footer.php';
 ?>
+
+<script>  
+    //caps-lock detect
+    var input = document.getElementById("pswd");
+    var text = document.getElementById("text");
+    input.addEventListener("keyup", function(event) {
+        if (event.getModifierState("CapsLock")) {
+            text.style.display = "block";
+        } else {
+            text.style.display = "none"
+        }
+    });
+</script>
