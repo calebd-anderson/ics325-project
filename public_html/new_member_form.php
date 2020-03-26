@@ -22,7 +22,7 @@
                   </span>
               </p>                    
               <p id="text">WARNING! Caps lock is ON.</p>
-              <div id="message">
+              <div id="message" class="js-fade">
                   <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
                   <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
                   <p id="number" class="invalid">A <b>number</b></p>
