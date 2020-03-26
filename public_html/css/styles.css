@@ -170,13 +170,13 @@ textarea{
   border-color: #FF1744;  
 }
 .btn {
-  -webkit-border-radius: 3;
-  -moz-border-radius: 3;
+  /* -webkit-border-radius: 3;
+  -moz-border-radius: 3; */
   border-radius: 3px;
-  height: 32px;
-  color: black;
+  /* height: 32px; */
+  /* color: black; */
   font-size: 14px;
-  background: rgb(148, 148, 148);
+  background: rgb(64, 150, 248);
   padding: 5px 20px 5px 20px;
   text-decoration: none;
 }
