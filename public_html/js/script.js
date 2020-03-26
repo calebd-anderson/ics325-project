@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
                 }
             }
         });
-function setBackground() {
-    this.classList.toggle('highlight');
-}
+    function setBackground() {
+        this.classList.toggle('highlight');
+    }
 });

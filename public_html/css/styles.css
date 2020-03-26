@@ -129,12 +129,12 @@ footer a {
 .fieldset {
   font-family: 'Montserrat', sans-serif;
   border: 1px solid #ddd;
-  /* padding: 10px; */
   margin-left: 10%;
 	margin-right: 10%;
 }
 article, fieldset {
-  background-color: rgb(175, 236, 255);
+  background-color: rgb(28, 53, 61);
+  background:linear-gradient(to bottom, #519c88 5%, #135252 100%);
   border: solid 1px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -152,37 +152,42 @@ legend {
   font-weight: bold;
   font-size: 24px;
 }
-form input[type="text"], input[type="password"] {
-  font-size: 16px;
+
+form input{
+  padding: 10px;
+  width: 65%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
   height: 24px;
-  padding: 3px;
 }
-textarea{
-  font-size: 16px;
-  resize: none;
-}
-.highlight {
+
+input[type=text]:focus,input[type=password]:focus, textarea:focus {
   background-color: #FFE0B2;
-}    
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
 .error {
-  /* background: #FFCDD2 url(error.png) no-repeat 98% center; */
   box-shadow: 0 0 5px #FF5252;
-  border-color: #FF1744;  
+  border-color: #FF1744;
 }
-.btn {
-  /* -webkit-border-radius: 3;
-  -moz-border-radius: 3; */
-  border-radius: 3px;
-  /* height: 32px; */
-  /* color: black; */
-  font-size: 14px;
-  background: rgb(64, 150, 248);
-  padding: 5px 20px 5px 20px;
-  text-decoration: none;
+
+button {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
 }
-.btn:hover {
-  background: rgb(223, 223, 223);
-  text-decoration: none;
+button:hover {
+  opacity: 0.8;
 }
 /* TXT ICON */
 .container {
@@ -190,9 +195,10 @@ textarea{
 }
 .input_img {
   position: absolute;
-  right: 3%;
-  margin: auto;
-  /* padding: 10px; */
-  /* border: 1px solid #cacece; */
+  right: 1%;
+  margin: 0;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 /*#endregion Form Styles */
