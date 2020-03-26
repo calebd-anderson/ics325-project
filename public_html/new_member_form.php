@@ -10,8 +10,8 @@
           <legend style="font-family: Raleway;">Chasing Arctic - Register</legend>
 
           <div class="tab">Name:
-            <p><input type="text" placeholder="First name..." oninput="this.className = ''"></p>
-            <p><input type="text" placeholder="Last name..." oninput="this.className = ''"></p>
+            <p><input type="text" name="fname" placeholder="First name..." oninput="this.className = ''"></p>
+            <p><input type="text" name="lname" placeholder="Last name..." oninput="this.className = ''"></p>
           </div>
 
           <div class="tab">Login Info:
@@ -32,6 +32,7 @@
 
           <div class="tab">Contact Info:
               <p><input type="text" placeholder="E-mail..." oninput="this.className = ''"></p>
+              <p><input type="text" placeholder="Address..." oninput="this.className = ''"></p>
               <p><input type="text" placeholder="Phone..." oninput="this.className = ''"></p>
           </div>
 
