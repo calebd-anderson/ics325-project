@@ -5,7 +5,7 @@
 session_start();
 include 'header.php';
   $servername = "localhost";
-  $SQLuser = "caleb_tree";
+  $SQLuser = "***REMOVED***";
   $SQLpswd = "***REMOVED***";
   $dbname = "***REMOVED***";
   
