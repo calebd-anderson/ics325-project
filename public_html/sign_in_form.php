@@ -5,12 +5,12 @@
 session_start();
 include 'header.php';
   $servername = "localhost";
-  $username = "caleb_tree";
-  $password = "***REMOVED***";
+  $SQLuser = "caleb_tree";
+  $SQLpswd = "***REMOVED***";
   $dbname = "***REMOVED***";
   
   // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
+  $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -79,7 +79,7 @@ include 'header.php';
       echo '<fieldset class="fieldset"><legend>You\'re Signed In</legend>
       <p>I bet you\'re glad you can see this secret page.</p>';
         // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -100,8 +100,8 @@ include 'header.php';
             <a href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en"><img src="https://lh3.googleusercontent.com/MkSEE1fAQDUfQsqlhUEat-ZzJjkR2XnJEJpE-abcn7dPcIN8aYocgLoIDhujEDD5w-g=s180" alt="Authy 2-Factor Authentication"></a>
             <form action="setup_2fa.php" method="get" id="mainForm">
             <p>Would you like to setup multi-factor authentication now?</p>
-            <span><input name="yes" type="submit" value="Yes" class="btn"/></span>
-            <span><input name="no" type="submit" value="No" class="btn"/></span>
+            <span><button name="yes" type="submit">Yes</button></span>
+            <span><button name="no" type="submit">No</button></span>
             </form>
             </fieldset>
           <?php
