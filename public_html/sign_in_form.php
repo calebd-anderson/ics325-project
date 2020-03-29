@@ -5,8 +5,8 @@
 session_start();
 include 'header.php';
   $servername = "localhost";
-  $SQLuser = "caleb_tree";
-  $SQLpswd = "-/&Dk)7;ypq8";
+  $SQLuser = "***REMOVED***";
+  $SQLpswd = "***REMOVED***";
   $dbname = "***REMOVED***";
   
   // Create connection
