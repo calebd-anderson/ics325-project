@@ -18,7 +18,7 @@ $username = $_SESSION['username'];
     echo (($result === true) ? '<span style="color:#0c0">OK</span>' : '<span style="color:#c00">FAIL</span>');
     
     if($result){
-        $db = new mysqli('localhost', 'caleb_tree', '***REMOVED***', '***REMOVED***');
+        $db = new mysqli('localhost', '***REMOVED***', '***REMOVED***', '***REMOVED***');
         if(mysqli_connect_errno()){
             echo "<p>Error: Could not connect to database.<br/>
                 Please try again later.</p>";

@@ -28,7 +28,7 @@
         $username = $_POST['username'];
         // $_SESSION['username'] = $username;
         $pswd = $_POST['pswd'];
-        $db = new mysqli('localhost', 'caleb_tree', '***REMOVED***', '***REMOVED***');
+        $db = new mysqli('localhost', '***REMOVED***', '***REMOVED***', '***REMOVED***');
         if(mysqli_connect_errno()){
             echo "<p>Error: Could not connect to database.<br/>
                 Please try again later.</p>";
