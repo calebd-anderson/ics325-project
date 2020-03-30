@@ -110,5 +110,5 @@ right: 20px;
                 expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
                 donating to the expedition...
                 </p>
-                <a href="single.html" class="btn read-more">Read More</a>
+                <a href="single.php" class="btn read-more">Read More</a>
     </div>
