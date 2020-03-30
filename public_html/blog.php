@@ -68,7 +68,7 @@ right: 20px;
         <div class="post">
             <img src="globe.png"  alt="image" class="post-image">
             <div class="post-preview">
-                <h2><a href="single.html">A New Beginning.</a></h2>
+                <h2><a href="single.php">A New Beginning.</a></h2>
                 <i class="user"> Biensur Chang,</i>
                 &nbsp;
                 <i class="calendar"> March 30th, 2020</i>
@@ -78,13 +78,13 @@ right: 20px;
                 expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
                 donating to the expedition...
                 </p>
-                <a href="single.html" class="btn read-more">Read More</a>
+                <a href="single.php" class="btn read-more">Read More</a>
     </div>
     
     <div class="post">
             <img src="globe.png"  alt="image" class="post-image">
             <div class="post-preview">
-                <h2><a href="single.html">The Purpose of Our Expedition</a></h2>
+                <h2><a href="single.php">The Purpose of Our Expedition</a></h2>
                 <i class="user"> Biensur Chang,</i>
                 &nbsp;
                 <i class="calendar"> March 29th, 2020</i>
@@ -94,13 +94,13 @@ right: 20px;
                 expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
                 donating to the expedition...
                 </p>
-                <a href="single.html" class="btn read-more">Read More</a>
+                <a href="single.php" class="btn read-more">Read More</a>
     </div>
  
     <div class="post">
             <img src="globe.png"  alt="image" class="post-image">
             <div class="post-preview">
-                <h2><a href="single.html">Welcome to Chasing Antarctica</a></h2>
+                <h2><a href="single.php">Welcome to Chasing Antarctica</a></h2>
                 <i class="user"> Biensur Chang,</i>
                 &nbsp;
                 <i class="calendar"> March 28th, 2020</i>
