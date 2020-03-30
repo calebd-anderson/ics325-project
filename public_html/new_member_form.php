@@ -23,7 +23,7 @@
           <div class="tab">Login Info:
             <p><input type="text" placeholder="Username..." name="username" maxlength="25" oninput="this.className = ''" /></p>
                 <p>
-                    <span class="container">                  
+                    <span class="container">
                       <input placeholder="Password..." data-toggle="popover" data-trigger="focus" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="this.className = ''"/>                   
                       <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="35" id="EYE"></a>
                     </span>
