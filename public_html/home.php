@@ -14,5 +14,5 @@ require('header.php');
     </slection>
 </article>
 <?php
-require('footer.php');
+  require('footer.php');
 ?>
