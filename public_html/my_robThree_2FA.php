@@ -34,7 +34,10 @@
         }
         else {
             //display the secrete
-            echo '<br><span  style="color:rgb(151, 41, 41);">Required PHP GD library to draw the QR code is NOT installed on your web server.</span>'.
+            echo '<p><span  style="color:rgb(151, 41, 41);">Required PHP GD library to draw the QR code is NOT installed on your web server.</span>'.
+            '<br>The authenticator app won\'t automatically recognize it.'.
+            '<br>Scan this QR code with this <a target="_blank" href="https://play.google.com/store/apps/details?id=com.kevintesar.qrcodetoclipboard&hl=en_US">app</a> to copy the code to your phone\'s clip-board.'.
+            '<br><img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl='.$secret.'" /></p>'.
             '<br>...or display the secret to the user for manual entry: '.
             chunk_split($secret, 4, ' ');
         }

@@ -1,14 +1,14 @@
 <?php
-// ini_set('display_startup_errors',1); 
-// ini_set('display_errors',1);
-// error_reporting(-1);
-session_start();
-require 'header.php';
-require('setup_2fa.inc');
-$secret = $_SESSION["secret"];
-$tfa = unserialize($_SESSION["tfa"]);
-$code = $_POST['code'];
-$username = $_SESSION['username'];
+    // ini_set('display_startup_errors',1); 
+    // ini_set('display_errors',1);
+    // error_reporting(-1);
+    session_start();
+    require 'header.php';
+    require('setup_2fa.inc');
+    $secret = $_SESSION["secret"];
+    $tfa = unserialize($_SESSION["tfa"]);
+    $code = $_POST['code'];
+    $username = $_SESSION['username'];
 ?>
 <fieldset class="fieldset"><legend>Verify Code</legend>
     <!-- <p>The code entered was <?php echo $code; ?></p>
