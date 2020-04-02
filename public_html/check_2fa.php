@@ -30,7 +30,7 @@
 
         //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
         
-        $query = "UPDATE member_credentials SET secret = AES_ENCRYPT('$secret', UNHEX('$key')) WHERE username = '$username'";
+        $query = "UPDATE member_creds SET secret = AES_ENCRYPT('$secret', UNHEX('$key')) WHERE username = '$username'";
         if ($db->query($query) === TRUE) {
             echo "<p>Record updated successfully.";
             echo ' Congratulations! The secret is encrypted and stored with your account and multi-factor authentication setup is complete.</p>
@@ -38,7 +38,8 @@
         } else {
             echo "Error updating record: " . $db->error;
         }
-        $db->close();        
+        //$db->close();
+        mysqli_close($db);
         //include('footer.php');
 
     }else{
