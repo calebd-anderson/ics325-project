@@ -4,10 +4,7 @@
 // error_reporting(-1);
 session_start();
 include 'header.php';
-  $servername = "localhost";
-  $SQLuser = "caleb_tree";
-  $SQLpswd = "***REMOVED***";
-  $dbname = "***REMOVED***";
+require '../SQLcreds.inc';
   
   // Create connection
   $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
@@ -37,7 +34,7 @@ include 'header.php';
           //     $usernameErr = "Only letters and white space allowed. ";
           // }
       }      
-    $sql = "SELECT pswd FROM member_credentials WHERE username = '$username' LIMIT 1";
+    $sql = "SELECT pswd FROM member_creds WHERE username = '$username' LIMIT 1";
     $result = $conn->query($sql);
     $value = mysqli_fetch_object($result);
     if($value == null){echo '<fieldset class="fieldset"><p>Username or password is not correct.</p>';}
@@ -85,7 +82,7 @@ include 'header.php';
             die("Connection failed: " . $conn->connect_error);
         }
         //extract and decrypt secret
-        $sql = "SELECT AES_DECRYPT(secret,UNHEX('***REMOVED***')) FROM member_credentials WHERE member_credentials.username = '$username' LIMIT 1";
+        $sql = "SELECT AES_DECRYPT(secret,UNHEX('***REMOVED***')) FROM member_creds WHERE member_creds.username = '$username' LIMIT 1";
         $result = $conn->query($sql);
         //$value = mysqli_fetch_object($result);
         $row = $result -> fetch_array(MYSQLI_NUM);
