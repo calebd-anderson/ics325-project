@@ -24,7 +24,7 @@
     <title>Antarctica</title>    
 </head>
 <body id="main">
-<img src="images/logo.png" class="logo">
+<img src="images/logo2.png" class="logo">
 
 <div class="navbar">
 <script>gsap.from(".logo", {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});</script>
