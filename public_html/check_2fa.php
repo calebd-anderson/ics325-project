@@ -1,14 +1,14 @@
 <?php
-// ini_set('display_startup_errors',1); 
-// ini_set('display_errors',1);
-// error_reporting(-1);
-session_start();
-require 'header.php';
-require('setup_2fa.inc');
-$secret = $_SESSION["secret"];
-$tfa = unserialize($_SESSION["tfa"]);
-$code = $_POST['code'];
-$username = $_SESSION['username'];
+    // ini_set('display_startup_errors',1); 
+    // ini_set('display_errors',1);
+    // error_reporting(-1);
+    session_start();
+    require 'header.php';
+    require('setup_2fa.inc');
+    $secret = $_SESSION["secret"];
+    $tfa = unserialize($_SESSION["tfa"]);
+    $code = $_POST['code'];
+    $username = $_SESSION['username'];
 ?>
 <fieldset class="fieldset"><legend>Verify Code</legend>
     <!-- <p>The code entered was <?php echo $code; ?></p>
@@ -30,7 +30,7 @@ $username = $_SESSION['username'];
 
         //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
         
-        $query = "UPDATE member_credentials SET secret = AES_ENCRYPT('$secret', UNHEX('$key')) WHERE username = '$username'";
+        $query = "UPDATE member_creds SET secret = AES_ENCRYPT('$secret', UNHEX('$key')) WHERE username = '$username'";
         if ($db->query($query) === TRUE) {
             echo "<p>Record updated successfully.";
             echo ' Congratulations! The secret is encrypted and stored with your account and multi-factor authentication setup is complete.</p>
@@ -38,7 +38,8 @@ $username = $_SESSION['username'];
         } else {
             echo "Error updating record: " . $db->error;
         }
-        $db->close();        
+        //$db->close();
+        mysqli_close($db);
         //include('footer.php');
 
     }else{

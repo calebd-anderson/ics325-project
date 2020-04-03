@@ -18,7 +18,11 @@
         }
         else {
             //display the secrete
-            echo '<br><strong style="color:rgb(151, 41, 41);">The required PHP library to draw the QR code (GD) is not installed on your web server.</strong>';
+            echo '<p><span style="color:rgb(151, 41, 41);">Required PHP GD library to draw the QR code is NOT installed on your web server.</span>'.
+            '<br>The authenticator app won\'t automatically recognize it.'.
+            '<br>Instead scan this QR code with <a target="_blank" href="https://play.google.com/store/apps/details?id=com.kevintesar.qrcodetoclipboard&hl=en_US">this app</a> to copy the code to your phone\'s clip-board'.
+            ' then paste it into the authenticator app.'.
+            '<br><img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl='.$secret.'" /></p>';
         }
     ?>
     

@@ -28,7 +28,12 @@
         $username = $_POST['username'];
         // $_SESSION['username'] = $username;
         $pswd = $_POST['pswd'];
-        $db = new mysqli('localhost', '***REMOVED***', '***REMOVED***', '***REMOVED***');
+        $phone = test_input($_POST['phone']);
+        $email = test_input($_POST['email']);
+        $addr = test_input($_POST['addr']);
+        //$db = new mysqli('localhost', '***REMOVED***', '***REMOVED***', '***REMOVED***');
+        require '../SQLcreds.inc';
+        $db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
         if(mysqli_connect_errno()){
             echo "<p>Error: Could not connect to database.<br/>
                 Please try again later.</p>";
@@ -39,11 +44,16 @@
     $hash = password_hash($pswd, PASSWORD_DEFAULT);
     
     //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
-    $query = "INSERT INTO member_credentials (username, pswd) VALUES (?, ?)";
-    $stmt = $db->prepare($query);
-    $stmt->bind_param('ss', $username, $hash);
-    $stmt->execute();
-    if ($stmt->affected_rows > 0){
+    $query1 = "INSERT INTO member_contact (firstName, lastName, phone, email, addr) VALUES (?, ?, ?, ?, ?)";
+    $query2 = "INSERT INTO member_creds (username, pswd) VALUES (?, ?)";
+    $stmt1 = $db->prepare($query1);
+    $stmt2 = $db->prepare($query2);
+    // $db->multi_query($query);
+    $stmt1->bind_param('ssiss', $fName, $lName, $phone, $email, $addr);
+    $stmt2->bind_param('ss', $username, $hash);
+    $stmt1->execute();
+    $stmt2->execute();
+    if ($stmt1->affected_rows && $stmt2->affected_rows > 0){
         echo "<p>Member added to database.</p>";
     }else{
         echo "<p style='color: red'>An error has occured.<br/>
@@ -52,11 +62,11 @@
             exit;
     }
     $db->close();
-    echo '<p>This is your first name: '.$fName.'</p>';
-    echo '<p>This is your last name: '.$lName.'</p>';
-    echo '<p>This is your username: '.$username.'</p>';
-    echo '<p>This is your password: '.$pswd.'</p>';
-    echo '<p>This is your hashed password: '.$hash.'</p>';
+    // echo '<p>This is your first name: '.$fName.'</p>';
+    // echo '<p>This is your last name: '.$lName.'</p>';
+    // echo '<p>This is your username: '.$username.'</p>';
+    // echo '<p>This is your password: '.$pswd.'</p>';
+    // echo '<p>This is your hashed password: '.$hash.'</p>';
 ?>
 <p>Try one of these great apps to setup multi-factor authentication: </p>
     <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en"><img src="https://lh3.googleusercontent.com/HPc5gptPzRw3wFhJE1ZCnTqlvEvuVFBAsV9etfouOhdRbkp-zNtYTzKUmUVPERSZ_lAL=s180" alt="Google Authenticator"></a>
