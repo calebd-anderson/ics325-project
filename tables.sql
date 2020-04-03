@@ -7,13 +7,13 @@ email CHAR(50) NOT NULL,
 addr CHAR(50) NOT NULL
 );
 
-CREATE TABLE `member_creds` (
-`username` char(20) NOT NULL,
-`memberID` int(10) unsigned DEFAULT NULL AUTO_INCREMENT,
-`pswd` char(50) NOT NULL,
-`secret` blob DEFAULT NULL,
+CREATE TABLE member_creds (
+username char(20) NOT NULL,
+memberID int(10) UNSIGNED DEFAULT NULL AUTO_INCREMENT,
+pswd char(50) NOT NULL,
+secret blob DEFAULT NULL,
 UNIQUE KEY `username` (`username`),
-FOREIGN KEY `memberID` (`memberID`),
+KEY `memberID` (`memberID`),
 CONSTRAINT `memberID` FOREIGN KEY (`memberID`) REFERENCES `member_contact` (`memberID`)
 ON UPDATE CASCADE ON DELETE CASCADE 
 );
