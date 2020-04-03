@@ -42,6 +42,6 @@
         <a href="#" class="navicon" id="newsicon">News</a>
         <a href="#" class="navicon" id="mbricon">Membership</a>        
         <a href="web_store.php" class="navicon" id="storeicon">Store</a>
-        <a href="#" class="navicon" id="discourseicon">Discourse</a>
+        <a href="blog.php" class="navicon" id="discourseicon">Discourse</a>
         <a href="my_robThree_2FA.php" id="">2FA Demo</a>
     </div> 

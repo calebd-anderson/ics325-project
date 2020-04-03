@@ -14,26 +14,27 @@
             <p><input type="text" name="lname" placeholder="Last name..." oninput="this.className = ''"></p>
           </div>
 
-          <div class="tab">Login Info:
-            <p><input placeholder="Username..." type="text" id="name" name="username" maxlength="25" oninput="this.className = ''" /></p>                
-                  <span class="container">                  
-                      <input placeholder="Password..." data-toggle="popover" data-trigger="focus" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="this.className = ''"/>                   
-                      <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="35" id="EYE"></a>
-                  </span>
-              </p>                    
-              <p id="text">WARNING! Caps lock is ON.</p>
-              <div id="message" class="js-fade">
-                  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                  <p id="number" class="invalid">A <b>number</b></p>
-                  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-              </div>
+          <div class="tab">Contact Info:
+              <p><input type="text" placeholder="E-mail..." name="email" oninput="this.className = ''"></p>
+              <p><input type="text" placeholder="Address..." name="addr" oninput="this.className = ''"></p>
+              <p><input type="text" placeholder="Phone..." name="phone" oninput="this.className = ''"></p>
           </div>
 
-          <div class="tab">Contact Info:
-              <p><input type="text" placeholder="E-mail..." oninput="this.className = ''"></p>
-              <p><input type="text" placeholder="Address..." oninput="this.className = ''"></p>
-              <p><input type="text" placeholder="Phone..." oninput="this.className = ''"></p>
+          <div class="tab">Login Info:
+            <p><input type="text" placeholder="Username..." name="username" maxlength="25" oninput="this.className = ''" /></p>
+                <p>
+                    <span class="container">
+                      <input placeholder="Password..." data-toggle="popover" data-trigger="focus" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="this.className = ''"/>                   
+                      <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="35" id="EYE"></a>
+                    </span>
+                </p>
+                <p id="text">WARNING! Caps lock is ON.</p>
+                <div id="message" class="js-fade">
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
           </div>
 
           <div style="overflow:auto;">
