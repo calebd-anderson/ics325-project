@@ -1,4 +1,7 @@
 <?php
+    ini_set('display_startup_errors',1); 
+    ini_set('display_errors',1);
+    error_reporting(-1);
     session_start();
     require 'header.php';
 ?>
@@ -53,7 +56,7 @@
     $stmt2->bind_param('ss', $username, $hash);
     $stmt1->execute();
     $stmt2->execute();
-    if ($stmt1->affected_rows && $stmt2->affected_rows > 0){
+    if (($stmt1->affected_rows > 0) && ($stmt2->affected_rows > 0)){
         echo "<p>Member added to database.</p>";
     }else{
         echo "<p style='color: red'>An error has occured.<br/>
