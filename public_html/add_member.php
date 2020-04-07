@@ -57,7 +57,7 @@
     $stmt1->execute();
     $stmt2->execute();
     if ($stmt1->affected_rows > 0 && $stmt2->affected_rows > 0){
-        $_SESSION['valid_user'] = $_SESSION['username'];
+        $_SESSION['valid_user'] = $_POST['username'];
         echo "<p>Member added to database.</p>";
     }else{
         echo "<p style='color: red'>An error has occured.<br/>
