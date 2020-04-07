@@ -10,7 +10,8 @@
         <a href='https://github.com/RobThree/TwoFactorAuth'>RobThree2FA</a><br />
         <a href='https://greensock.com/'>GreenSock Animation</a><br />
         <a href='https://fonts.google.com/?selection.family=Montserrat'>Google Fonts</a><br />
-        <a href='https://html5boilerplate.com/'>HTML5 Boilerplate</a>
+        <a href='https://html5boilerplate.com/'>HTML5 Boilerplate</a><br />
+        <a href="https://www.w3schools.com/">w3schools tutorials</a>
     </div>
     <div class="Icon_links">
         <div>Icons made by <a href="https://www.flaticon.com/authors/payungkead" title="Payungkead">Payungkead</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
