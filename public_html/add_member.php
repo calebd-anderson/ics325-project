@@ -1,7 +1,7 @@
 <?php
-    ini_set('display_startup_errors',1); 
-    ini_set('display_errors',1);
-    error_reporting(-1);
+    // ini_set('display_startup_errors',1); 
+    // ini_set('display_errors',1);
+    // error_reporting(-1);
     session_start();
     require 'header.php';
 ?>
@@ -57,6 +57,7 @@
     $stmt1->execute();
     $stmt2->execute();
     if ($stmt1->affected_rows > 0 && $stmt2->affected_rows > 0){
+        $_SESSION['valid_user'] = $_SESSION['username'];
         echo "<p>Member added to database.</p>";
     }else{
         echo "<p style='color: red'>An error has occured.<br/>
@@ -65,11 +66,6 @@
             exit;
     }
     $db->close();
-    // echo '<p>This is your first name: '.$fName.'</p>';
-    // echo '<p>This is your last name: '.$lName.'</p>';
-    // echo '<p>This is your username: '.$username.'</p>';
-    // echo '<p>This is your password: '.$pswd.'</p>';
-    // echo '<p>This is your hashed password: '.$hash.'</p>';
 ?>
 <p>Try one of these great apps to setup multi-factor authentication: </p>
     <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en"><img src="https://lh3.googleusercontent.com/HPc5gptPzRw3wFhJE1ZCnTqlvEvuVFBAsV9etfouOhdRbkp-zNtYTzKUmUVPERSZ_lAL=s180" alt="Google Authenticator"></a>

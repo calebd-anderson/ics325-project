@@ -17,7 +17,8 @@
 
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
@@ -29,9 +30,17 @@
 <div class="navbar">
 <script>gsap.from(".logo", {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});</script>
     <nav id="shoppingNav">
-        <a href="home.php">Home</a>
-        <a href="new_member_form.php">Become a Member</a>        
-        <a href="sign_in_form.php">Sign In</a>   
+        <a href="home.php">Home</a>                
+        <?php
+            @session_start();
+            if (isset($_SESSION['valid_user'])){
+                echo '<span style="padding:14px 16px;float:left;">Welcom: '.$_SESSION['valid_user'].'</span>';
+                echo '<a href="logout.php"><i class="fa fa-fw fa-sign-out"></i> Log Off</a>';
+            } else{
+                echo '<a href="new_member_form.php">Become a Member</a>';
+                echo '<a href="sign_in_form.php"><i class="fa fa-fw fa-user"></i> Login</a>';
+            }
+        ?>
         <span id='navbtn' onclick="toggleNav()">&#9776; Nav Menu</span>           
     </nav>
     </div>
@@ -41,7 +50,8 @@
         <!-- <a href="#" class="navicon" id="expicon">Expeditions</a> -->
         <a href="#" class="navicon" id="newsicon">News</a>
         <a href="#" class="navicon" id="mbricon">Membership</a>        
-        <a href="web_store.php" class="navicon" id="storeicon">Store</a>
-        <a href="blog.php" class="navicon" id="discourseicon">Discourse</a>
+        <a href="store/store_index.php" class="navicon" id="storeicon">Store</a>
+        <a href="blog/blog.php" class="navicon" id="discourseicon">Discourse</a>
+        <!-- <a href="blog/blog.php" class='far fa-comments'> Discourse</a> -->
         <a href="my_robThree_2FA.php" id="">2FA Demo</a>
     </div> 
