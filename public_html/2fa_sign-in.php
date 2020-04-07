@@ -1,8 +1,4 @@
 <?php
-    // ini_set('display_startup_errors',1); 
-    // ini_set('display_errors',1);
-    // error_reporting(-1);
-
     session_start();
     require 'header.php';
     require('setup_2fa.inc');
@@ -23,6 +19,8 @@
         //code not entered
     }else if($result){
         echo '<fieldset class="fieldset"><p>You\'re authorized.</p></fieldset>';
+        $_SESSION['valid_user'] = $_SESSION['username'];
+        header("Location:home.php");
     }else{
         echo '<fieldset class="fieldset"><p>You\'re not authorized.</p></fieldset>';
     }
