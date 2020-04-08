@@ -34,7 +34,8 @@
         <?php
             @session_start();
             if (isset($_SESSION['valid_user'])){
-                echo '<span style="padding:14px 16px;float:left;">Welcom: '.$_SESSION['valid_user'].'</span>';
+                echo '<span style="padding:14px 16px;float:left;">Welcom: '.$_SESSION['valid_user'].'</span>';                
+                echo '<a href="#">My Account</a>';
                 echo '<a href="logout.php"><i class="fa fa-fw fa-sign-out"></i> Log Off</a>';
             } else{
                 echo '<a href="new_member_form.php">Become a Member</a>';
@@ -53,5 +54,5 @@
         <a href="store/store_index.php" class="navicon" id="storeicon">Store</a>
         <a href="blog/blog.php" class="navicon" id="discourseicon">Discourse</a>
         <!-- <a href="blog/blog.php" class='far fa-comments'> Discourse</a> -->
-        <a href="my_robThree_2FA.php" id="">2FA Demo</a>
+        <!-- <a href="my_robThree_2FA.php" id="">2FA Demo</a> -->
     </div> 

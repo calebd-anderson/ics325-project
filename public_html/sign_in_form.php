@@ -94,7 +94,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     <?php
     $_SESSION['secret'] = $secret;
     // $_SESSION['username'] = $username;
-  }  
+  }
   // $conn->close();
   // header("Location:check_2fa.php");
   // $_SESSION['valid_user'] = $username;

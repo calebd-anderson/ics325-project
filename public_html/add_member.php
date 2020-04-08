@@ -59,11 +59,20 @@
     if ($stmt1->affected_rows > 0 && $stmt2->affected_rows > 0){
         $_SESSION['valid_user'] = $_POST['username'];
         echo "<p>Member added to database.</p>";
+    }elseif($stmt1->affected_rows > 0){
+        echo "<p style='color: red'>An error has occured.<br/>
+            The item was not added.</p></fieldset>";
+            //delete orphan row from fail
+            $query3 = "DELETE FROM member_contact WHERE memberID = LAST_INSERT_ID();";
+            $stmt3 = $db->prepare($query3);
+            $stmt3->execute();
+            require 'footer.php';
+            exit;
     }else{
         echo "<p style='color: red'>An error has occured.<br/>
             The item was not added.</p></fieldset>";
-            require 'footer.php';
-            exit;
+        require 'footer.php';
+        exit;
     }
     $db->close();
 ?>
