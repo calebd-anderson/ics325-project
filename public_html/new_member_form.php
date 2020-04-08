@@ -2,12 +2,16 @@
 <?php
     include('header.php');
 ?>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="css\pswd_validation.css">
+<link rel="stylesheet" href="css\special_form.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .status-available{color:#2FC332;}
 .status-not-available{color:#D60202;}
 </style>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script>
+//username availability check
 function checkAvailability() {
 	$("#loaderIcon").show();
 	jQuery.ajax({
@@ -22,35 +26,27 @@ function checkAvailability() {
 	});
 }
 </script>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-<link rel="stylesheet" href="css\pswd_validation.css">
-<link rel="stylesheet" href="css\special_form.css">
   <form action="add_member.php" method="post" id="mainForm">
       <fieldset class="fieldset">
-          <legend style="font-family: Raleway;">Chasing Arctic - Register</legend>
-
-          <div class="tab">Name:
+            <legend style="font-family: Raleway;">Chasing Arctic - Register</legend>
+            <div class="tab">Name:
             <p><input type="text" name="fname" placeholder="First name..." oninput="this.className = ''"></p>
             <p><input type="text" name="lname" placeholder="Last name..." oninput="this.className = ''"></p>
-          </div>
-
-          <div class="tab">Contact Info:
-              <p><input type="text" placeholder="E-mail..." name="email" oninput="this.className = ''"></p>
-              <p><input type="text" placeholder="Address..." name="addr" oninput="this.className = ''"></p>
-              <p><input type="text" placeholder="Phone..." name="phone" oninput="this.className = ''"></p>
-          </div>
+            </div>
+            <div class="tab">Contact Info:
+                <p><input type="text" placeholder="E-mail..." name="email" oninput="this.className = ''"></p>
+                <p><input type="text" placeholder="Address..." name="addr" oninput="this.className = ''"></p>
+                <p><input type="text" placeholder="Phone..." name="phone" oninput="this.className = ''"></p>
+            </div>
 
             <div class="tab">Login Info:
-            <div id="frmCheckUsername">
                 <p><input type="text" id="username" placeholder="Username..." name="username" maxlength="25" oninput="this.className = ''" onBlur="checkAvailability()">
+                <span class="fa fa-cog fa-spin" id="loaderIcon" style="font-size:24px; display:none; color:#0084f0;"></span>
                 <span id="user-availability-status"></span></p>
-            </div>
-                <p><img src="LoaderIcon.gif" id="loaderIcon" style="display:none" /></p>
                 <p>
                     <span class="container">
-                      <input placeholder="Password..." data-toggle="popover" data-trigger="focus" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="this.className = ''"/>                   
-                      <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="35" id="EYE"></a>
+                        <input placeholder="Password..." data-toggle="popover" data-trigger="focus" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="this.className = ''"/>                   
+                        <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="35" id="EYE"></a>
                     </span>
                 </p>
                 <p id="text">WARNING! Caps lock is ON.</p>
@@ -60,7 +56,7 @@ function checkAvailability() {
                     <p id="number" class="invalid">A <b>number</b></p>
                     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                 </div>
-          </div>
+            </div>
 
           <div style="overflow:auto;">
           <div style="float:right;">
