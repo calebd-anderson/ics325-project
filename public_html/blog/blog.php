@@ -67,7 +67,7 @@ right: 20px;
             <h1 class="recent_post">Recent Posts</h1>
         </div>
         <div class="post">
-                <img src="globe.png"  alt="image" class="post-image">
+                <img src="images/globe.png"  alt="image" class="post-image">
                 <div class="post-preview">
                     <h2><a href="single.php">A New Beginning.</a></h2>
                     <i class="user"> Biensur Chang,</i>
@@ -84,7 +84,7 @@ right: 20px;
         </div>
         
         <div class="post">
-            <img src="globe.png"  alt="image" class="post-image">
+            <img src="images/globe.png"  alt="image" class="post-image">
             <div class="post-preview">
                 <h2><a href="single.php">The Purpose of Our Expedition</a></h2>
                 <i class="user"> Biensur Chang,</i>
@@ -101,7 +101,7 @@ right: 20px;
         </div>
     
         <div class="post">
-            <img src="globe.png"  alt="image" class="post-image">
+            <img src="images/globe.png"  alt="image" class="post-image">
             <div class="post-preview">
                 <h2><a href="single.php">Welcome to Chasing Antarctica</a></h2>
                 <i class="user"> Biensur Chang,</i>

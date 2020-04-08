@@ -29,7 +29,10 @@
                       <a class="nav-link" href="#">Missions</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="blog.php">Blog</a>
+                      <a class="nav-link" href="blog/blog.php">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="store/store_index.php">Merchandise</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Help</a>
