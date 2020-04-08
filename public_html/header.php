@@ -35,6 +35,12 @@
                       <a class="nav-link" href="store/store_index.php">Merchandise</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="sign_in_form.php">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="new_member_form.php">Become a Member</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="#">Help</a>
                     </li>
                   </ul>
