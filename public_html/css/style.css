@@ -1,0 +1,49 @@
+body {
+font-family: Georgia, serif;
+padding-top: 50px;
+}
+
+/*-----Home.php Styles-----*/
+
+.fieldset {
+padding: 20px;
+}
+.banner {
+margin-bottom: 20px;
+background-color: #80ff80;
+height: 300px;
+padding-top: 10px;
+padding-bottom: 50px;
+}
+.carouselHeader {
+padding-top: 50px;
+padding-bottom: 50px;
+border-top: 1px solid;
+}
+.carousel-container{
+margin: auto;
+width: 85%;
+padding: 10px;
+}
+
+/*-------Footer Styles-------*/
+
+footer {
+    width: 100%;
+    margin: auto;
+}
+
+.resources {
+    text-align: left;
+    display: inline-block;
+}
+
+.Icon_links {
+    text-align: left;
+    display: inline-block;
+    padding-left: 30px;
+}
+
+.copyright {
+    background-color: #80ff80;
+}
