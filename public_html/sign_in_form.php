@@ -76,7 +76,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
 }else if(password_verify($pswd, $value)) {
   // visitor's name and password combination are correct
   //extract and decrypt secret
-  $sql = "SELECT AES_DECRYPT(secret,UNHEX('***REMOVED***')) FROM member_creds WHERE username = '$username' LIMIT 1";
+  $sql = "SELECT AES_DECRYPT(secret, UNHEX('$key')) FROM member_creds WHERE username = '$username' LIMIT 1";
   $result = $conn->query($sql);
   $row = $result -> fetch_array(MYSQLI_NUM);
   $secret = $row[0];
@@ -125,15 +125,15 @@ include 'footer.php';
 ?>
 
 <script>  
-//caps-lock detect
-var input = document.getElementById("pswd");
-var text = document.getElementById("text");
-input.addEventListener("keyup", function(event) {
-if (event.getModifierState("CapsLock")) {
-text.style.display = "block";
-} else {
-text.style.display = "none"
-}
-});
+  //caps-lock detect
+  var input = document.getElementById("pswd");
+  var text = document.getElementById("text");
+  input.addEventListener("keyup", function(event) {
+    if (event.getModifierState("CapsLock")) {
+      text.style.display = "block";
+    } else {
+      text.style.display = "none"
+    }
+  });
 </script>
 
