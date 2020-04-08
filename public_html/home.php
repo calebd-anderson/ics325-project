@@ -1,5 +1,5 @@
 <?php
-  require('header.php');
+  include('header.php');
 ?>
   <script src="/js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -14,5 +14,5 @@
     </slection>
 </article>
 <?php
-  require('footer.php');
+  include('footer.php');
 ?>

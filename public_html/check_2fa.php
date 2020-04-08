@@ -5,6 +5,7 @@
     session_start();
     require 'header.php';
     require('setup_2fa.inc');
+    require('../SQLcreds.inc');
     $secret = $_SESSION["secret"];
     $tfa = unserialize($_SESSION["tfa"]);
     $code = $_POST['code'];
@@ -18,15 +19,12 @@
     echo (($result === true) ? '<span style="color:#0c0">OK</span>' : '<span style="color:#c00">FAIL</span>');
     
     if($result){
-        $db = new mysqli('localhost', '***REMOVED***', '***REMOVED***', '***REMOVED***');
+        $db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
         if(mysqli_connect_errno()){
             echo "<p>Error: Could not connect to database.<br/>
                 Please try again later.</p>";
             exit;
-        }    
-        //encrypt secret
-        //$key = openssl_random_pseudo_bytes(16, $cstrong);
-        $key = '***REMOVED***';
+        }
 
         //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
         
