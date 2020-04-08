@@ -2,6 +2,26 @@
 <?php
     include('header.php');
 ?>
+<style>
+.status-available{color:#2FC332;}
+.status-not-available{color:#D60202;}
+</style>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script>
+function checkAvailability() {
+	$("#loaderIcon").show();
+	jQuery.ajax({
+	url: "check_availability.php",
+	data:'username='+$("#username").val(),
+	type: "POST",
+	success:function(data){
+		$("#user-availability-status").html(data);
+		$("#loaderIcon").hide();
+	},
+	error:function (){}
+	});
+}
+</script>
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" href="css\pswd_validation.css">
@@ -21,8 +41,12 @@
               <p><input type="text" placeholder="Phone..." name="phone" oninput="this.className = ''"></p>
           </div>
 
-          <div class="tab">Login Info:
-            <p><input type="text" placeholder="Username..." name="username" maxlength="25" oninput="this.className = ''" /></p>
+            <div class="tab">Login Info:
+            <div id="frmCheckUsername">
+                <p><input type="text" id="username" placeholder="Username..." name="username" maxlength="25" oninput="this.className = ''" onBlur="checkAvailability()">
+                <span id="user-availability-status"></span></p>
+            </div>
+                <p><img src="LoaderIcon.gif" id="loaderIcon" style="display:none" /></p>
                 <p>
                     <span class="container">
                       <input placeholder="Password..." data-toggle="popover" data-trigger="focus" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="this.className = ''"/>                   
