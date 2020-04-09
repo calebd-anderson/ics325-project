@@ -16,9 +16,14 @@ section{
   border: 3px solid green;
   padding: 10px;
 }
+
 .store_table{
   display:block;
 }
+table{
+  box-sizing: content-box;
+}
+
 /*#region-------Form Styles-------*/
 /*class takes precidence*/
 .fieldset {
@@ -59,22 +64,44 @@ button:hover {
 .eye_container {
     position: relative;
 }
-.input_img {
+/* Mobile first - up to 991.98px wide */
+@media screen and (max-width:466px){
+  .input_img {
     position: absolute;
-    right: 3%;
-    margin: 0;
-    top: 50%;
-    /* -ms-transform: translateY(-50%); */
-    transform: translateY(-50%);
+    right: -150px;
+  }
+}
+/* Desktop size */
+@media screen and (min-width:466.98px){
+  .input_img {
+      position: absolute;
+      right: 3%;
+      margin: 0;
+      top: 50%;
+      /* -ms-transform: translateY(-50%); */
+      transform: translateY(-50%);
+  }
 }
 /* CapsLk warning */
-#text {
+#CapsLk {
     display:none;
     color:red
 }
 /*#endregion-------Form Styles-------*/
 
 /*#region-------SideNav Styles------- */
+/* Mobile first - up to 991.98px wide */
+@media screen and (max-width:991.98px){
+  #navbtn{
+    display: none;
+  }
+}
+/* Desktop size */
+@media screen and (min-width:991.98px){
+  .desktop-hide {
+      display:none;
+  }
+}
 #navbtn{
     font-size:20px;
     cursor: pointer;
