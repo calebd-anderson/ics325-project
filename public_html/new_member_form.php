@@ -48,7 +48,7 @@ function checkAvailability() {
                         <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="35" id="EYE"></a>
                     </span>
                 </p>
-                <p id="text">WARNING! Caps lock is ON.</p>
+                <p id="CapsLk">WARNING! Caps lock is ON.</p>
                 <div id="message" class="js-fade">
                     <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
                     <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>

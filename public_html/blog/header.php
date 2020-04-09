@@ -35,6 +35,17 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
+              <!-- dissapears in desktop and appears on mobile -->
+              <li class="nav-item desktop-hide">
+                <a class="nav-link" href="#">Missions</a>
+              </li>
+              <li class="nav-item desktop-hide">
+                <a class="nav-link" href="../blog/blog.php">Blog</a>
+              </li>
+              <li class="nav-item desktop-hide">
+                <a class="nav-link" href="../store/store_index.php">Merchandise</a>
+              </li>
+              <!-- dissapears in desktop and appears on mobile -->
               <?php
                 @session_start();
                 if (isset($_SESSION['valid_user'])){
