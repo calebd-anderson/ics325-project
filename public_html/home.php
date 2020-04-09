@@ -1,5 +1,5 @@
 <?php
-require('header.php');
+  require('header.php');
 ?>
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
@@ -9,11 +9,11 @@ require('header.php');
   <script src="js/main.js"></script>
 <!-- page content -->
 <body>
-  <article class="fieldset">
+  <article>
       <h1 align="center">Welcome to Chasing Antartica NPO 501(c)</h1>
       <section>
           <h2 align="center">This website provides up to date information on environmental issues.</h2>
-      </slection>
+      </section>
   </article>
   <div>
     <h2 class="banner" align="center">Banner Test</h2>
