@@ -11,48 +11,47 @@
     );
 ?>
 <link rel="stylesheet" href="stylesheet.css">
-<fieldset class='fieldset'>
-    <legend>
-<span class="bigl">C</span>hasing<span class="bigl"> A</span>rctic<span class="bigl"> M</span>erchandise
-</legend>
-<table>
-<?php                        
-    //associative multidimensional loop
-    shuffle_assoc($merchandise);
-    $column = 0;
-    echo '<tr>';
-    foreach($merchandise as $key => $value){
-        echo '<td class="card">';
-        // echo '<div class="container">';
-        echo '<img src="'.$value[1].'" alt="'.$key.'"'.
-        " width=\"200\" height=\"316\"/>";                            
-        // echo '<input type="checkbox" name="'.$key.'" id="checkbox-1-1" class="regular-checkbox">';
-        // echo '</div>';
-        echo '<div>'.$value[2].'</div>';
-        echo '<p class="price">$'.$value[0].'</p>';
-        echo '<p>Some text about the jeans..</p>';
-        echo '<p><button name="'.$key.'">Add to Cart</button></p>';
-        echo '</td>';
-        $column++;
-        if($column == 5){
-            echo '</tr>';
-            echo '<tr>';
-            $column = 0;
+<section>
+    <h1>
+        <span class="bigl">C</span>hasing<span class="bigl"> A</span>rctic<span class="bigl"> M</span>erchandise
+    </h1>
+    <table class="store_table">
+    <?php                        
+        //associative multidimensional loop
+        shuffle_assoc($merchandise);
+        $column = 0;
+        echo '<tr>';
+        foreach($merchandise as $key => $value){
+            echo '<td class="card">';
+            // echo '<div class="container">';
+            echo '<img src="'.$value[1].'" alt="'.$key.'"'." width=\"200\" height=\"316\"/>";
+            // echo '<input type="checkbox" name="'.$key.'" id="checkbox-1-1" class="regular-checkbox">';
+            // echo '</div>';
+            echo '<div>'.$value[2].'</div>';
+            echo '<p class="price">$'.$value[0].'</p>';
+            echo '<p>Some text about the jeans..</p>';
+            echo '<p><button name="'.$key.'">Add to Cart</button></p>';
+            echo '</td>';
+            $column++;
+            if($column == 3){
+                echo '</tr>';
+                echo '<tr>';
+                $column = 0;
+            }
         }
-    }
-    echo '</tr>';
-    function shuffle_assoc(&$array) {
-        $keys = array_keys($array);
-        shuffle($keys);
-        foreach($keys as $key) {
-            $new[$key] = $array[$key];
+        echo '</tr>';
+        function shuffle_assoc(&$array) {
+            $keys = array_keys($array);
+            shuffle($keys);
+            foreach($keys as $key) {
+                $new[$key] = $array[$key];
+            }
+            $array = $new;
+            //return true;
         }
-        $array = $new;
-        //return true;
-    }
-?>
-</table>
-</fieldset>
+    ?>
+    </table>
+</section>
 
 <?php
     include('../footer.php');

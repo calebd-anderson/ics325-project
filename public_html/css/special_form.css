@@ -8,7 +8,7 @@
     display: none;
   }
   
-#prevBtn {
+/* #prevBtn {
     box-shadow:inset 0px 1px 3px 0px #91b8b3;
     background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
     background-color:#768d87;
@@ -22,7 +22,7 @@
     padding:13px 32px;
     text-decoration:none;
     text-shadow:0px -1px 0px #2b665e;
-}
+} */
   
   /* Make circles that indicate the steps of the form: */
   .step {

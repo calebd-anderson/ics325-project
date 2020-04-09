@@ -4,7 +4,7 @@ function toggleNav() {
     (document.getElementById("websiteNav").style.width = "0",
     document.getElementById("main").style.marginRight = "0%") : 
     (document.getElementById("websiteNav").style.width = "280px",
-    document.getElementById("main").style.marginRight = "170px");
+    document.getElementById("main").style.marginRight = "21%");
 }
 function closeNav() {
     document.getElementById("websiteNav").style.width = "0";

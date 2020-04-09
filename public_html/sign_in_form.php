@@ -1,8 +1,8 @@
 <?php
-ini_set('display_startup_errors',1); 
-ini_set('display_errors',1);
-error_reporting(-1);
-session_start();
+// ini_set('display_startup_errors',1); 
+// ini_set('display_errors',1);
+// error_reporting(-1);
+// session_start();
 include 'header.php';
 require '../SQLcreds.inc';
 
@@ -61,7 +61,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     <p><label for="name">Username:</label>
     <input type="text" name="username" id="name" size="20" class="required highlightable"/></p>
     <p><label for="pswd">Password:</label>
-      <span class="container"> 
+      <span class="eye_container"> 
         <input type="password" name="pswd" id="pswd" size="20" class="required highlightable"/>
         <a class="input_img" onclick="toggle_pswd()"><img src="https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png" width="auto" height="30" id="EYE"></a>
       </span>
@@ -100,9 +100,9 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
   // $_SESSION['valid_user'] = $username;
   if($secret == null){
     $_SESSION['valid_user'] = $username;
-    echo '<fieldset class="fieldset"><legend>You\'re Signed In</legend>
+    echo '<section><h2>You\'re Signed In</h2>
     <p>I bet you\'re glad you can see this secret page.</p>';
-    echo '<p>MFA has not been setup on this account (the secret field in the database is empty).</p>';
+    echo '<p>Multi-factor authentication has not been setup on this account.</p>';// (the secret field in the database is empty)
     ?>
     <p>Try one of these great apps to setup multi-factor authentication: </p>
     <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en"><img src="https://lh3.googleusercontent.com/HPc5gptPzRw3wFhJE1ZCnTqlvEvuVFBAsV9etfouOhdRbkp-zNtYTzKUmUVPERSZ_lAL=s180" alt="Google Authenticator"></a>
@@ -112,8 +112,8 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     <p>Would you like to setup multi-factor authentication now?</p>
     <span><button name="yes" type="submit">Yes</button></span>
     <span><button name="no" type="submit">No</button></span>
+  </section>
     </form>
-    </fieldset>
     <?php    
   }
 } else{
