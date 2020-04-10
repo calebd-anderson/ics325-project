@@ -134,7 +134,7 @@ include 'footer.php';
 <script>  
   //caps-lock detect
   var input = document.getElementById("pswd");
-  var text = document.getElementById("text");
+  var text = document.getElementById("CapsLk");
   input.addEventListener("keyup", function(event) {
     if (event.getModifierState("CapsLock")) {
       text.style.display = "block";

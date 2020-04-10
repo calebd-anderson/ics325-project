@@ -71,13 +71,12 @@ button:hover {
     display: none !important;
   }
 }
-@media screen and (max-width:470px){
+/* @media screen and (max-width:465px){
   .input_img {
-    margin: 0;
     position: absolute;
-    right: -145px;
+    margin-right: 25%;
   }
-}
+} */
 
 /* Desktop size */
 @media screen and (min-width:468.98px){
@@ -85,10 +84,7 @@ button:hover {
     /* background-color: #1caa46; */
     position: absolute;
     right: 4%;
-    margin: 0;
-    top: 50%;
-    /* -ms-transform: translateY(-50%); */
-    transform: translateY(-50%);
+    /* right: .75vw; */
   }
 }
 /* CapsLk warning */
