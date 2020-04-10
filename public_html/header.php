@@ -5,19 +5,18 @@
       <title>Chasing Antartica</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="page icon" href="favicon.ico" />
-      
+      <!-- Homebrew Style -->
       <link rel="stylesheet" href="css/style.css">
+      <!-- HTML5 Style -->
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/main.css">
-      
+      <!-- Bootstrap, Font Awesome Style -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      
+      <!-- Homebrew Javascript -->
       <script src="js/script.js"></script>
-
+      <!-- JQuery, Popper, Bootstrap Libraries -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -64,7 +63,7 @@
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>
-              <!-- dissapears in desktop and appears on mobile -->
+              <!-- dissapear on desktop / appear on mobile -->
               <li class="nav-item desktop-hide">
                 <a class="nav-link" href="#">Missions</a>
               </li>
@@ -85,7 +84,7 @@
                   <path fill-rule="evenodd" d="M0 4.5A1.5 1.5 0 011.5 3h13A1.5 1.5 0 0116 4.5v2.384l-7.614 2.03a1.5 1.5 0 01-.772 0L0 6.884V4.5zM1.5 4a.5.5 0 00-.5.5v1.616l6.871 1.832a.5.5 0 00.258 0L15 6.116V4.5a.5.5 0 00-.5-.5h-13zM5 2.5A1.5 1.5 0 016.5 1h3A1.5 1.5 0 0111 2.5V3h-1v-.5a.5.5 0 00-.5-.5h-3a.5.5 0 00-.5.5V3H5v-.5z" clip-rule="evenodd"/>
                 </svg> Merchandise</a>
               </li>
-              <!-- dissapears in desktop and appears on mobile -->
+              <!-- dissapear on desktop / appear on mobile -->
               <?php
                 @session_start();
                 if (isset($_SESSION['valid_user'])){
@@ -93,7 +92,8 @@
                   echo '<a class="nav-link" href="#">My Account</a>';
                   echo '<a class="nav-link" href="logout.php"><i class="fa fa-fw fa-sign-out"></i> Log Off</a>';
                 } else{
-                  echo '<li class="nav-item"><a class="nav-link" href="new_member_form.php"><svg class="bi bi-person-check-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  echo '<li class="nav-item"><a class="nav-link" href="new_member_form.php">
+                  <svg class="bi bi-person-check-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm9.854-2.854a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-1.5-1.5a.5.5 0 01.708-.708L12.5 7.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
                   </svg> Become a Member</a></li>';
                   echo '<li class="nav-item"><a class="nav-link" href="sign_in_form.php"><i class="fa fa-fw fa-user"></i> Login</a></li>';
