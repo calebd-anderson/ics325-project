@@ -4,12 +4,13 @@
   color: #000;
   position: relative;
   background-color: rgba(255, 255, 255, 0.5);
-  width: 45%;
+  /* width: %; */
 }
 
 #message p {
   padding: 0px 35px;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size:2vw
 }
 
 /* Add a green text color and a checkmark when the requirements are right */

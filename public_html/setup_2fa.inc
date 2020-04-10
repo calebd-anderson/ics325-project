@@ -1,9 +1,9 @@
 <?php
 //session_start();
 require_once 'autoload.php';
-require_once 'lib/Providers/Qr/MyProvider.php';
+require_once '2fa_lib/Providers/Qr/MyProvider.php';
 //register($path, $usernamespace)
-Loader::register('lib','RobThree\\Auth');
+Loader::register('2fa_lib','RobThree\\Auth');
 use RobThree\Auth;
 
 $mp = new Auth\Providers\Qr\MyProvider();

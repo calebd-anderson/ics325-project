@@ -66,16 +66,24 @@ button:hover {
     
 }
 
+@media screen and (max-width:650px){
+  .popover {
+    display: none !important;
+  }
+}
+@media screen and (max-width:470px){
+  .input_img {
+    position: absolute;
+    right: -145px;
+  }
+}
+
 /* Desktop size */
 @media screen and (min-width:468.98px){
   .input_img {
     /* background-color: #1caa46; */
     position: absolute;
     right: 4%;
-    margin: 0;
-    top: 50%;
-    /* -ms-transform: translateY(-50%); */
-    transform: translateY(-50%);
   }
 }
 /* CapsLk warning */

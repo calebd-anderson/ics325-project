@@ -44,7 +44,7 @@ function checkAvailability() {
                 </p>
                 <p>
                     <span class="eye_container">
-                        <input placeholder="Password..." data-toggle="popover" data-trigger="focus" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="this.className = ''"/>                   
+                        <input tabindex="0" placeholder="Password..." data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>                   
                         <a class="input_img" onclick="toggle_pswd()">
                             <span id="eye">
                                 <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
