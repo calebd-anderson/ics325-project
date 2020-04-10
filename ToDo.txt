@@ -1,9 +1,7 @@
 BACKEND:
 Cookie Accept Pop-up (general data protection regulation)
-Database
 
 FEATURES:
-Login checks if user id available
 Video
 Email
 Polls, Surveys

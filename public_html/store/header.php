@@ -36,7 +36,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
-              <!-- dissapears in desktop and appears on mobile -->
+              <!-- dissapear on desktop / appear on mobile -->
               <li class="nav-item desktop-hide">
                 <a class="nav-link" href="#">Missions</a>
               </li>
@@ -46,7 +46,7 @@
               <li class="nav-item desktop-hide">
                 <a class="nav-link" href="../store/store_index.php">Merchandise</a>
               </li>
-              <!-- dissapears in desktop and appears on mobile -->
+              <!-- dissapear on desktop / appear on mobile -->
               <?php
                 @session_start();
                 if (isset($_SESSION['valid_user'])){
@@ -60,7 +60,10 @@
               ?>
               <li class="nav-item">
                 <a class="nav-link" href="#">Help</a>
-              </li>                    
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="checkout.php">Cart</a>
+              </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

@@ -1,53 +1,65 @@
 <?php
   require('header.php');
 ?>
-
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
 <!-- page content -->
 <body>
-  <article>
-      <h1 align="center">Welcome to Chasing Antartica NPO 501(c)</h1>
-      <section>
-          <h2 align="center">This website provides up to date information on environmental issues.</h2>
-      </section>
-  </article>
-  <div>
+  <!-- <div>
     <h2 class="banner" align="center">Banner Test</h2>
-  </div>
-  <div>
-    <h2 class="carouselHeader" align="center">A Place Further than the Universe</h2>
-  </div>
-  <div class="carousel-container">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="images/Iceberg.jpg" alt="Iceberg" width="500" height="600">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="images/Penguins.jpg" alt="Penguins">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="images/Ship.jpg" alt="Giant Ship">
-        </div>
+  </div> -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li style="cursor:pointer;" data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li style="cursor:pointer;" data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li style="cursor:pointer;" data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    <li style="cursor:pointer;" data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+    <li style="cursor:pointer;" data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/Iceberg.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to Chasing Antartica NPO 501(c)</h5>
+        <p>This website provides up to date information on environmental issues.</p>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-    <div>
-      
+    <div class="carousel-item">
+      <img src="http://getwallpapers.com/wallpaper/full/d/f/3/369792.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>A Place Further than the Universe.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/Penguins.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/Ship.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://hdfondsdecran.com/image/201609/1906/iceberg-illuminee-canada-merveilleux-vue.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
     </div>
   </div>
-</body>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <?php
-require('footer.php');
+  require('footer.php');
 ?>

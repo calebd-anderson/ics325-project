@@ -10,36 +10,60 @@
                             'trsection'=>   array(2.99, 'https://image.sportsmansguide.com/adimgs/l/1/180123_ts.jpg', 'Boots')
     );
 ?>
+<!-- <div class="card-group">
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div> -->
 <link rel="stylesheet" href="stylesheet.css">
-<section>
+<!-- <section> -->
     <h1>
         <span class="bigl">C</span>hasing<span class="bigl"> A</span>rctic<span class="bigl"> M</span>erchandise
     </h1>
-    <table class="store_table">
     <?php                        
-        //associative multidimensional loop
+        //loop card rows
         shuffle_assoc($merchandise);
         $column = 0;
-        echo '<tr>';
+        echo '<div class="card-group">';
         foreach($merchandise as $key => $value){
-            echo '<td class="card">';
-            // echo '<div class="container">';
-            echo '<img src="'.$value[1].'" alt="'.$key.'"'." width=\"200\" height=\"316\"/>";
-            // echo '<input type="checkbox" name="'.$key.'" id="checkbox-1-1" class="regular-checkbox">';
-            // echo '</div>';
-            echo '<div>'.$value[2].'</div>';
+            echo '<div class="card">';
+            echo '<img class="card-img-top" src="'.$value[1].'" alt="'.$key.'"/>';
+            echo '<div class="card-body">';
+            echo '<h5 class="card-title">'.$value[2].'</h5>';
             echo '<p class="price">$'.$value[0].'</p>';
-            echo '<p>Some text about the jeans..</p>';
-            echo '<p><button name="'.$key.'">Add to Cart</button></p>';
-            echo '</td>';
+            echo '<p class="card-text">Some text about the jeans..</p>';
+            echo '<p class="card-text"><button name="'.$key.'">Add to Cart</button></p>';
+            echo '</div>';
+            echo '</div>';
             $column++;
-            if($column == 3){
-                echo '</tr>';
-                echo '<tr>';
+            if($column == 4){
+                echo '</div>';
+                echo '<div class="card-group">';
                 $column = 0;
             }
         }
-        echo '</tr>';
+        //shuffle array
         function shuffle_assoc(&$array) {
             $keys = array_keys($array);
             shuffle($keys);
@@ -47,12 +71,10 @@
                 $new[$key] = $array[$key];
             }
             $array = $new;
-            //return true;
+            return true;
         }
     ?>
-    </table>
-</section>
-
+<!-- </section> -->
 <?php
     include('../footer.php');
 ?>
