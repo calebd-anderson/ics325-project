@@ -86,8 +86,8 @@
     <a target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en"><img src="https://lh3.googleusercontent.com/T7_4mv5aTo4XdLWz_vAQ2Hg8E-uMf_XUZMtdHdnf5ifZEP413DhOEDo2YEMSSL1Jl4k=s180" alt="Microsoft Authenticator" width="100" height="auto"></a>
 <form action="setup_2fa.php" method="get" id="mainForm">
 <p>Would you like to setup multi-factor authentication now?</p>
-<span><button name="yes" type="submit">Yes</button></span>
-<span><button name="no" type="submit">No</button></span>
+<span><button class="btn btn-primary" name="yes" type="submit">Yes</button></span>
+<span><button class="btn btn-secondary" name="no" type="submit">No</button></span>
 </form>
 </fieldset>
 <?php

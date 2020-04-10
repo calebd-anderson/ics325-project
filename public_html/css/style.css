@@ -19,15 +19,7 @@ article{
   }
 }
 
-.store_table{
-  display:block;
-}
-table{
-  box-sizing: content-box;
-}
-
 /*#region-------Form Styles-------*/
-/*class takes precidence*/
 .fieldset {
   padding: 20px;
   font-family: 'Montserrat', sans-serif;
@@ -44,7 +36,12 @@ table{
     width: 90%;
   }
 }
-input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=tel]:focus, input[type=email]:focus {
+/* input focus */
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus,
+input[type=tel]:focus,
+input[type=email]:focus {
     background-color: #FFE0B2;
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
@@ -53,27 +50,25 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=t
     border-color: #FF1744;
 }
 
-/* Text box icon */
-.eye_container {
-    position: relative;
-    
-}
-
+/* remove popover on mobile */
 @media screen and (max-width:650px){
   .popover {
     display: none !important;
   }
 }
 /* @media screen and (max-width:465px){
-  .input_img {
+  .input_icon {
     position: absolute;
     margin-right: 25%;
   }
 } */
-
+/* pswd icon */
+.eye_container {
+  position: relative;    
+}
 /* Desktop size */
 @media screen and (min-width:468.98px){
-  .input_img {
+  .input_icon {
     /* background-color: #1caa46; */
     position: absolute;
     right: 4%;
