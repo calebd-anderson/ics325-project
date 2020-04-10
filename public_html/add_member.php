@@ -30,7 +30,11 @@
         // create short variable names
         $username = $_POST['username'];
         // $_SESSION['username'] = $username;
-        $pswd = $_POST['pswd'];
+        $pswd = test_input($_POST['pswd']);
+        // check if password meets requirements only contains letters and whitespace
+        if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$pswd)) {
+            $pswdErr = "Must contain at lease 8 characters, consisting of upper and lower case, numbers, and special characters. ";
+        }
         $phone = test_input($_POST['phone']);
         $email = test_input($_POST['email']);
         $addr = test_input($_POST['addr']);
