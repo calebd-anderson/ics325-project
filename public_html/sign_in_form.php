@@ -74,6 +74,11 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
       </span>
       <p id="CapsLk">WARNING! Caps lock is ON.</p>
     </p>
+    <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+    </div>
     <p><button type="submit" name="submit" class="btn">Log In</button></p>
   </form>
 </fieldset>
