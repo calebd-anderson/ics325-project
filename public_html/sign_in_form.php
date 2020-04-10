@@ -79,7 +79,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
       <input type="checkbox" value="remember-me"> Remember me
     </label>
     </div>
-    <p><button type="submit" name="submit" class="btn">Log In</button></p>
+    <p><button type="submit" name="submit" class="btn btn-primary">Log In</button></p>
   </form>
 </fieldset>
 <?php

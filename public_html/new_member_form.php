@@ -32,9 +32,9 @@ function checkAvailability() {
             <p><input type="text" name="lname" placeholder="Last name..." oninput="this.className = ''"></p>
             </div>
             <div class="tab"><h5>Contact Info:</h5>
-                <p><input type="text" placeholder="E-mail..." name="email" oninput="this.className = ''"></p>
+                <p><input type="email" placeholder="E-mail..." name="email" oninput="this.className = ''"></p>
                 <p><input type="text" placeholder="Address..." name="addr" oninput="this.className = ''"></p>
-                <p><input type="text" placeholder="Phone..." name="phone" oninput="this.className = ''"></p>
+                <p><input class="phone_us" type="tel" placeholder="Phone..." name="phone" oninput="this.className = ''"></p>
             </div>
 
             <div class="tab"><h5>Login Info:</h5>
@@ -44,7 +44,7 @@ function checkAvailability() {
                 </p>
                 <p>
                     <span class="eye_container">
-                        <input tabindex="0" placeholder="Password..." data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>                   
+                        <input tabindex="0" placeholder="Password..." data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
                         <a class="input_img" onclick="toggle_pswd()">
                             <span id="eye">
                                 <svg class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -54,6 +54,7 @@ function checkAvailability() {
                             </span>
                         </a>
                     </span>
+                    <?php //echo "$pswdErr";?>
                 </p>
                 <p id="CapsLk">WARNING! Caps lock is ON.</p>
                 <div id="message" class="js-fade">
@@ -65,10 +66,10 @@ function checkAvailability() {
             </div>
 
             <div style="overflow:auto;">
-            <div style="float:right;">
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-            </div>
+                <div style="float:right;">
+                    <button class="btn btn-secondary" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button class="btn btn-primary" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
             </div>
 
             <!-- Circles which indicates the steps of the form: -->
@@ -86,3 +87,12 @@ function checkAvailability() {
 <?php
     include('footer.php');
 ?>
+      <script src="js/jquery.mask.min.js"></script>
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+$(document).ready(function(){
+  $('.phone_us').mask('(000) 000-0000');
+});
+</script>
