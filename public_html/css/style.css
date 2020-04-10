@@ -73,6 +73,7 @@ button:hover {
 }
 @media screen and (max-width:470px){
   .input_img {
+    margin: 0;
     position: absolute;
     right: -145px;
   }
@@ -84,6 +85,10 @@ button:hover {
     /* background-color: #1caa46; */
     position: absolute;
     right: 4%;
+    margin: 0;
+    top: 50%;
+    /* -ms-transform: translateY(-50%); */
+    transform: translateY(-50%);
   }
 }
 /* CapsLk warning */
