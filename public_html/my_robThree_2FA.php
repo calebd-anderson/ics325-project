@@ -13,7 +13,7 @@
         echo '<ol>';
 
         require_once 'autoload.php';
-        Loader::register('lib','RobThree\\Auth');
+        Loader::register('2fa_lib','RobThree\\Auth');
 
         use \RobThree\Auth\TwoFactorAuth;
         $mp = new RobThree\Auth\Providers\Qr\MyProvider();
