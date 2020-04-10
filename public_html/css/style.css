@@ -9,12 +9,14 @@ body {
 article{
   margin: 2%;
 }
-section{
-  margin: auto;
-  margin-top: 2%;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
+@media screen and (min-width:991.98px){
+  section{
+    margin: auto;
+    margin-top: 2%;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
 }
 
 .store_table{
@@ -108,69 +110,69 @@ button:hover {
   }
 }
 #navbtn{
-    font-size:20px;
-    cursor: pointer;
-    /* color: rgb(135, 135, 136); */
-    float: right;
-    /* padding-right: 10px; */
-    margin: 10px;
-  }
-  #navbtn:hover{
-    color: #1caa46;
-  }  
-  #websiteNav {   
-    border:solid 1px;
-    background-image: url(../images/bac_2.jpg);
-    height: 100%;
-    width: 0;
-    position: fixed;
-    /* top: 0; */
-    right: 0;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 2%;
-  }
-  .navicon{
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    background-size: 50px auto;
-    text-align: center;
-    position: relative;
-  }
-  #expicon{
-    background-image: url("../images/expd.png");
-  }
-  #newsicon{
-    background-image: url("../images/news.png");
-  }  
-  #mbricon{
-    background-image: url("../images/membership.png");
-  }
-  #storeicon{
-    background-image: url("../images/web-store.png");
-  }
-  #discourseicon{
-    background-image: url("../images/discourse_icon.png");
-  }
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-    display: block;
-    transition: 0.2s;
-  }
-  .sidenav a:hover {
-    background-color: #ddd;
-    color: #1caa46;
-  }
-  .sidenav #navclosebtn {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 36px;
-  }
-  /*#endregion-------SideNav Styles-------*/
+  font-size:20px;
+  cursor: pointer;
+  /* color: rgb(135, 135, 136); */
+  float: right;
+  /* padding-right: 10px; */
+  margin: 10px;
+}
+#navbtn:hover{
+  color: #1caa46;
+}  
+#websiteNav {   
+  border:solid 1px;
+  background-image: url(../images/bac_2.jpg);
+  height: 100%;
+  width: 0;
+  position: fixed;
+  /* top: 0; */
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 2%;
+}
+.navicon{
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 50px auto;
+  text-align: center;
+  position: relative;
+}
+#expicon{
+  background-image: url("../images/expd.png");
+}
+#newsicon{
+  background-image: url("../images/news.png");
+}  
+#mbricon{
+  background-image: url("../images/membership.png");
+}
+#storeicon{
+  background-image: url("../images/web-store.png");
+}
+#discourseicon{
+  background-image: url("../images/discourse_icon.png");
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  display: block;
+  transition: 0.2s;
+}
+.sidenav a:hover {
+  background-color: #ddd;
+  color: #1caa46;
+}
+.sidenav #navclosebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 36px;
+}
+/*#endregion-------SideNav Styles-------*/
 
 /*#region-----Home.php Styles-----*/
 .banner {
