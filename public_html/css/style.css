@@ -29,11 +29,20 @@ table{
 /*#region-------Form Styles-------*/
 /*class takes precidence*/
 .fieldset {
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ddd;
+  margin: auto;
+  width: 50%;
+}
+@media screen and (max-width:670.98px){
+  .fieldset {
     padding: 20px;
     font-family: 'Montserrat', sans-serif;
     border: 1px solid #ddd;
     margin: auto;
-    width: 55%;
+    width: 90%;
+  }
 }
 input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=tel]:focus, input[type=email]:focus {
     background-color: #FFE0B2;
