@@ -109,9 +109,9 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     $_SESSION['valid_user'] = $username;
     echo '<section><h2>You\'re Signed In</h2>
     <p>I bet you\'re glad you can see this secret page.</p>';
-    echo '<p>Multi-factor authentication has not been setup on this account.</p>';// (the secret field in the database is empty)
+    echo '<strong>Multi-factor authentication has not been setup on this account.</strong>';// (the secret field in the database is empty)
 ?>
-  <p>Try one of these great apps to setup multi-factor authentication: </p>
+  <p>Try one of these great apps to setup multi-factor authentication:</p>
   <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en"><img src="https://lh3.googleusercontent.com/HPc5gptPzRw3wFhJE1ZCnTqlvEvuVFBAsV9etfouOhdRbkp-zNtYTzKUmUVPERSZ_lAL=s180" alt="Google Authenticator" width="100" height="auto"></a>
   <a target="_blank" href="https://play.google.com/store/apps/details?id=com.authy.authy&hl=en"><img src="https://lh3.googleusercontent.com/MkSEE1fAQDUfQsqlhUEat-ZzJjkR2XnJEJpE-abcn7dPcIN8aYocgLoIDhujEDD5w-g=s180" alt="Authy 2-Factor Authentication" width="100" height="auto"></a>
   <a target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en"><img src="https://lh3.googleusercontent.com/T7_4mv5aTo4XdLWz_vAQ2Hg8E-uMf_XUZMtdHdnf5ifZEP413DhOEDo2YEMSSL1Jl4k=s180" alt="Microsoft Authenticator" width="100" height="auto"></a>
