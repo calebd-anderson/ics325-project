@@ -91,14 +91,14 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
   if(!$secret == null){
     echo '<fieldset class="fieldset"><legend>Please Log In</legend>';
     echo '<p>2FA is enabled on this account. Enter the code from the authenticator app to log in.</p>';    
-    ?>
+?>
       <form method="post" action="2fa_sign-in.php" id="mainForm">
       <p><label for="code">Code: </label>
       <input type="text" name="code" id="id" size="15" class="required highlightable"/></p>
       <p><button type="submit" name="submit" class="btn">Verify Code</button></p>
       </fieldset>
       </form>
-    <?php
+<?php
     $_SESSION['secret'] = $secret;
     // $_SESSION['username'] = $username;
   }
@@ -110,18 +110,18 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     echo '<section><h2>You\'re Signed In</h2>
     <p>I bet you\'re glad you can see this secret page.</p>';
     echo '<p>Multi-factor authentication has not been setup on this account.</p>';// (the secret field in the database is empty)
-    ?>
-    <p>Try one of these great apps to setup multi-factor authentication: </p>
-    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en"><img src="https://lh3.googleusercontent.com/HPc5gptPzRw3wFhJE1ZCnTqlvEvuVFBAsV9etfouOhdRbkp-zNtYTzKUmUVPERSZ_lAL=s180" alt="Google Authenticator"></a>
-    <a href="https://play.google.com/store/apps/details?id=com.authy.authy&hl=en"><img src="https://lh3.googleusercontent.com/T7_4mv5aTo4XdLWz_vAQ2Hg8E-uMf_XUZMtdHdnf5ifZEP413DhOEDo2YEMSSL1Jl4k=s180" alt="Microsoft Authenticator"></a>
-    <a href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en"><img src="https://lh3.googleusercontent.com/MkSEE1fAQDUfQsqlhUEat-ZzJjkR2XnJEJpE-abcn7dPcIN8aYocgLoIDhujEDD5w-g=s180" alt="Authy 2-Factor Authentication"></a>
-    <form action="setup_2fa.php" method="get" id="mainForm">
-    <p>Would you like to setup multi-factor authentication now?</p>
-    <span><button name="yes" type="submit">Yes</button></span>
-    <span><button name="no" type="submit">No</button></span>
+?>
+  <p>Try one of these great apps to setup multi-factor authentication: </p>
+  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en"><img src="https://lh3.googleusercontent.com/HPc5gptPzRw3wFhJE1ZCnTqlvEvuVFBAsV9etfouOhdRbkp-zNtYTzKUmUVPERSZ_lAL=s180" alt="Google Authenticator" width="100" height="auto"></a>
+  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.authy.authy&hl=en"><img src="https://lh3.googleusercontent.com/MkSEE1fAQDUfQsqlhUEat-ZzJjkR2XnJEJpE-abcn7dPcIN8aYocgLoIDhujEDD5w-g=s180" alt="Authy 2-Factor Authentication" width="100" height="auto"></a>
+  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=en"><img src="https://lh3.googleusercontent.com/T7_4mv5aTo4XdLWz_vAQ2Hg8E-uMf_XUZMtdHdnf5ifZEP413DhOEDo2YEMSSL1Jl4k=s180" alt="Microsoft Authenticator" width="100" height="auto"></a>
+  <form action="setup_2fa.php" method="get" id="mainForm">
+  <p>Would you like to setup multi-factor authentication now?</p>
+  <span><button name="yes" type="submit">Yes</button></span>
+  <span><button name="no" type="submit">No</button></span>
   </section>
-    </form>
-    <?php    
+  </form>
+<?php    
   }
 } else{
     echo'<fieldset class="fieldset"><h1>Go Away!</h1>';
