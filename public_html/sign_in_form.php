@@ -94,7 +94,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
       <form method="post" action="2fa_sign-in.php" id="mainForm">
       <p><label for="code">Code: </label>
       <input type="text" name="code" id="id" size="15" class="required highlightable"/></p>
-      <p><button type="submit" name="submit" class="btn">Verify Code</button></p>
+      <p><button type="submit" name="submit" class="btn btn-primary">Verify Code</button></p>
       </fieldset>
       </form>
 <?php
