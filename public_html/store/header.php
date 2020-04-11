@@ -120,8 +120,8 @@
   <!-- <a href="#" class="navicon" id="expicon">Expeditions</a> -->
   <a href="#" class="navicon" id="newsicon">News</a>
   <a href="#" class="navicon" id="mbricon">Membership</a>        
-  <a href="store/store_index.php" class="navicon" id="storeicon">Store</a>
-  <a href="blog/blog.php" class="navicon" id="discourseicon">Discourse</a>
+  <a href="store_index.php" class="navicon" id="storeicon">Store</a>
+  <a href="../blog/blog.php" class="navicon" id="discourseicon">Discourse</a>
   <!-- <a href="blog/blog.php" class='far fa-comments'> Discourse</a> -->
   <!-- <a href="my_robThree_2FA.php" id="">2FA Demo</a> -->
 </div>
