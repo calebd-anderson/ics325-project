@@ -2,12 +2,8 @@
     require 'header.php';
     require('setup_2fa.inc');
 
-    //$tfa = unserialize($_SESSION["tfa"]);
+    //the secret and code
     $secret = $_SESSION['secret'];
-
-    // password_hash($pswd, PASSWORD_DEFAULT);
-    // password_verify($pswd, $value);
-
     $code = $_POST['code'];
     // echo '<p>This is $secret: '.$secret.'</p>';
     // echo '<p>This is your $code: '.$code.'</p>';
