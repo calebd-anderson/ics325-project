@@ -18,6 +18,18 @@ article{
     padding: 10px;
   }
 }
+.bottom-left {
+  position: absolute !important;
+  bottom: 8px !important;
+  left: 16px !important;
+}
+/* .carousel-item{
+  position: relative;
+} */
+cite{
+  background-color: black;
+  color: white;
+}
 
 /*#region-------Form Styles-------*/
 .fieldset {
