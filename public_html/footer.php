@@ -1,4 +1,3 @@
-<div class="navbar">
 <footer>
     <div class="resources">
         <h5>Open source projects and tutorials used to make this website:</h5>
@@ -25,6 +24,5 @@
         </p>
     </div>
 </footer>
-</div>
 </body>
 </html>
