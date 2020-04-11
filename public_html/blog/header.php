@@ -72,7 +72,7 @@ session_start();
                 <a class="nav-link" href="#">Missions</a>
               </li>
               <li class="nav-item desktop-hide">
-                <a class="nav-link" href="../blog/blog.php">
+                <a class="nav-link" href="blog.php">
                 <svg class="bi bi-chat-quote" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M2.678 11.894a1 1 0 01.287.801 10.97 10.97 0 01-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 01.71-.074A8.06 8.06 0 008 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 01-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 00.244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 01-2.347-.306c-.52.263-1.639.742-3.468 1.105z" clip-rule="evenodd"/>
                   <path d="M7.468 7.667c0 .92-.776 1.666-1.734 1.666S4 8.587 4 7.667C4 6.747 4.776 6 5.734 6s1.734.746 1.734 1.667z"/>
@@ -82,7 +82,7 @@ session_start();
                 </svg> Blog</a>
               </li>
               <li class="nav-item desktop-hide">
-                <a class="nav-link" href="store_index.php">
+                <a class="nav-link" href="../store/store_index.php">
                 <svg class="bi bi-briefcase" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M0 12.5A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-6h-1v6a.5.5 0 01-.5.5h-13a.5.5 0 01-.5-.5v-6H0v6z" clip-rule="evenodd"/>
                   <path fill-rule="evenodd" d="M0 4.5A1.5 1.5 0 011.5 3h13A1.5 1.5 0 0116 4.5v2.384l-7.614 2.03a1.5 1.5 0 01-.772 0L0 6.884V4.5zM1.5 4a.5.5 0 00-.5.5v1.616l6.871 1.832a.5.5 0 00.258 0L15 6.116V4.5a.5.5 0 00-.5-.5h-13zM5 2.5A1.5 1.5 0 016.5 1h3A1.5 1.5 0 0111 2.5V3h-1v-.5a.5.5 0 00-.5-.5h-3a.5.5 0 00-.5.5V3H5v-.5z" clip-rule="evenodd"/>
@@ -94,13 +94,13 @@ session_start();
                 if (isset($_SESSION['valid_user'])){
                   echo '<span class="nav-link disabled">Welcome: '.$_SESSION['valid_user'].'</span>';
                   echo '<a class="nav-link" href="../account.php">My Account</a>';
-                  echo '<a class="nav-link" href="logout.php"><i class="fa fa-fw fa-sign-out"></i> Log Off</a>';
+                  echo '<a class="nav-link" href="../logout.php"><i class="fa fa-fw fa-sign-out"></i> Log Off</a>';
                 } else{
-                  echo '<li class="nav-item"><a class="nav-link" href="new_member_form.php">
+                  echo '<li class="nav-item"><a class="nav-link" href="../new_member_form.php">
                   <svg class="bi bi-person-check-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm9.854-2.854a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-1.5-1.5a.5.5 0 01.708-.708L12.5 7.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
                   </svg> Become a Member</a></li>';
-                  echo '<li class="nav-item"><a class="nav-link" href="sign_in_form.php"><i class="fa fa-fw fa-user"></i> Login</a></li>';
+                  echo '<li class="nav-item"><a class="nav-link" href="../sign_in_form.php"><i class="fa fa-fw fa-user"></i> Login</a></li>';
                 }
               ?>
             </ul>

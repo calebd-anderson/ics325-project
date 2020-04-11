@@ -49,9 +49,9 @@
         <a name="resendLink" href="#" id="" data-i18n="">Resend Email Verification</a>
       </span>
     </div>
-    <div class="clearfix pull-right">
+    <!-- <div class="clearfix pull-right">
       <a class="btn btn-primary" id="" data-i18n="">Change</a>
-    </div>
+    </div> -->
   </div>
   <!-- DATE OF BIRTH -->
   <div class="form-group clearfix">
@@ -84,12 +84,12 @@
 </form>
 </article>
 <!-- attempt -->
-<div class="btn-group" role="group">
+<!-- <div class="btn-group" role="group">
   <button onclick="myFunction()" formaction="">Click Me</button>
   <div id="myDIV">
     This is my DIV element.
   </div>
-</div>
+</div> -->
 
 <script>
   function myFunction() {
