@@ -89,7 +89,7 @@ session_start();
                 </svg> Merchandise</a>
               </li>
               <!-- dissapear on desktop / appear on mobile -->
-              <?php                
+              <?php
                 if (isset($_SESSION['valid_user'])){
                   echo '<span class="nav-link disabled">Welcome: '.$_SESSION['valid_user'].'</span>';
                   echo '<a class="nav-link" href="account.php">My Account</a>';
