@@ -1,8 +1,12 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
       <meta charset="utf-8">
-      <title>Chasing Antartica</title>
+      <title>Merchandise</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="page icon" href="../favicon.ico" />
       <!-- Homebrew Style -->
@@ -86,11 +90,11 @@
               </li>
               <!-- dissapear on desktop / appear on mobile -->
               <?php
-                @session_start();
+                // @session_start();
                 if (isset($_SESSION['valid_user'])){
                   echo '<span class="nav-link">Welcom: '.$_SESSION['valid_user'].'</span>';
                   echo '<a class="nav-link" href="#">My Account</a>';
-                  echo '<i class="fa fa-fw fa-sign-out"></i><a class="nav-link" href="../logout.php"> Log Off</a>';
+                  echo '<a class="nav-link" href="../logout.php"><i class="fa fa-fw fa-sign-out"></i> Log Off</a>';
                 } else{
                   echo '<li class="nav-item"><a class="nav-link" href="../new_member_form.php">
                   <svg class="bi bi-person-check-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

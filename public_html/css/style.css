@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-
+.clearfix {
+  overflow: auto;
+}
 body {
     /* background-image: url('../images/bac_2.jpg'); */
     font-family: Georgia, serif;

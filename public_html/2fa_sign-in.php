@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require 'header.php';
     require('setup_2fa.inc');
 
@@ -18,10 +17,11 @@
     if (!isset($_POST['code'])){
         //code not entered
     }else if($result){
-        echo '<fieldset class="fieldset"><p>You\'re authorized.</p></fieldset>';
+        echo '<section><p>You\'re authorized.</p></section>';
         $_SESSION['valid_user'] = $_SESSION['username'];
-        header("Location:home.php");
+        require('footer.php');
     }else{
-        echo '<fieldset class="fieldset"><p>You\'re not authorized.</p></fieldset>';
+        echo '<section><p>You\'re not authorized.</p></section>';
+        require('footer.php');
     }
 ?>
