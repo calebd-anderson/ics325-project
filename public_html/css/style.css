@@ -4,17 +4,17 @@
   overflow: auto;
 }
 body {
-    /* background-image: url('../images/bac_2.jpg'); */
-    font-family: Georgia, serif;
-    padding-top: 50px;
+  /* background-image: url('../images/bac_2.jpg'); */
+  font-family: Georgia, serif;
+  padding-top: 50px;
 }
 article{
   margin: 2%;
 }
 @media screen and (min-width:991.98px){
   section{
-    margin: auto;
-    margin-top: 2%;
+    /* margin: auto; */
+    margin: 2%;
     width: 75%;
     border: 3px solid green;
     padding: 10px;
@@ -56,12 +56,12 @@ input[type=password]:focus,
 textarea:focus,
 input[type=tel]:focus,
 input[type=email]:focus {
-    background-color: #FFE0B2;
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  background-color: #FFE0B2;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
 .error {
-    box-shadow: 0 0 5px #FF5252;
-    border-color: #FF1744;
+  box-shadow: 0 0 5px #FF5252;
+  border-color: #FF1744;
 }
 
 /* remove popover on mobile */
@@ -91,8 +91,8 @@ input[type=email]:focus {
 }
 /* CapsLk warning */
 #CapsLk {
-    display:none;
-    color:red
+  display:none;
+  color:red
 }
 /*#endregion-------Form Styles-------*/
 
@@ -176,42 +176,42 @@ input[type=email]:focus {
 
 /*#region-----Home.php Styles-----*/
 .banner {
-    margin-bottom: 20px;
-    background-color: #80ff80;
-    height: 300px;
-    padding-top: 10px;
-    padding-bottom: 50px;
+  margin-bottom: 20px;
+  background-color: #80ff80;
+  height: 300px;
+  padding-top: 10px;
+  padding-bottom: 50px;
 }
 .carouselHeader {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border-top: 1px solid;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-top: 1px solid;
 }
 .carousel-container{
-    margin: auto;
-    width: 85%;
-    padding: 10px;
+  margin: auto;
+  width: 85%;
+  padding: 10px;
 }
 /*#endregion-------Home.php Styles-------*/
 
 /*#region-------Footer Styles-------*/
 footer {
-    width: 100%;
-    margin: auto;
+  width: 100%;
+  margin: auto;
+  /* padding: 10px; */
 }
-
 .resources {
-    text-align: left;
-    display: inline-block;
-    border: 1px solid #276873;
+  text-align: left;
+  display: inline-block;
+  border: 1px solid #276873;
 }
 
 .Icon_links {
-    text-align: left;
-    display: inline-block;
-    padding-left: 30px;
+  text-align: left;
+  display: inline-block;
+  padding-left: 30px;
 }
 .copyright {
-    background-color: #80ff80;
+  background-color: #80ff80;
 }
 /*#endregion-------Footer Styles-------*/
