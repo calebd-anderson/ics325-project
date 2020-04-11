@@ -38,7 +38,8 @@
 }
 .post .post-image {
     width: 20%;
-    height: 50%;
+    /* height: 50%; */
+    height: auto;
     float: left;
 
 }
@@ -67,7 +68,7 @@ right: 20px;
             <h1 class="recent_post">Recent Posts</h1>
         </div>
         <div class="post">
-                <img src="images/globe.png"  alt="image" class="post-image">
+                <img src="images/globe.jpg" alt="image" class="post-image img-thumbnail">
                 <div class="post-preview">
                     <h2><a href="single.php">A New Beginning.</a></h2>
                     <i class="user"> Biensur Chang,</i>
@@ -84,7 +85,7 @@ right: 20px;
         </div>
         
         <div class="post">
-            <img src="images/globe.png"  alt="image" class="post-image">
+            <img src="images/globe.jpg"  alt="image" class="post-image img-thumbnail">
             <div class="post-preview">
                 <h2><a href="single.php">The Purpose of Our Expedition</a></h2>
                 <i class="user"> Biensur Chang,</i>
@@ -101,7 +102,7 @@ right: 20px;
         </div>
     
         <div class="post">
-            <img src="images/globe.png"  alt="image" class="post-image">
+            <img src="images/globe.jpg"  alt="image" class="post-image img-thumbnail">
             <div class="post-preview">
                 <h2><a href="single.php">Welcome to Chasing Antarctica</a></h2>
                 <i class="user"> Biensur Chang,</i>
@@ -116,7 +117,7 @@ right: 20px;
                 <a href="single.php" class="btn read-more">Read More</a>
             </div>
         </div>
-</body>
+
 <?php
-require("footer.php");
+    require("../footer.php");
 ?>
