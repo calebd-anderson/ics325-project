@@ -53,13 +53,15 @@
         
 <?php
     }else{
-        echo "<p><fieldset class=\"fieldset\">No 2FA for you.</p></fieldset>";
+        echo "<article><p>No 2FA for you.</p></article>";
         $query = "UPDATE member_creds SET secret = NULL WHERE username = '$username'";
         $stmt = $conn->prepare($query);
         $stmt->execute();
         unset($secret);
         unset($_SESSION['secret']);
         $conn->close();
+        // include('home.php');
+        echo '<meta http-equiv="Refresh" content="0; url=account.php" />';
     }
     include('footer.php');
    
