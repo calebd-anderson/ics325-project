@@ -96,6 +96,11 @@ input[type=email]:focus {
 }
 /*#endregion-------Form Styles-------*/
 
+#mainForm {
+  padding-top: 4em;
+  padding-bottom: 6em;
+}
+
 /*#region-------SideNav Styles------- */
 /* Mobile first - up to 991.98px wide */
 @media screen and (max-width:991.98px){
@@ -242,3 +247,23 @@ footer {
   font-size: 110%;
 }
 
+/*Contact Page*/
+.form_Body {
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 2em;
+}
+
+.contact_Form {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  padding-left: 2em;
+  padding-bottom: 4em;
+}
+
+.contact_Info {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
