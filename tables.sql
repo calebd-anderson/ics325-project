@@ -6,7 +6,7 @@ CREATE TABLE `member_contact` (
   `email` char(50) NOT NULL,
   `addr` char(50) NOT NULL,
   PRIMARY KEY (`memberID`)
-)
+);
 
 CREATE TABLE `member_creds` (
   `username` char(20) NOT NULL,
@@ -17,12 +17,14 @@ CREATE TABLE `member_creds` (
   KEY `memberID` (`memberID`),
   CONSTRAINT `memberID` FOREIGN KEY (`memberID`) REFERENCES `member_contact` (`memberID`) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 -- PRODUCT TABLE
 -- alt
 -- title
 -- price
 -- img
--- description
+-- descr
+-- LOAD DATA INFILE "<root_dir>/ICS325_Project/products.txt" INTO TABLE products;
 CREATE TABLE products (
   prodID INT UNSIGNED NOT NULL PRIMARY KEY,
   alt CHAR(20) NOT NULL,
