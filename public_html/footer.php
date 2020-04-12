@@ -1,4 +1,5 @@
 <footer>
+<article>
     <div class="resources">
         <h5>Open source projects and tutorials used to make this website:</h5>
         <a target="_blank" href='https://github.com/RobThree/TwoFactorAuth'>RobThree2FA</a><br />
@@ -24,6 +25,7 @@
             </svg> Other info</a>.
         </p>
     </div>
+</article>
 </footer>
 </body>
 </html>
