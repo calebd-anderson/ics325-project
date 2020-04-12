@@ -24,7 +24,7 @@
         });
     }
 </script>
-    <form action="add_member.php" method="post" id="mainForm">
+    <form action="add_member.php" method="post">
         <fieldset class="fieldset">
             <legend style="font-family: Raleway;">Chasing Arctic - Register</legend>
             <div class="tab"><h5>Name:</h5>
