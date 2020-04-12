@@ -51,3 +51,4 @@ CREATE TABLE member_order (
   INDEX (prodID),
   FOREIGN KEY(prodID) REFERENCES  products(prodID)
 ) ENGINE = InnoDB;
+
