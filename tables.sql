@@ -17,3 +17,35 @@ CREATE TABLE `member_creds` (
   KEY `memberID` (`memberID`),
   CONSTRAINT `memberID` FOREIGN KEY (`memberID`) REFERENCES `member_contact` (`memberID`) ON DELETE CASCADE ON UPDATE CASCADE
 );
+-- PRODUCT TABLE
+-- alt
+-- title
+-- price
+-- img
+-- description
+CREATE TABLE products (
+  prodID INT UNSIGNED NOT NULL PRIMARY KEY,
+  alt CHAR(20) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  price DECIMAL(3, 2) NOT NULL,
+  img VARCHAR(255) NOT NULL,
+  descr VARCHAR(255) NOT NULL
+);
+
+-- MEMBER ORDER TABLE
+-- order id
+-- member id
+-- prod id
+-- qnty
+-- total
+CREATE TABLE member_order (
+  orderID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  prodID INT UNSIGNED NOT NULL,
+  memberID INT(10) UNSIGNED NOT NULL,
+  qnty INT NOT NULL,
+  total DECIMAL(3, 2) NOT NULL,
+  INDEX (memberID),
+  FOREIGN KEY(memberID) REFERENCES member_contact(memberID),
+  INDEX (prodID),
+  FOREIGN KEY(prodID) REFERENCES  products(prodID)
+) ENGINE = InnoDB;
