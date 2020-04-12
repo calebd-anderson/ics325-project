@@ -1,5 +1,4 @@
 <?php
-    // session_start();
     include 'header.php';
     require '../SQLcreds.inc';
 
@@ -15,8 +14,6 @@
     $row = $result -> fetch_array(MYSQLI_NUM);
     $secret = $row[0];
     $_SESSION['secret'] = $secret;
-    
-    // echo '<p>Youre check box: '.$_GET['2fa'].'</p>';
 
     if($_SERVER['REQUEST_METHOD'] == "GET" and isset($_GET['yes']) or isset($_GET['2fa'])){
         require('setup_2fa.inc');
@@ -24,7 +21,6 @@
         $_SESSION["secret"] = $secret;
 ?>
     <fieldset class="fieldset"><legend>Multi-Factor Authentication Setup</legend>
-
     <?php
         //displays QR code
         if (extension_loaded('gd') && function_exists('gd_info')) {
@@ -33,12 +29,13 @@
             echo '<img src="'.$tfa->getQRCodeImageAsDataUri('ICS 325', $secret).'">';
         }
         else {
-            //display the secrete
-            echo '<p><span style="color:rgb(151, 41, 41);">Required PHP GD library to draw the QR code is NOT installed on your web server.</span>'.
-            '<br>The authenticator app won\'t automatically recognize it.'.
-            '<br>Instead scan this QR code with <a target="_blank" href="https://play.google.com/store/apps/details?id=com.kevintesar.qrcodetoclipboard&hl=en_US">this app</a> to copy the code to your phone\'s clip-board'.
-            ' then paste it into the authenticator app.'.
-            '<br><img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl='.$secret.'" /></p>';
+            //substitute google QR API
+            echo '<p><span style="color:rgb(151, 41, 41);">Required PHP library to draw the QR code GD is NOT installed on this web server.</span>'.
+            '<br>The authenticator app won\'t automatically recognize this QR code.'.
+            '<br>Instead scan this QR code with a generic QR code reader then paste it into the authenticator app.'.
+            '<br><img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl='.$secret.'" />'.
+            '<br><a target="_blank" href="https://play.google.com/store/apps/details?id=com.kevintesar.qrcodetoclipboard&hl=en_US">This app</a>'.
+            'copies the secret directly to the phone clip-board</p>';
         }
     ?>    
         <form action="check_2fa.php" method="post" id="mainForm">
@@ -49,18 +46,18 @@
             </p>            
             <p><button class="btn btn-primary" type="submit">Verify Code</button></p>
         </form>
-        </fieldset>
+    </fieldset>
         
 <?php
-    }else{
+    } else {
         echo "<article><p>No 2FA for you.</p></article>";
         $query = "UPDATE member_creds SET secret = NULL WHERE username = '$username'";
         $stmt = $conn->prepare($query);
         $stmt->execute();
         unset($secret);
         unset($_SESSION['secret']);
+        $stmt -> free_result();
         $conn->close();
-        // include('home.php');
         echo '<meta http-equiv="Refresh" content="0; url=account.php" />';
     }
     include('footer.php');
