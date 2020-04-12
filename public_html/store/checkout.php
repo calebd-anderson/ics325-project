@@ -3,7 +3,7 @@
 ?>
 <div class="container">
   <div class="py-5 text-center">
-    <!-- <img class="d-block mx-auto mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+    <img class="d-block mx-auto mb-4" src="images/earth-day.png" alt="" width="72" height="72">
     <h2>Checkout form</h2>
     <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
   </div>
@@ -207,14 +207,14 @@
     </div>
   </div>
 
-  <footer class="my-5 pt-5 text-muted text-center text-small">
+  <!-- <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2017-{{ site.time | date: "%Y" }} Company Name</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
-  </footer>
+  </footer> -->
 </div>
 <?php
     require('../footer.php');
