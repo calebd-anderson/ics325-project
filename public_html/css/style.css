@@ -215,3 +215,30 @@ footer {
   background-color: #80ff80;
 }
 /*#endregion-------Footer Styles-------*/
+
+/*About Us*/
+.about_Image {
+  position: relative;
+  text-align: center;
+  color: grey;
+}
+
+.about_Header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%, -50%);
+  font-size: 150%;
+}
+
+.about_Us {
+  margin: auto;
+  width: 75%;
+  padding-top:4em;
+  padding-bottom: 8em;
+  line-height: 2em;
+  text-indent: 40px;
+  font-size: 110%;
+}
+
