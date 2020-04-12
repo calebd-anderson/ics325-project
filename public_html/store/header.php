@@ -11,6 +11,7 @@ session_start();
       <link rel="page icon" href="../favicon.ico" />
       <!-- Homebrew Style -->
       <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="css/stylesheet.css">
       <!-- HTML5 Style -->
       <link rel="stylesheet" href="../css/normalize.css">
       <link rel="stylesheet" href="../css/main.css">

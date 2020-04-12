@@ -4,30 +4,14 @@
 	margin: auto;
 	text-align: center;
 	font-family: arial;
-  }
-  
-  .price {
+}
+
+.price {
 	color: grey;
 	font-size: 22px;
-  }
-  
-  .card button {
-	border: none;
-	outline: 0;
-	padding: 12px;
-	color: white;
-	background-color: #000;
-	text-align: center;
-	cursor: pointer;
-	width: 100%;
-	font-size: 18px;
-  }
-  
-  .card button:hover {
-	opacity: 0.7;
-  }
+}
 
 .bigl {
-font-size : 1.2em;
-color : #0013be;
+	font-size : 1.2em;
+	color : #0013be;
 }
