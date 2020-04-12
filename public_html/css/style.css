@@ -63,7 +63,6 @@ input[type=email]:focus {
   box-shadow: 0 0 5px #FF5252;
   border-color: #FF1744;
 }
-
 /* remove popover on mobile */
 @media screen and (max-width:650px){
   .popover {
@@ -94,12 +93,11 @@ input[type=email]:focus {
   display:none;
   color:red
 }
-/*#endregion-------Form Styles-------*/
-
 #mainForm {
   padding-top: 4em;
   padding-bottom: 6em;
 }
+/*#endregion-------Form Styles-------*/
 
 /*#region-------SideNav Styles------- */
 /* Mobile first - up to 991.98px wide */
