@@ -53,7 +53,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
 <script src="js/fields.js"></script>
 <fieldset class="fieldset">
   <legend>Please Log In</legend>
-  <form method="post" action="sign_in_form.php" id="mainForm">
+  <form method="post" action="sign_in_form.php">
     <p><label for="name">Username:</label>
     <input type="text" name="username" id="name" size="20" class="required highlightable"/></p>
     <p><label for="pswd">Password:</label>
