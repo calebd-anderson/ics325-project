@@ -7,16 +7,10 @@
         echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
         exit();
     }
-    $sql = "SELECT alt, title, price, img, descr FROM products";
-    // $result = $mysqli -> query($sql);
-    // $obj = $result -> fetch_object();
-    // shuffle($result);
-    // shuffle_assoc($result);
-    // echo'<pre>';
-    // print_r($result);
-    // echo'</pre>';
+    $sql = "SELECT * FROM products";
 ?>
 <h1><span class="bigl">C</span>hasing<span class="bigl"> A</span>rctic<span class="bigl"> M</span>erchandise</h1>
+<form method="post" action="store_index.php?action=add&code=<?php echo @$product_array[$key]["code"]; ?>">
 <?php
     //loop card rows
     $column = 0;
@@ -27,9 +21,17 @@
             printf('<img class="card-img-top" src="%s" alt="%s"/>', $obj->img, $obj->alt);
             echo '<div class="card-body">';
             printf('<h5 class="card-title">%s</h5>', $obj->title);
+            // echo '';
             printf('<p class="price">$%s</p>', $obj->price);
             printf('<p class="card-text">%s</p>',$obj->descr);
-            printf('<p class="card-text"><button class="btn btn-primary" name="%s">Add to Cart</button></p>', $obj->alt);
+            printf('<p class="card-text">
+            <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">QNTY</span>
+            </div>
+            <input type="text" class="form-control" name="quantity" value="1" size="2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">            
+            <button type="submit" class="btn btn-primary" name="%s">Add to Cart</button>
+            </div></p>', $obj->prodID);
             echo '</div>';
             echo '</div>';
             $column++;
@@ -42,18 +44,16 @@
         // Free result set
         $result -> free_result();
     }
+    echo '</form>';
+
+    // $sql = "INSERT * FROM products";
+
     $mysqli -> close();
-    //shuffle array
-    // function shuffle_assoc(&$array) {
-    //     $keys = array_keys($array);
-    //     shuffle($keys);
-    //     foreach($keys as $key) {
-    //         $new[$key] = $array[$key];
-    //     }
-    //     $array = $new;
-    //     return true;
-    // }
-?>
-<?php
+
+    //ordered items array
+    // $stack = array("orange", "banana");
+    // array_push($stack, "apple", "raspberry");
+    // print_r($stack);
+
     include('../footer.php');
 ?>
