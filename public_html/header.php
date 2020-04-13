@@ -11,6 +11,8 @@ session_start();
       <link rel="page icon" href="favicon.ico" />
       <!-- Homebrew Style -->
       <link rel="stylesheet" href="css/style.css">
+      <!-- W3 School CSS -->
+      <link rel="stylesheet" href="css\pswd_validation.css">
       <!-- HTML5 Style -->
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/main.css">
