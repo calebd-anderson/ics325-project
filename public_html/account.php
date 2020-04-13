@@ -19,68 +19,69 @@
     padding: 10px;
   } 
 </style>
-<article>
 <!-- HEADING -->
 <h1 id="" class="text-center" data-i18n="">Profile</h1>
 <!-- INITIAL FORM -->
-<form class="center" action="setup_2fa.php" method="get">
-  <!-- DISPLAY NAME -->
-  <div class="form-group clearfix">
-    <label class="pull-left">
-      <span style="padding:10px;" id="" data-i18n="">Display name:</span>
-    </label>
-    <div class="pull-left">
-      <input id="" placeholder="<?php echo @$_SESSION['username']?>" type="text" class="input-control" disabled>
+<div class="container center">
+  <form action="setup_2fa.php" method="get">
+    <!-- DISPLAY NAME -->
+    <div class="form-group clearfix row">
+      <label class="pull-left col">
+        <span id="" data-i18n="">Display name:</span>
+      </label>
+      <div class="pull-left col">
+        <input id="" placeholder="<?php echo @$_SESSION['username']?>" type="text" class="input-control" disabled>
+      </div>
     </div>
-  </div>
-  <!-- EMAIL -->
-  <div id="" class="form-group clearfix ">
-    <label class="pull-left" for="">
-      <span style="padding:10px;" id="" class="label-text" data-i18n="">Email address:</span>
-    </label>
-    <div class="pull-left">
-      <input id="" type="email" class="input-control" disabled="">
-      <span style="display:none;" class="help-text" id="" data-i18n="">Email address is not formatted correctly.</span>
-      <span style="display:none;" class="help-text" id="" data-i18n="">Email address is required.</span>
-      <span style="display:none;" class="help-text" id="" data-i18n="">Email address is already being used.</span>
-      <span style="display:none;" class="help-text" id="">
-        <a name="resendLink" href="#" id="" data-i18n="">Resend Email Verification</a>
-      </span>
+    <!-- EMAIL -->
+    <div id="" class="form-group clearfix row">
+      <label class="pull-left col" for="email">
+        <span id="" class="label-text" data-i18n="">Email address:</span>
+      </label>
+      <div class="pull-left col">
+        <input type="email" name="email" class="input-control" disabled="">
+        <!-- <span style="display:none;" class="help-text" id="" data-i18n="">Email address is not formatted correctly.</span>
+        <span style="display:none;" class="help-text" id="" data-i18n="">Email address is required.</span>
+        <span style="display:none;" class="help-text" id="" data-i18n="">Email address is already being used.</span>
+        <span style="display:none;" class="help-text" id="">
+          <a name="resendLink" href="#" id="" data-i18n="">Resend Email Verification</a>
+        </span> -->
+      </div>
+      <!-- <div class="clearfix pull-right">
+        <a class="btn btn-primary" id="" data-i18n="">Change</a>
+      </div> -->
     </div>
-    <!-- <div class="clearfix pull-right">
-      <a class="btn btn-primary" id="" data-i18n="">Change</a>
-    </div> -->
-  </div>
-  <!-- DATE OF BIRTH -->
-  <div class="form-group clearfix">
-    <label id="" class="pull-left" for="" data-i18n="">
-      <span style="padding:10px;">Date of birth:</span>
-    </label>
-    <div class="pull-left">
-      <input type="text" id="" class="input-control" disabled="">
+    <!-- DATE OF BIRTH -->
+    <div class="form-group clearfix row">
+      <label id="" class="pull-left col" for="dob" data-i18n="">
+        <span>Date of birth:</span>
+      </label>
+      <div class="pull-left col">
+        <input type="text" name="dob" class="input-control" disabled="">
+      </div>
     </div>
-  </div>
-  <!-- BUTTON GROUP -->
-  <div class="btn-group" role="group">
-    <!-- <a id="" class="btn btn-primary" data-i18n="" onclick="myFunction()"><span>Change Password</span></a> -->
-    <input type="submit" class="btn btn-primary" value="Change Password" formaction="change_pass.php">
-    <input type="submit" class="btn btn-primary" value="Change Email" formaction="change_email.php">
-    <input type="submit" class="btn btn-primary" value="Delete Account" formaction="delete_account.php">
-  </div>  
-  <!-- 2FA SWITCH -->
-  <?php
-    if(@$secret){
-      echo '<div class="custom-control custom-switch pull-left">';
-      echo '<input checked="checked" type="checkbox" class="custom-control-input" id="2fa" name="2fa" onChange="this.form.submit()">';
-    } else {
-      echo '<div class="custom-control custom-switch pull-left">';
-      echo '<input type="checkbox" class="custom-control-input" id="2fa" name="2fa" onChange="this.form.submit()">';
-    }
-  ?>
-  <label class="custom-control-label" for="2fa">Enable/Disable 2FA</label>
+    <!-- BUTTON GROUP -->
+    <div class="form-group btn-group row" role="group">
+      <!-- <a id="" class="btn btn-primary" data-i18n="" onclick="myFunction()"><span>Change Password</span></a> -->
+      <input type="submit" class="btn btn-primary" value="Change Password" formaction="change_pass.php">
+      <input type="submit" class="btn btn-primary" value="Change Email" formaction="change_email.php">
+      <input type="submit" class="btn btn-primary" value="Delete Account" formaction="delete_account.php">
+    </div>
+    <!-- 2FA SWITCH -->
+    <?php
+      if(@$secret){
+        echo '<div class="form-group"><div class="custom-control custom-switch pull-left row">';
+        echo '<input checked="checked" type="checkbox" class="custom-control-input" id="2fa" name="2fa" onChange="this.form.submit()">';
+      } else {
+        echo '<div class="form-group"><div class="custom-control custom-switch pull-left row">';
+        echo '<input type="checkbox" class="custom-control-input" id="2fa" name="2fa" onChange="this.form.submit()">';
+      }
+    ?>
+    <label class="custom-control-label" for="2fa">Enable/Disable 2FA</label>
+  </form>
 </div>
-</form>
-</article>
+</div>
+</div>
 <!-- attempt -->
 <!-- <div class="btn-group" role="group">
   <button onclick="myFunction()" formaction="">Click Me</button>
