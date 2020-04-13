@@ -30,12 +30,12 @@
         }
         else {
             //substitute google QR API
-            echo '<p><span style="color:rgb(151, 41, 41);">Required PHP library to draw the QR code GD is NOT installed on this web server.</span>'.
-            '<br>The authenticator app won\'t automatically recognize this QR code.'.
+            echo '<p style="color:rgb(151, 41, 41);">Required PHP library to draw the QR code GD is NOT installed on this web server.</span></p>'.
+            '<p>The authenticator app won\'t automatically recognize this QR code.'.
             '<br>Instead scan this QR code with a generic QR code reader then paste it into the authenticator app.'.
             '<br><img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl='.$secret.'" />'.
-            '<br><a target="_blank" href="https://play.google.com/store/apps/details?id=com.kevintesar.qrcodetoclipboard&hl=en_US">This app</a>'.
-            'copies the secret directly to the phone clip-board</p>';
+            '<br><a target="_blank" href="https://play.google.com/store/apps/details?id=com.kevintesar.qrcodetoclipboard&hl=en_US">This app </a>'.
+            'copies the secret directly to the phone clip-board.</p>';
         }
     ?>    
         <form action="check_2fa.php" method="post" id="mainForm">
