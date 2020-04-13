@@ -56,9 +56,9 @@
     $stmt2 = $db->prepare($query2);
     // $db->multi_query($query);
     $stmt1->bind_param('ssiss', $fName, $lName, $phone, $email, $addr);
-    $stmt2->bind_param('ss', $username, $hash);
-    $stmt1->execute();
+    $stmt2->bind_param('ss', $username, $hash);    
     $stmt2->execute();
+    $stmt1->execute();
     //spaghettie username valid_user SESSION POST variables
     $_SESSION['username'] = $username;
     if ($stmt1->affected_rows > 0 && $stmt2->affected_rows > 0){
