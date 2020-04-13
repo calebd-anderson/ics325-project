@@ -2,7 +2,7 @@ CREATE TABLE `member_contact` (
   `memberID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `firstName` CHAR(50) NOT NULL,
   `lastName` CHAR(50) NOT NULL,
-  `phone`  CHAR(25) NOT NULL,
+  `phone` VARCHAR(64) NOT NULL,
   `email` CHAR(50) NOT NULL,
   `addr` CHAR(50) NOT NULL,
   CONSTRAINT `member`

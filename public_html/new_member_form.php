@@ -34,7 +34,7 @@
             <div class="tab"><h5>Contact Info:</h5>
                 <p><input type="email" placeholder="E-mail..." name="email" oninput="this.className = ''"></p>
                 <p><input type="text" placeholder="Address..." name="addr" oninput="this.className = ''"></p>
-                <p><input class="phone_us" type="tel" placeholder="Phone..." name="phone" oninput="this.className = ''"></p>
+                <p><input class="phone_us" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = ''"></p>
             </div>
 
             <div class="tab"><h5>Login Info:</h5>
