@@ -20,7 +20,7 @@
   } 
 </style>
 <!-- HEADING -->
-<h1 id="" class="text-center" data-i18n="">Profile</h1>
+<h2 style="font-family: Raleway;" id="" class="text-center" data-i18n="">Profile & Account Management</h2>
 <!-- INITIAL FORM -->
 <div class="container center">
   <form action="setup_2fa.php" method="get">
@@ -30,7 +30,7 @@
         <span id="" data-i18n="">Display name:</span>
       </label>
       <div class="pull-left col">
-        <input id="" placeholder="<?php echo @$_SESSION['username']?>" type="text" class="input-control" disabled>
+        <input id="" placeholder=" <?php echo $_SESSION['username']?>" type="text" class="input-control" disabled>
       </div>
     </div>
     <!-- EMAIL -->
@@ -39,7 +39,7 @@
         <span id="" class="label-text" data-i18n="">Email address:</span>
       </label>
       <div class="pull-left col">
-        <input type="email" name="email" class="input-control" disabled="">
+        <input type="email" name="email" class="input-control" disabled="" placeholder=" <?php echo $_SESSION['email']?>">
         <!-- <span style="display:none;" class="help-text" id="" data-i18n="">Email address is not formatted correctly.</span>
         <span style="display:none;" class="help-text" id="" data-i18n="">Email address is required.</span>
         <span style="display:none;" class="help-text" id="" data-i18n="">Email address is already being used.</span>
@@ -57,7 +57,7 @@
         <span>Date of birth:</span>
       </label>
       <div class="pull-left col">
-        <input type="text" name="dob" class="input-control" disabled="">
+        <input type="text" name="dob" class="input-control" disabled="" placeholder=" n/a">
       </div>
     </div>
     <!-- BUTTON GROUP -->
