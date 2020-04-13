@@ -1,9 +1,7 @@
 <?php
   require('header.php');
   require('../SQLcreds.inc');
-      // Create connection
       $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
-      // Check connection
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
       }
