@@ -34,7 +34,7 @@
         if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$pswd)) {
             $pswdErr = "Must contain at lease 8 characters, consisting of upper and lower case, numbers, and special characters. ";
         }
-        $phone = test_input($_POST['phone']);
+        $phone = test_input($_POST['us_phone']);
         $email = test_input($_POST['email']);
         $addr = test_input($_POST['addr']);
         //$db = new mysqli('localhost', '***REMOVED***', '***REMOVED***', '***REMOVED***');
@@ -55,7 +55,7 @@
     $stmt1 = $db->prepare($query1);
     $stmt2 = $db->prepare($query2);
     // $db->multi_query($query);
-    $stmt1->bind_param('ssiss', $fName, $lName, $phone, $email, $addr);
+    $stmt1->bind_param('sssss', $fName, $lName, $phone, $email, $addr);
     $stmt2->bind_param('ss', $username, $hash);    
     $stmt2->execute();
     $stmt1->execute();
