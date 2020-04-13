@@ -6,12 +6,17 @@
         die("Connection failed: " . $conn->connect_error);
     }
     $username = $_SESSION['username'];
-    $sql = "SELECT AES_DECRYPT(secret, UNHEX('$key')) FROM member_creds WHERE username = '$username' LIMIT 1";
-    $result = $conn->query($sql);
-    $row = $result -> fetch_array(MYSQLI_NUM);
-    $secret = $row[0];
+    $sql = "DELETE FROM member_creds WHERE username = '$username';";
+    if (mysqli_query($conn, $sql)) {
+        session_unset();
+        session_destroy();
+        echo "<p class='valid'>Record deleted successfully.</p>";
+     } else {
+        echo "<p class='invalid'>Error deleting record: " . mysqli_error($conn)."</p>";
+     }
+     mysqli_close($conn);
 ?>
-<h1>I Will Delete Your Account</h1>
+<!-- <h1>I Will Delete Your Account</h1> -->
 <?php
     include('footer.php');
 ?>

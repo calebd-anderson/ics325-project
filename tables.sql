@@ -1,21 +1,22 @@
 CREATE TABLE `member_contact` (
-  `memberID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `firstName` char(50) NOT NULL,
-  `lastName` char(50) NOT NULL,
-  `phone`  char(25) NOT NULL,
-  `email` char(50) NOT NULL,
-  `addr` char(50) NOT NULL,
-  PRIMARY KEY (`memberID`)
+  `memberID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `firstName` CHAR(50) NOT NULL,
+  `lastName` CHAR(50) NOT NULL,
+  `phone`  CHAR(25) NOT NULL,
+  `email` CHAR(50) NOT NULL,
+  `addr` CHAR(50) NOT NULL,
+  CONSTRAINT `member`
+    FOREIGN KEY (memberID) REFERENCES member_creds (memberID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE `member_creds` (
   `username` char(20) NOT NULL,
-  `memberID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `memberID` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `pswd` char(255) NOT NULL,
   `secret` blob DEFAULT NULL,
-  UNIQUE KEY `username` (`username`),
-  KEY `memberID` (`memberID`),
-  CONSTRAINT `memberID` FOREIGN KEY (`memberID`) REFERENCES `member_contact` (`memberID`) ON DELETE CASCADE ON UPDATE CASCADE
+  UNIQUE KEY `username` (`username`)
 );
 
 -- PRODUCT TABLE
