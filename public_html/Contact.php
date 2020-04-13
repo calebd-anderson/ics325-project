@@ -5,7 +5,7 @@
         <div>
             <h2 style="background-color: #80ff80;padding-left:1em;">Contact<h2>
         </div>
-        <div class="form_Body">
+        <div class="flex_Body">
             <form class="contact_Form" method="POST" name="TestForm">
                 <fieldset>
                     <label for="fname">First Name:</label><br>
