@@ -86,7 +86,15 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
   $result = $conn->query($sql);
   $row = $result -> fetch_array(MYSQLI_NUM);
   $secret = $row[0];
+  //set email in session
+  $UID = $conn->query("SELECT memberID FROM member_creds WHERE username = '$username'")->fetch_object()->memberID;
+  $email = $conn->query("SELECT email FROM member_contact WHERE memberID = '$UID'")->fetch_object()->email;
+  $_SESSION['email'] = $email;
+  $result -> free_result();
   $conn->close();
+  
+
+
   if(!$secret == null){
     echo '<fieldset class="fieldset"><legend>Please Log In</legend>';
     echo '<p>2FA is enabled on this account. Enter the code from the authenticator app to log in.</p>';    
