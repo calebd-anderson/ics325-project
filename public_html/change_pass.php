@@ -1,39 +1,6 @@
 <?php
     include('header.php');
 ?>
-<<<<<<< HEAD
-<?php
-    session_start();
-
-    $user = $_SESSION['username'];
-
-    if ($user){
-        //user is logged in
-
-        if ($_POST['submit']){
-            $oldpassword = $_POST['oldpassword'];
-            $newpassword = $_POST['newpassword'];
-            $repeatpassword = $_POST['repeatpassword'];
-
-            echo"$oldpassword/$newpassword/$repeatpassword"
-        }
-        else {
-
-        echo "
-            <form action="change_pass.php" method = "POST">
-                Old Password: <input type = 'text' name='oldpassword'><p>
-                New Password: <input type='password' name='newpassword'><br>
-                Repeat New Password <input type='password' name='repeatpassword'><br>
-                <input type='submit' name='submit' value='Change Password'>
-            </form>
-        ";
-        }
-    }
-    else {
-        die("Please log in to change your password.");
-    }
-?>
-=======
 <form action="change_pass.php" method="POST">
 <div class="container center">
 <h3>I Will Change Your Password</h3>
@@ -53,7 +20,6 @@
         <button type="submit" class="btn btn-primary">Change</button>
 </div>
 </form>
->>>>>>> 4afa721d28734d2ab30f57a771ef115c178611c9
 
 <?php
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['oldpswd']) and isset($_POST['newpswd'])){

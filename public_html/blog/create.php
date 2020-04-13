@@ -98,11 +98,7 @@ form div {
 
     <div class="content">
         <h2 class="page-title">Manage Posts</h2>
-<<<<<<< HEAD
             <form action="createcode.php" method="POST">
-=======
-            <form action="create.hphp" method="post">
->>>>>>> 4afa721d28734d2ab30f57a771ef115c178611c9
                 <div>
                         <label>Title</label>
                         <textarea name="title" id="title" cols="80" rows="1"></textarea>
@@ -113,11 +109,7 @@ form div {
                         <textarea name="body" id="body" cols="80" rows="10"></textarea>
                 </div>
                <div>
-<<<<<<< HEAD
                    <input type="submit" class="btn" value="Submit"></input>
-=======
-                   <button type="submit" class="btn">Add Post</button>
->>>>>>> 4afa721d28734d2ab30f57a771ef115c178611c9
                 </div>
     </div>
 </div>
