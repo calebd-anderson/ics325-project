@@ -3,7 +3,7 @@
 ?>
 <form action="change_pass.php" method="POST">
 <div class="container center">
-<h3>I Will Change Your Password</h3>
+<h3 style="font-family: Raleway;">I Will Change Your Password</h3>
     <div class="form-group row">
         <label for="oldpswd" class="col-sm-2 col-form-label">Old Password: </label>
         <div class="col-sm-10">

@@ -29,6 +29,8 @@
         
         // create short variable names
         $username = $_POST['username'];
+        //spaghettie username valid_user SESSION POST variables
+        $_SESSION['username'] = $username;
         $pswd = test_input($_POST['pswd']);
         // check if password meets requirements only contains letters and whitespace
         if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$pswd)) {
@@ -36,6 +38,7 @@
         }
         $phone = test_input($_POST['us_phone']);
         $email = test_input($_POST['email']);
+        $_SESSION['email'] = $email;
         $addr = test_input($_POST['addr']);
         //$db = new mysqli('localhost', '***REMOVED***', '***REMOVED***', '***REMOVED***');
         require '../SQLcreds.inc';
@@ -59,8 +62,6 @@
     $stmt2->bind_param('ss', $username, $hash);    
     $stmt2->execute();
     $stmt1->execute();
-    //spaghettie username valid_user SESSION POST variables
-    $_SESSION['username'] = $username;
     if ($stmt1->affected_rows > 0 && $stmt2->affected_rows > 0){
         $_SESSION['valid_user'] = $_POST['username'];
         echo "<p>Member added to database.</p>";
