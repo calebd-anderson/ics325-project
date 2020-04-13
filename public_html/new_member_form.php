@@ -2,7 +2,7 @@
 <?php
     include('header.php');
 ?>
-<link rel="stylesheet" href="css\pswd_validation.css">
+<!-- <link rel="stylesheet" href="css\pswd_validation.css"> -->
 <link rel="stylesheet" href="css\special_form.css">
 <style>
     .status-available{color:#2FC332;}
