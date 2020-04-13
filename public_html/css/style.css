@@ -193,6 +193,71 @@ input[type=email]:focus {
 }
 /*#endregion-------Home.php Styles-------*/
 
+#section_space {
+  padding-top: 4em;
+}
+
+.image_flex {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  padding-left: 2em;
+  padding-bottom: 4em;
+}
+
+.text_flex {
+  -webkit-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+  padding-left: 2em;
+  padding-right: 1em;
+  line-height: 1.6;
+  font-size: 110%;
+}
+
+
+.button_loc {
+  padding-top: 2em;
+  top: 50%;
+  left: 50%;
+}
+
+.art_but {
+  border-radius: 4px;
+  background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.4s;
+  cursor: pointer;
+  margin: 5px;
+}
+.art_but span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+.art_but span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.art_but:hover span {
+  padding-right: 25px;
+}
+.art_but:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 /*#region-------Footer Styles-------*/
 footer {
   width: 100%;
@@ -242,7 +307,7 @@ footer {
 }
 
 /*Contact Page*/
-.form_Body {
+.flex_Body {
   display: -webkit-flex;
   display: flex;
   padding-top: 2em;
@@ -261,3 +326,4 @@ footer {
   -ms-flex: 2;
   flex: 2;
 }
+
