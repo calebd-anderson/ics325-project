@@ -29,7 +29,6 @@
         
         // create short variable names
         $username = $_POST['username'];
-        // $_SESSION['username'] = $username;
         $pswd = test_input($_POST['pswd']);
         // check if password meets requirements only contains letters and whitespace
         if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$pswd)) {
@@ -60,6 +59,8 @@
     $stmt2->bind_param('ss', $username, $hash);
     $stmt1->execute();
     $stmt2->execute();
+    //spaghettie username valid_user SESSION POST variables
+    $_SESSION['username'] = $username;
     if ($stmt1->affected_rows > 0 && $stmt2->affected_rows > 0){
         $_SESSION['valid_user'] = $_POST['username'];
         echo "<p>Member added to database.</p>";

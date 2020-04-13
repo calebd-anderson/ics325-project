@@ -93,10 +93,6 @@ input[type=email]:focus {
   display:none;
   color:red
 }
-#mainForm {
-  padding-top: 4em;
-  padding-bottom: 6em;
-}
 /*#endregion-------Form Styles-------*/
 
 /*#region-------SideNav Styles------- */
