@@ -12,10 +12,10 @@ if(mysqli_connect_errno())
          }
  else {
     $title = $_POST['title'];
-    echo $title;
+    echo "<p align=center>$title</p> ";
         
     $body = $_POST['body'];
-    echo $body;
+    echo "<p align=center>$body</p> ";
  }
 
 if (!$db) {
