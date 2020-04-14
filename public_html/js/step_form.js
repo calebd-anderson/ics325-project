@@ -13,6 +13,7 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Create Account";
+    // document.getElementById("nextBtn").setAttribute("type", "submit");
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
@@ -32,7 +33,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    document.getElementById("mainForm").submit();
+    document.getElementById("stepForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
@@ -46,8 +47,10 @@ function validateForm() {
   y = x[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
+    console.log("PSWD Eye" + y[i].id == "pswd");
+    if(y[i].id == "pswd") return true;
     // If a field is empty...
-    if (y[i].value == "") {
+    if (y[i].value == ""){
       // add an "invalid" class to the field:
       y[i].className += " invalid";
       // and set the current valid status to false:
