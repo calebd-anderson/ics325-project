@@ -27,25 +27,31 @@
     <form action="add_member.php" method="post" id="mainForm">
         <fieldset class="fieldset">
             <legend style="font-family: Raleway;">Chasing Arctic - Register</legend>
-<!-- Name -->
             <div class="tab"><h5>Name:</h5>
-                <p><input class="form-control" type="text" name="fname" placeholder="First name..." oninput="this.className = 'form-control'"></p>
-                <p><input class="form-control" type="text" name="lname" placeholder="Last name..." oninput="this.className = 'form-control'"></p>
+            <p><input type="text" name="fname" placeholder="First name..." oninput="this.className = ''"></p>
+            <p><input type="text" name="lname" placeholder="Last name..." oninput="this.className = ''"></p>
             </div>
-<!-- Contact Info -->
             <div class="tab"><h5>Contact Info:</h5>
-                <p><input class="form-control" type="email" placeholder="E-mail..." name="email" oninput="this.className = 'form-control'"></p>
-                <p><input class="form-control" type="text" placeholder="Address..." name="addr" oninput="this.className = 'form-control'"></p>
-                <p><input class="phone_us form-control" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = 'form-control'"></p>
+                <p><input type="email" placeholder="E-mail..." name="email" oninput="this.className = ''"></p>
+                <p><input type="text" placeholder="Address..." name="addr" oninput="this.className = ''"></p>
+                <p><input class="phone_us" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = ''"></p>
             </div>
-<!-- Login -->
+
             <div class="tab"><h5>Login Info:</h5>
-                <p><input class="form-control" type="text" id="username" placeholder="Username..." name="username" maxlength="25"  onBlur="checkAvailability()" oninput="this.className = 'form-control'">
+                <p><input type="text" id="username" placeholder="Username..." name="username" maxlength="25" oninput="this.className = ''" onBlur="checkAvailability()">
                     <span class="fa fa-cog fa-spin" id="loaderIcon" style="font-size:24px; display:none; color:#0084f0;"></span>
                     <span id="user-availability-status"></span>
                 </p>
                 <p>
-                    <input class="form-control" tabindex="0" placeholder="Password..." data-toggle="password" type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninput="this.className = 'form-control'"/>
+                    <span class="eye_container">
+                        <input tabindex="0" placeholder="Password..." data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Try to pick something that’s not easy to guess." type="password" id="pswd" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+                        <a class="input_icon" onclick="toggle_pswd()">
+                            <svg id="eye" class="bi bi-eye" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 001.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0014.828 8a13.133 13.133 0 00-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 001.172 8z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.5 8a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </span>
                     <?php //echo "$pswdErr";?>
                 </p>
                 <p id="CapsLk">WARNING! Caps lock is ON.</p>
@@ -56,7 +62,7 @@
                     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                 </div>
             </div>
-<!-- Buttons -->
+
             <div style="overflow:auto;">
                 <div style="float:right;">
                     <button class="btn btn-secondary" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -69,15 +75,13 @@
             <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
-            <!-- new page add more steps -->
+            <!-- <span class="step"></span> -->
             </div>
         </fieldset>
     </form>
 <script src="js/fields.js"></script>
 <script src="js/pswd_validation.js"></script>
 <script src="js/step_form.js"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-<script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 <?php
     include('footer.php');
 ?>
