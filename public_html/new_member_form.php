@@ -25,19 +25,8 @@
 </script>
 <fieldset class="fieldset"><legend style="font-family: Raleway;">Chasing Arctic - Register</legend>
     <form action="add_member.php" method="post" id="stepForm">
-<!-- Name -->
-        <div class="tab"><h5>Name:</h5>
-            <p><input class="form-control" type="text" name="fname" placeholder="First name..." oninput="this.className = 'form-control'"></p>
-            <p><input class="form-control" type="text" name="lname" placeholder="Last name..." oninput="this.className = 'form-control'"></p>
-        </div>
-<!-- Contact Info -->
-        <div class="tab"><h5>Contact Info:</h5>
-            <p><input class="form-control" type="email" placeholder="E-mail..." name="email" oninput="this.className = 'form-control'"></p>
-            <p><input class="form-control" type="text" placeholder="Address..." name="addr" oninput="this.className = 'form-control'"></p>
-            <p><input class="phone_us form-control" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = 'form-control'"></p>
-        </div>
 <!-- Login -->
-        <div class="tab"><h5>Login Info:</h5>
+    <div class="tab"><h5>Login Info:</h5>
             <p>
                 <input class="form-control" type="text" id="username" placeholder="Username..."
                     name="username" maxlength="25"  onBlur="checkAvailability()"
@@ -48,7 +37,8 @@
             <p>
                 <!-- <input id="password" class="form-control" type="password" placeholder="Enter the password"> -->
                 <input id="pswd" class="form-control" tabindex="0" placeholder="Password..." type="password"
-                    name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+                    name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Try to pick something that’s not easy to guess." />
                 <?php //echo "$pswdErr";?>
             </p>
             <p id="CapsLk">WARNING! Caps lock is ON.</p>
@@ -58,6 +48,17 @@
                 <p id="number" class="invalid">A <b>number</b></p>
                 <p id="length" class="invalid">Minimum <b>8 characters</b></p>
             </div>
+        </div>
+<!-- Name -->
+        <div class="tab"><h5>Name:</h5>
+            <p><input class="form-control" type="text" name="fname" placeholder="First name..." oninput="this.className = 'form-control'"></p>
+            <p><input class="form-control" type="text" name="lname" placeholder="Last name..." oninput="this.className = 'form-control'"></p>
+        </div>
+<!-- Contact Info -->
+        <div class="tab"><h5>Contact Info:</h5>
+            <p><input class="form-control" type="email" placeholder="E-mail..." name="email" oninput="this.className = 'form-control'"></p>
+            <p><input class="form-control" type="text" placeholder="Address..." name="addr" oninput="this.className = 'form-control'"></p>
+            <p><input class="phone_us form-control" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = 'form-control'"></p>
         </div>
 <!-- Buttons -->
         <div style="overflow:auto;">
@@ -81,7 +82,7 @@
 <script src="js/pswd_validation.js"></script>
 <script src="js/step_form.js"></script>
 <script src="js/jquery.mask.min.js"></script>
-<script src="js\bootstrap-show-password.js"></script>
+<script src="js/bootstrap-show-password.js"></script>
 
 <?php
     include('footer.php');
@@ -99,8 +100,8 @@ $(document ).ready(function() {
     console.log( "ready!" );
 });
 
-// $(document).ready(function(){
-//   $('[data-toggle="popover"]').popover();
-// });
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+});
 
 </script>

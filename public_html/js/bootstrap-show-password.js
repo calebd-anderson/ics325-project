@@ -81,7 +81,7 @@ class Password {
     // Create the text, icon and assign
     this.$element.wrap(`<div class="input-group${sprintf(' input-group-%s', this.options.size)}" />`)
 
-    this.$text = $('<input type="text" id="pswd_eye" />')[placementFuc](this.$element)
+    this.$text = $('<input type="text" id="pswd_eye"/>')[placementFuc](this.$element)
       .attr('class', this.$element.attr('class'))
       .attr('style', this.$element.attr('style'))
       .attr('placeholder', this.$element.attr('placeholder'))
