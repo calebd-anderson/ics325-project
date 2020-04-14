@@ -13,7 +13,7 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Create Account";
-    // document.getElementById("nextBtn").setAttribute("type", "submit");
+    document.getElementById("nextBtn").setAttribute("type", "submit");
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
@@ -45,10 +45,14 @@ function validateForm() {
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
+  //removes pswd eye input object from validation. Requires custom bootstrap-show-password.js @ line 84
+  if(y[2]){
+    if(y[2].id.localeCompare('pswd_eye') == 0) y[2].remove();
+  }
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-    console.log("PSWD Eye" + y[i].id == "pswd");
-    if(y[i].id == "pswd") return true;
+    // console.log("PSWD Eye" + y[i].id == "pswd");
+    // if(y[i].id == "pswd") return true;
     // If a field is empty...
     if (y[i].value == ""){
       // add an "invalid" class to the field:
