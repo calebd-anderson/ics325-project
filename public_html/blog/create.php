@@ -98,7 +98,7 @@ form div {
 
     <div class="content">
         <h2 class="page-title">Manage Posts</h2>
-            <form action="create.hphp" method="post">
+            <form action="createcode.php" method="POST">
                 <div>
                         <label>Title</label>
                         <textarea name="title" id="title" cols="80" rows="1"></textarea>
@@ -109,7 +109,7 @@ form div {
                         <textarea name="body" id="body" cols="80" rows="10"></textarea>
                 </div>
                <div>
-                   <button type="submit" class="btn">Add Post</button>
+                   <input type="submit" class="btn" value="Submit"></input>
                 </div>
     </div>
 </div>
