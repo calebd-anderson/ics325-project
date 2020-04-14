@@ -11,7 +11,8 @@
             <a target="_blank" href="https://www.w3schools.com/">w3schools tutorials</a><br />
             <a target="_blank" href="https://phppot.com/jquery/live-username-availability-check-using-php-and-jquery-ajax/">Username Avail Check</a><br />
             <a target="_blank" href="https://getbootstrap.com/">Bootstrap</a><br />
-            <a target="_blank" href="https://igorescobar.github.io/jQuery-Mask-Plugin/">Phone # Mask</a>
+            <a target="_blank" href="https://igorescobar.github.io/jQuery-Mask-Plugin/">Phone # Mask</a><br />
+            <a target="_blank" href="http://bootstrap-show-password.wenzhixin.net.cn/home/">Bootstrap Show Password</a>
         </div>
         <div class="Icon_links col">
             <div>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/payungkead" title="Payungkead">Payungkead</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
@@ -20,7 +21,6 @@
             <div>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </div>
     </div>
-
     <div class="row">
         <div class="copyright col">
             <p>&copy; Chasing the Arctic. <br>
