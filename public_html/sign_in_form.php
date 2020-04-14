@@ -56,11 +56,11 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
   <form method="post" action="sign_in_form.php" id="mainForm">
     <p>
       <label for="name">Username:</label>
-      <input type="text" name="username" id="name" size="20" class="form-control required highlightable"/>
+      <input type="text" name="username" id="name" size="20" class="form-control"/>
     </p>
     <p>
       <label for="pswd">Password:</label>
-      <input data-toggle="password" name="pswd" id="pswd" class="form-control" type="password" maxlength="10" placeholder="Enter the password">
+      <input data-toggle="password" name="pswd" id="pswd" class="form-control" type="password" maxlength="10">
       <p id="CapsLk">WARNING! Caps lock is ON.</p>
     </p>
     <div class="checkbox mb-3">
@@ -99,7 +99,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
 ?>
       <form method="post" action="2fa_sign-in.php" id="mainForm">
       <p><label for="code">Code: </label>
-      <input type="text" name="code" id="id" size="15" class="required highlightable"/></p>
+        <input type="text" name="code" id="id" size="15"/></p>
       <p><button type="submit" name="submit" class="btn btn-primary">Verify Code</button></p>
       </fieldset>
       </form>

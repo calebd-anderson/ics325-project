@@ -36,19 +36,19 @@
             <p><input class="form-control" type="text" placeholder="Address..." name="addr" oninput="this.className = 'form-control'"></p>
             <p><input class="phone_us form-control" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = 'form-control'"></p>
         </div>
-                <!-- Login -->
-    <div class="tab"><h5>Login Info:</h5>
+<!-- Login -->
+        <div class="tab"><h5>Login Info:</h5>
             <p>
                 <input class="form-control" type="text" id="username" placeholder="Username..."
-                    name="username" maxlength="25"  onBlur="checkAvailability()" oninput="this.className = 'form-control'">
+                    name="username" maxlength="25"  onBlur="checkAvailability()"
+                    oninput="this.className = 'form-control'"/>
                 <span class="fa fa-cog fa-spin" id="loaderIcon" style="font-size:24px; display:none; color:#0084f0;"></span>
                 <span id="user-availability-status"></span>
             </p>
             <p>
                 <!-- <input id="password" class="form-control" type="password" placeholder="Enter the password"> -->
                 <input id="pswd" class="form-control" tabindex="0" placeholder="Password..." type="password"
-                    name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    oninput="this.className = 'form-control'"/>
+                    name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
                 <?php //echo "$pswdErr";?>
             </p>
             <p id="CapsLk">WARNING! Caps lock is ON.</p>
@@ -81,7 +81,7 @@
 <script src="js/pswd_validation.js"></script>
 <script src="js/step_form.js"></script>
 <script src="js/jquery.mask.min.js"></script>
-<script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+<script src="js\bootstrap-show-password.js"></script>
 
 <?php
     include('footer.php');
@@ -98,4 +98,9 @@ $(function() {
 $(document ).ready(function() {
     console.log( "ready!" );
 });
+
+// $(document).ready(function(){
+//   $('[data-toggle="popover"]').popover();
+// });
+
 </script>
