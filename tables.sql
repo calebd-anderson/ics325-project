@@ -52,3 +52,10 @@ CREATE TABLE member_order (
   INDEX (prodID),
   FOREIGN KEY(prodID) REFERENCES  products(prodID)
 ) ENGINE = InnoDB;
+
+CREATE TABLE `member_blog` (
+  `blogID` int(10) NOT NULL AUTO_INCREMENT,
+  `title` char(30) NOT NULL,
+  `body` text NOT NULL,
+  PRIMARY KEY (`blogID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
