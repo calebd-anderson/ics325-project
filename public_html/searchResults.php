@@ -14,27 +14,30 @@ $output = '';
 
 //sets it to grab search input//
 if (isset($_POST['Search'])) {
-    $squery = $_POST['Search'];
-    $squery = preg_replace("#[^0-9a-z]#i","",$squery);
-
-    $squery = ('SELECT * FROM member_blog WHERE title LIKE "%$squery%" OR body LIKE "%$squery%"') or die ("Could not find search terms.");
-    $count = mysqli_num_rows($squery);
+    if (preg_replace("#[^0-9a-z]#i","", $_POST['Search'])) {
+        $squery = $_POST['Search'];
+    }
+    //query db for items that match the search term//
+    $sql = "SELECT * FROM member_blog WHERE title LIKE '%" . $squery . "%' OR body LIKE '%" . $squery  ."%' ";
+    $result = mysqli_query($db, $sql);
+    $count = mysqli_num_rows($result);
     if ($count == 0) {
         $output = "There are no search results.";
     }
     else {
-        while ($row = mysqli_fetch_array($squery)) {
-            $title = $row['title'];
-            $body = $row['body'];
-            $id = $row['blogID'];
+        while ($row = $result->fetch_assoc()) {
+            $title = $row["title"];
+            $body = $row["body"];
+            $id = $row["blogID"];
 
-            $results = '<div>'.$title.''.$body.'</div>';
+            $results = '<div>' . $title . ' ' . $body . '</div>';
+            echo $results;
         }
     }
 }
 
-echo $results;
 
+$db->close();
 ?>
 <?php
     include('footer.php');
