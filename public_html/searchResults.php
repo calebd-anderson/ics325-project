@@ -9,6 +9,7 @@ $db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
                 Please try again later.</p>";
             exit;
         }
+
 $output = '';
 
 //sets it to grab search input//
@@ -16,7 +17,7 @@ if (isset($_POST['Search'])) {
     $squery = $_POST['Search'];
     $squery = preg_replace("#[^0-9a-z]#i","",$squery);
 
-    $squery = mysqli_query('SELECT * FROM member_blog WHERE title LIKE "%$squery%" OR body LIKE "%$squery%"') or die ("Could not find search terms.");
+    $squery = ('SELECT * FROM member_blog WHERE title LIKE "%$squery%" OR body LIKE "%$squery%"') or die ("Could not find search terms.");
     $count = mysqli_num_rows($squery);
     if ($count == 0) {
         $output = "There are no search results.";
