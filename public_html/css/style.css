@@ -69,25 +69,6 @@ input[type=email]:focus {
     display: none !important;
   }
 }
-/* @media screen and (max-width:465px){
-  .input_icon {
-    position: absolute;
-    margin-right: 25%;
-  }
-} */
-/* pswd icon */
-.eye_container {
-  position: relative;    
-}
-/* Desktop size */
-@media screen and (min-width:468.98px){
-  .input_icon {
-    /* background-color: #1caa46; */
-    position: absolute;
-    right: 4%;
-    /* right: .75vw; */
-  }
-}
 /* CapsLk warning */
 #CapsLk {
   display:none;
@@ -170,6 +151,10 @@ input[type=email]:focus {
   top: 0;
   left: 0;
   font-size: 36px;
+}
+#main {
+  transition: margin-right .5s;
+  /* padding: 16px; */
 }
 /*#endregion-------SideNav Styles-------*/
 
