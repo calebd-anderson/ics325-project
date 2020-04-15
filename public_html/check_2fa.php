@@ -39,9 +39,10 @@
     }else{
         echo '<p>Code does not match.</p>';
         echo '<p>If you see green below it is possible the secret was entered into the app incorrectly.</p>';
+        echo '<p>You should also make sure that your phone is in sync with network time.</p>';
         try {
             $tfa->ensureCorrectTime();
-            echo '<span style="color:#0c0">Your hosts time seems to be correct / within margin</span>';
+            echo '<span style="color:#0c0">Your hosts time seems to be correct / within margin.</span>';
         } catch (RobThree\Auth\TwoFactorAuthException $ex) {
             echo '<span style="color:#c00"><b>Warning:</b> Your hosts time seems to be off: ' . $ex->getMessage().'</span>';
         }        
