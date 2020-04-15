@@ -38,7 +38,8 @@
                 <!-- <input id="password" class="form-control" type="password" placeholder="Enter the password"> -->
                 <input id="pswd" class="form-control" tabindex="0" placeholder="Password..." type="password"
                     name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Try to pick something that’s not easy to guess." />
+                    data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Try to pick something that’s not easy to guess." 
+                    oninput="this.className = 'form-control'"/>
                 <?php //echo "$pswdErr";?>
             </p>
             <p id="CapsLk">WARNING! Caps lock is ON.</p>
