@@ -6,6 +6,17 @@
   <!-- <div>
     <h2 class="banner" align="center">Banner Test</h2>
   </div> -->
+  <p>
+    Our website is a basic login portal right now:
+    <ul>
+      <li>Create an account</li>
+      <li>Play with setting up two factor authentication</li>
+      <li>Chage your password</li>
+      <li>Play with writing a blog post in the blog/discourse section from the menu</li>
+      <li>Use the search bar to search for your post</li>
+    </ul>
+  </p>
+  <p>Your account can be deleted when you're done if you want. However if you keep your account we will update the page to allow for more services in the future.</p> 
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li style="cursor:pointer;" data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
