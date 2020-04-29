@@ -13,9 +13,9 @@ include 'header.php';
         $username = test_input($_POST['username']);
         $_SESSION['username'] = $username;
         // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
-            $usernameErr = "Only letters and white space allowed. ";
-            $valid = false;
+        if (!preg_match("/^[a-zA-Z_0-9]*$/",$username)) {
+          $usernameErr = "Only letters, numbers, and underscore allowed. ";
+          $valid = false;
         }
       }
     //validate password
