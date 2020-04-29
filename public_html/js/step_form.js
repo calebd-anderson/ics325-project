@@ -49,19 +49,19 @@ function validateForm() {
   for (i = 0; i < y.length; i++) {
       //ignore bootstrap-show-password.js pswd_eye input object line 84 by giving it a value
       // if(y[i].id.localeCompare('pswd_eye') == 0){
+        if(y[i].id == 'pswd_eye'){
+          // y[i].value = "data";
+          // y[i].remove();
+          // valid = true;
+          // y[i].className = "";
+          return valid;
+        }
     // If a field is empty...
     if (y[i].value == ""){
       // add an "invalid" class to the field:
       y[i].className += " is-invalid";
       // and set the current valid status to false:
       valid = false;
-    }
-    if(y[i].id == 'pswd_eye'){
-      // y[i].value = "data";
-      // y[i].remove();
-      // valid = true;
-      // y[i].className = "";
-      return valid;
     }
   }
   // If the valid status is true, mark the step as finished and valid:
