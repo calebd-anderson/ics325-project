@@ -24,40 +24,48 @@
     }
 </script>
 <?php
-    $pswdErr = $fNameErr = $lNameErr = '';
+    $pswdErr = $fNameErr = $lNameErr = $usernameErr = $formErr = '';
     $valid = true;
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         //first name validate
         $fName = test_input($_POST['fname']);
         // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/",$fName)) {
-            $fNameErr = "Only letters and white space allowed. ";
+        if (!preg_match("/^[a-zA-Z]*$/",$fName)) {
+            $fNameErr = "**Only letters allowed.";
             $valid = false;
         }
 
         //last name validate
         $lName = test_input($_POST['lname']);
         // check if name only contains letters and whitespace
-        if (!preg_match("/^[a-zA-Z ]*$/",$lName)) {
-            $lNameErr = "Only letters and white space allowed. ";
+        if (!preg_match("/^[a-zA-Z]*$/",$lName)) {
+            $lNameErr = "**Only letters allowed.";
             $valid = false;
         }
 
         //username validate
         $username = test_input($_POST['username']);
         $_SESSION['username'] = $username;
+        if (!preg_match("/^[a-zA-Z_0-9]*$/",$username)) {
+            $usernameErr = "**Only letters, numbers, and underscore allowed.";
+            $valid = false;
+        }
 
         //password validate
         if (empty($_POST['pswd'])) {
-            $pswdErr = "Password is required.";
+            $pswdErr = "**Password is required.";
             $valid = false;
         }else{
             $pswd = test_input($_POST['pswd']);
             // check if password meets requirements only contains letters
             if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$pswd)) {
-                $pswdErr = "Password must be a minimum of 8 characters, and contain numbers, as well as upper and lower case letters.";
+                $pswdErr = "**Password must be a minimum of 8 characters and contatin a minimum of one number, one upper case letter and one lower case letter.";
                 $valid = false;
             }
+        }
+
+        if(!$valid){
+            $formErr = '**Please correct the form errors:';
         }
 
         $phone = test_input($_POST['us_phone']);
@@ -132,40 +140,13 @@
 ?>
 <fieldset class="fieldset"><legend style="font-family: Raleway;">Chasing Arctic - Register</legend>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="stepForm">
-<!-- Login -->
-    <div class="tab"><h5>Login Info:</h5>
-            <p>
-                <input class="form-control" type="text" id="username" placeholder="Username..."
-                    name="username" maxlength="25"  onBlur="checkAvailability()"
-                    oninput="this.className = 'form-control'"/>
-                <span class="fa fa-cog fa-spin" id="loaderIcon" style="font-size:24px; display:none; color:#0084f0;"></span>
-                <span id="user-availability-status"></span>
-                <small id="emailHelp" class="form-text text-muted">Pick a unique username.</small>
-            </p>
-            <p>
-                <input id="pswd" class="form-control" tabindex="0" placeholder="Password..." type="password"
-                    name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Try to pick something that’s not easy to guess." 
-                    oninput="this.className = 'form-control'"/>
-                    <?php if(!$pswdErr){ ?>
-                <small class="form-text text-muted">Minimum of 8 characters, must contain numbers, as well as upper and lower case letters.</small>
-                <?php } ?>
-                <span class="status-not-available"><?php echo $pswdErr;?></span>
-            </p>
-            <p id="CapsLk">WARNING! Caps lock is ON.</p>
-            <div id="message" class="js-fade">
-                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                <p id="number" class="invalid">A <b>number</b></p>
-                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-            </div>
-        </div>
+    <p style="color: red;"><?php echo $formErr; ?></p>
 <!-- Name -->
         <div class="tab"><h5>Name:</h5>
+            <div style="color: red;"><?php echo $fNameErr; ?></div>
             <p><input class="form-control" type="text" name="fname" placeholder="First name..." oninput="this.className = 'form-control'"></p>
-            <span class="status-not-available"><?php echo $fNameErr;?></span>
+            <span style="color: red;"><?php echo $lNameErr; ?></span>
             <p><input class="form-control" type="text" name="lname" placeholder="Last name..." oninput="this.className = 'form-control'"></p>
-            <span class="status-not-available"><?php echo $lNameErr;?></span>
         </div>
 <!-- Contact Info -->
         <div class="tab"><h5>Contact Info:</h5>
@@ -173,6 +154,33 @@
             <p><input class="form-control" type="text" placeholder="Address..." name="addr" oninput="this.className = 'form-control'"></p>
             <p><input class="phone_us form-control" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = 'form-control'"></p>
         </div>
+<!-- Login -->
+        <div class="tab"><h5>Login Info:</h5>
+                <p>
+                    <input class="form-control" type="text" id="username" placeholder="Username..."
+                        name="username" maxlength="25"  onBlur="checkAvailability()"
+                        oninput="this.className = 'form-control'"/>
+                    <span class="fa fa-cog fa-spin" id="loaderIcon" style="font-size:24px; display:none; color:#0084f0;"></span>
+                    <span id="user-availability-status"></span>
+                    <span class="status-not-available"><?php echo $usernameErr;?></span>
+                    <small id="emailHelp" class="form-text text-muted">Pick a unique username. Letters, numbers and underscore allowed.</small>
+                </p>
+                <p>
+                    <input id="pswd" class="form-control" tabindex="0" placeholder="Password..." type="password"
+                        name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Try to pick something that’s not easy to guess." 
+                        oninput="this.className = 'form-control'"/>
+                    <small class="form-text text-muted">We store your password securely. Minimum of 8 characters. Must contain numbers, as well as upper and lower case letters.</small>
+                    <span style="color: red;"><?php echo $pswdErr;?></span>
+                </p>
+                <p id="CapsLk">WARNING! Caps lock is ON.</p>
+                <div id="message" class="js-fade">
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+            </div>
 <!-- Buttons -->
         <div style="overflow:auto;">
             <div style="float:right;">
