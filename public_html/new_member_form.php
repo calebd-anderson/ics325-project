@@ -49,7 +49,7 @@
 
         //password validate
         if (empty($_POST['pswd'])) {
-            $pswdErr = "Password is required. ";
+            $pswdErr = "Password is required.";
             $valid = false;
         }else{
             $pswd = test_input($_POST['pswd']);
