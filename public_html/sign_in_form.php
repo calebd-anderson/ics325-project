@@ -1,44 +1,51 @@
 <?php
 include 'header.php';
-require '../SQLcreds.inc';
 
-    // Create connection
-    $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    $usernameErr = '';
-
+  $usernameErr = $pswdErr = '';
+  $valid = true;
   //get username and password variables
   if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    //validate username
     if (empty($_POST['username'])) {
       $usernameErr = "Username is required. ";
+      $valid = false;
       } else {
-          $username = test_input($_POST['username']);
-          $_SESSION['username'] = $username;
-          // check if name only contains letters and whitespace
-          if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
-              $usernameErr = "Only letters and white space allowed. ";
-          }
+        $username = test_input($_POST['username']);
+        $_SESSION['username'] = $username;
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
+            $usernameErr = "Only letters and white space allowed. ";
+            $valid = false;
+        }
       }
+    //validate password
     if (empty($_POST['pswd'])) {
       $pswdErr = "Password is required. ";
-      } else {
-        $pswd = test_input($_POST['pswd']);
-      }
+      $valid = false;
+    } else {
+      $pswd = test_input($_POST['pswd']);
+    }
 
-    $sql = "SELECT pswd FROM member_creds WHERE username = '$username' LIMIT 1";
-    $result = $conn->query($sql);
-    $value = mysqli_fetch_object($result);
-    // if($value == null) {
-    //   throw new Exception("Password or username incorrect");
-    // }
-    // try {
-      @$value = $value->pswd;
-    // }catch(Exception $e) {
-    //   echo 'Message: ' .$e->getMessage();
-    // }
+    if($valid){
+      require '../SQLcreds.inc';
+      // Create connection
+      $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
+      // Check connection
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+      $sql = "SELECT pswd FROM member_creds WHERE username = '$username' LIMIT 1";
+      $result = $conn->query($sql);
+      $value = mysqli_fetch_object($result);
+      // if($value == null) {
+      //   throw new Exception("Password or username incorrect");
+      // }
+      // try {
+        @$value = $value->pswd;
+      // }catch(Exception $e) {
+      //   echo 'Message: ' .$e->getMessage();
+      // }
+    }
   }
   //sanatize input
   function test_input($data) {
@@ -49,7 +56,8 @@ require '../SQLcreds.inc';
   }
 
 //display sign-in form if form has not been submited
-if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
+// if (!($_SERVER["REQUEST_METHOD"] == "POST") || !$valid) {
+if (!isset($pswd) || !isset($username) || !$valid) {
 ?>
 
 <fieldset class="fieldset">
@@ -58,11 +66,12 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     <p>
       <label for="name">Username:</label>
       <input type="text" name="username" id="name" size="20" class="form-control"/>
-      <span class="status-not-available"><?php echo $usernameErr;?></span>
+      <span style="color:red;"><?php echo $usernameErr;?></span>
     </p>
     <p>
       <label for="pswd">Password:</label>
       <input data-toggle="password" name="pswd" id="pswd" class="form-control" type="password" maxlength="10">
+      <span style="color:red;"><?php echo $pswdErr;?></span>
       <p id="CapsLk">WARNING! Caps lock is ON.</p>
     </p>
     <div class="checkbox mb-3">
@@ -79,7 +88,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
 <?php
 
 //if sibmitted check password and username
-} else if(password_verify($pswd, $value)) {
+} else if(password_verify($pswd, $value) && $valid) {
   // visitor's name and password combination are correct
   //extract and decrypt secret
   $sql = "SELECT AES_DECRYPT(secret, UNHEX('$key')) FROM member_creds WHERE username = '$username' LIMIT 1";
@@ -92,8 +101,6 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
   $_SESSION['email'] = $email;
   $result -> free_result();
   $conn->close();
-  
-
 
   if(!$secret == null){
     echo '<fieldset class="fieldset"><legend>Please Log In</legend>';

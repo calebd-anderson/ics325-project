@@ -44,16 +44,21 @@
         }
 
         //username validate
-        $username = $_POST['username'];
+        $username = test_input($_POST['username']);
         $_SESSION['username'] = $username;
 
         //password validate
-        $pswd = test_input($_POST['pswd']);
-        // check if password meets requirements only contains letters
-        if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$pswd)) {
-            $pswdErr = "Password must be a minimum of 8 characters, and contain numbers, as well as upper and lower case letters.";
+        if (empty($_POST['pswd'])) {
+            $pswdErr = "Password is required. ";
             $valid = false;
-        }        
+        }else{
+            $pswd = test_input($_POST['pswd']);
+            // check if password meets requirements only contains letters
+            if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$pswd)) {
+                $pswdErr = "Password must be a minimum of 8 characters, and contain numbers, as well as upper and lower case letters.";
+                $valid = false;
+            }
+        }
 
         $phone = test_input($_POST['us_phone']);
         $email = test_input($_POST['email']);
