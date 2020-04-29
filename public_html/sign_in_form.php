@@ -7,12 +7,13 @@ require '../SQLcreds.inc';
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    }  
+    }
+    $usernameErr = '';
 
   //get username and password variables
   if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (empty($_POST['username'])) {
-      //$usernameErr = "Name is required. ";
+      $usernameErr = "Username is required. ";
       } else {
           $username = test_input($_POST['username']);
           $_SESSION['username'] = $username;
@@ -57,6 +58,7 @@ if ((!isset($_POST['username'])) || (!isset($_POST['pswd']))) {
     <p>
       <label for="name">Username:</label>
       <input type="text" name="username" id="name" size="20" class="form-control"/>
+      <span class="status-not-available"><?php echo $usernameErr;?></span>
     </p>
     <p>
       <label for="pswd">Password:</label>
