@@ -17,11 +17,11 @@ include_js: false
     </div>
   </header>
 
-  <div class="nav-scroller py-1 mb-2">
+  <!-- <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 text-muted" href="blogadmin.php">Write a Post</a>
     </nav>
-  </div>
+  </div> -->
 
   <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
     <div class="col-md-6 px-0">

@@ -2,7 +2,7 @@
     include("header.php");
 ?>
 <?php
-require '../SQLcreds.inc';
+require '../../SQLcreds.inc';
 $db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
         if(mysqli_connect_errno()){
             echo "<p>Error: Could not connect to database.<br/>
@@ -35,10 +35,8 @@ if (isset($_POST['Search'])) {
         }
     }
 }
-
-
 $db->close();
 ?>
 <?php
-    include('footer.php');
+    include('../footer.php');
 ?>
