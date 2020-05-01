@@ -21,15 +21,14 @@
             printf('<img class="card-img-top" src="%s" alt="%s"/>', $obj->img, $obj->alt);
             echo '<div class="card-body">';
             printf('<h5 class="card-title">%s</h5>', $obj->title);
-            // echo '';
             printf('<p class="price">$%s</p>', $obj->price);
             printf('<p class="card-text">%s</p>',$obj->descr);
             printf('<p class="card-text">
             <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">QNTY</span>
+                <span class="input-group-text" id="inputGroup-sizing-sm">QTY</span>
             </div>
-            <input type="text" class="form-control" name="quantity" value="1" size="2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">            
+            <input type="number" class="form-control" name="quantity" min="0" max="5" value="0" size="1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">            
             <button type="submit" class="btn btn-primary" name="%s">Add to Cart</button>
             </div></p>', $obj->prodID);
             echo '</div>';
