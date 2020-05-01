@@ -1,0 +1,209 @@
+<?php
+    include('header.php');
+?>
+
+<!-- Steps 1: Create Billing Plan -->
+<?php
+use PayPal\Api\ChargeModel;
+use PayPal\Api\Currency;
+use PayPal\Api\MerchantPreferences;
+use PayPal\Api\PaymentDefinition;
+use PayPal\Api\Plan;
+use PayPal\Api\Patch;
+use PayPal\Api\PatchRequest;
+use PayPal\Common\PayPalModel;
+
+// Create a new billing plan
+if (! empty($_POST["plan_name"]) && ! empty($_POST["plan_description"])) {
+    $plan = new Plan();
+    $plan->setName($_POST["plan_name"])
+        ->setDescription($_POST["plan_description"]);
+
+    // Set billing plan definitions
+    $paymentDefinition = new PaymentDefinition();
+    $paymentDefinition->setName('Regular Payments')
+        ->setType('REGULAR')
+        ->setFrequency('DAY')
+        ->setFrequencyInterval('1')
+        ->setCycles('3')
+        ->setAmount(new Currency(array(
+        'value' => 3,
+        'currency' => 'USD'
+    )));
+
+    // Set charge models
+    $chargeModel = new ChargeModel();
+    $chargeModel->setType('SHIPPING')->setAmount(new Currency(array(
+        'value' => 1,
+        'currency' => 'USD'
+    )));
+    $paymentDefinition->setChargeModels(array(
+        $chargeModel
+    ));
+
+    // Set merchant preferences
+    $merchantPreferences = new MerchantPreferences();
+    $merchantPreferences->setReturnUrl('http://<host>/how-to-manage-recurring-payments-    using-paypal-subscriptions-in-php/index.php?status=success')
+        ->setCancelUrl('http://<host>/how-to-manage-recurring-payments-using-paypal-    subscriptions-in-php/index.php?status=cancel')
+        ->setAutoBillAmount('yes')
+        ->setInitialFailAmountAction('CONTINUE')
+        ->setMaxFailAttempts('0')
+        ->setSetupFee(new Currency(array(
+        'value' => 1,
+        'currency' => 'USD'
+    )));
+
+    $plan->setPaymentDefinitions(array(
+        $paymentDefinition
+    ));
+    $plan->setMerchantPreferences($merchantPreferences);
+
+    try {
+        $createdPlan = $plan->create($apiContext);
+    } catch (PayPal\Exception\PayPalConnectionException $ex) {
+        echo $ex->getCode();
+        echo $ex->getData();
+        die($ex);
+    } catch (Exception $ex) {
+        die($ex);
+    }
+}
+
+// Activate Billing Plan
+try {
+    $patch = new Patch();
+    $value = new PayPalModel('{"state":"ACTIVE"}');
+    $patch->setOp('replace')
+        ->setPath('/')
+        ->setValue($value);
+    $patchRequest = new PatchRequest();
+    $patchRequest->addPatch($patch);
+    $createdPlan->update($patchRequest, $apiContext);
+    $patchedPlan = Plan::get($createdPlan->getId(), $apiContext);
+    
+    require_once "createPHPTutorialSubscriptionAgreement.php";
+} catch (PayPal\Exception\PayPalConnectionException $ex) {
+    echo $ex->getCode();
+    echo $ex->getData();
+    die($ex);
+} catch (Exception $ex) {
+    die($ex);
+}
+?>
+
+<!-- Steps 2: Create Billing Agreement -->
+<?php
+use PayPal\Api\Agreement;
+use PayPal\Api\Payer;
+use PayPal\Api\ShippingAddress;
+// use PayPal\Api\Plan;
+
+// Create new agreement
+$startDate = date('c', time() + 3600);
+$agreement = new Agreement();
+$agreement->setName('PHP Tutorial Plan Subscription Agreement')
+    ->setDescription('PHP Tutorial Plan Subscription Billing Agreement')
+    ->setStartDate($startDate);
+
+// Set plan id
+$plan = new Plan();
+$plan->setId($patchedPlan->getId());
+$agreement->setPlan($plan);
+
+// Add payer type
+$payer = new Payer();
+$payer->setPaymentMethod('paypal');
+$agreement->setPayer($payer);
+
+// Adding shipping details
+$shippingAddress = new ShippingAddress();
+$shippingAddress->setLine1('111 First Street')
+    ->setCity('Saratoga')
+    ->setState('CA')
+    ->setPostalCode('95070')
+    ->setCountryCode('US');
+$agreement->setShippingAddress($shippingAddress);
+
+try {
+    // Create agreement
+    $agreement = $agreement->create($apiContext);
+    
+    // Extract approval URL to redirect user
+    $approvalUrl = $agreement->getApprovalLink();
+    
+    header("Location: " . $approvalUrl);
+    exit();
+} catch (PayPal\Exception\PayPalConnectionException $ex) {
+    echo $ex->getCode();
+    echo $ex->getData();
+    die($ex);
+} catch (Exception $ex) {
+    die($ex);
+}
+
+// Step 3: Redirect to Customer Approval
+
+// Step 4: Execute Payment
+if (!empty($_GET['status'])) {
+    if($_GET['status'] == "success") {
+        $token = $_GET['token'];
+        $agreement = new \PayPal\Api\Agreement();
+        
+        try {
+            // Execute agreement
+            $agreement->execute($token, $apiContext);
+        } catch (PayPal\Exception\PayPalConnectionException $ex) {
+            echo $ex->getCode();
+            echo $ex->getData();
+            die($ex);
+        } catch (Exception $ex) {
+            die($ex);
+        }
+    } else {
+        echo "user canceled agreement";
+    }
+    exit;
+}
+?>
+
+
+
+
+
+<h1>I Will Manage Your Membership</h1>
+<!--
+    - make a form with recuring payment date select 
+    - amount select
+-->
+
+<div id="subscription-plan">
+    <div class="plan-info">PHP jQuery Tutorials</div>
+    <div class="plan-desc">Read tutorials to learn PHP.</div>
+    <div class="price">$49 / month</div>
+
+    <div>
+        <form method="post">
+
+            <input type="hidden" name="plan_name"
+                value="PHP jQuery Tutorials" /> <input type="hidden"
+                name="plan_description"
+                value="Tutorials access to learn PHP with simple examples." />
+            <input type="submit" name="subscribe" value="Subscribe"
+                class="btn-subscribe" />
+        </form>
+    </div>
+</div>
+
+<?php
+require 'vendor/PayPal-PHP-SDK/autoload.php';
+
+$apiContext = new \PayPal\Rest\ApiContext(new \PayPal\Auth\OAuthTokenCredential('CLIENT_ID', 'CLIENT_SECRET'));
+
+if (! empty($_POST["subscribe"])) {
+    require_once "./Service/createPHPTutorialSubscriptionPlan.php";
+}
+?>
+
+<?php
+    include('footer.php');
+?>
