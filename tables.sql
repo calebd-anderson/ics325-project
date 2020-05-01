@@ -25,7 +25,7 @@ CREATE TABLE `member_contact` (
 -- price
 -- img
 -- descr
--- LOAD DATA INFILE "<root_dir>/ICS325_Project/products.txt" INTO TABLE products;
+-- LOAD DATA INFILE "C:/Users/caleb/Documents/GitHub/ICS325_Project/products.txt" INTO TABLE products;
 CREATE TABLE products (
   prodID INT UNSIGNED NOT NULL PRIMARY KEY,
   alt CHAR(20) NOT NULL,
