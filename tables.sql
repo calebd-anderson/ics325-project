@@ -1,3 +1,11 @@
+CREATE TABLE `member_creds` (
+  `username` char(20) NOT NULL,
+  `memberID` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `pswd` char(255) NOT NULL,
+  `secret` blob DEFAULT NULL,
+  UNIQUE KEY `username` (`username`)
+);
+
 CREATE TABLE `member_contact` (
   `memberID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `firstName` CHAR(50) NOT NULL,
@@ -9,14 +17,6 @@ CREATE TABLE `member_contact` (
     FOREIGN KEY (memberID) REFERENCES member_creds (memberID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
-);
-
-CREATE TABLE `member_creds` (
-  `username` char(20) NOT NULL,
-  `memberID` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `pswd` char(255) NOT NULL,
-  `secret` blob DEFAULT NULL,
-  UNIQUE KEY `username` (`username`)
 );
 
 -- PRODUCT TABLE
@@ -53,3 +53,9 @@ CREATE TABLE member_order (
   FOREIGN KEY(prodID) REFERENCES  products(prodID)
 ) ENGINE = InnoDB;
 
+CREATE TABLE `member_blog` (
+  `blogID` int(10) NOT NULL AUTO_INCREMENT,
+  `title` char(30) NOT NULL,
+  `body` text NOT NULL,
+  PRIMARY KEY (`blogID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;

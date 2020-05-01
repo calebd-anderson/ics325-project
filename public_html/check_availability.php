@@ -1,5 +1,5 @@
 <?php
-  require("../DBController.php");
+  require("../u_nameavaildbctrl.php");
   @$db_handle = new DBController();
   // echo '<p>'.$_POST["username"].'</p>';
   if(!empty($_POST["username"])) {

@@ -59,33 +59,11 @@ input[type=email]:focus {
   background-color: #FFE0B2;
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
-.error {
-  box-shadow: 0 0 5px #FF5252;
-  border-color: #FF1744;
-}
+
 /* remove popover on mobile */
 @media screen and (max-width:650px){
   .popover {
     display: none !important;
-  }
-}
-/* @media screen and (max-width:465px){
-  .input_icon {
-    position: absolute;
-    margin-right: 25%;
-  }
-} */
-/* pswd icon */
-.eye_container {
-  position: relative;    
-}
-/* Desktop size */
-@media screen and (min-width:468.98px){
-  .input_icon {
-    /* background-color: #1caa46; */
-    position: absolute;
-    right: 4%;
-    /* right: .75vw; */
   }
 }
 /* CapsLk warning */
@@ -170,6 +148,10 @@ input[type=email]:focus {
   top: 0;
   left: 0;
   font-size: 36px;
+}
+#main {
+  transition: margin-right .5s;
+  /* padding: 16px; */
 }
 /*#endregion-------SideNav Styles-------*/
 
@@ -326,4 +308,3 @@ footer {
   -ms-flex: 2;
   flex: 2;
 }
-

@@ -9,6 +9,7 @@ session_start();
       <title>Chasing Antartica</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="page icon" href="favicon.ico" />
+
       <!-- Homebrew Style -->
       <link rel="stylesheet" href="css/style.css">
       <!-- W3 School CSS -->
@@ -17,13 +18,13 @@ session_start();
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/main.css">
       <!-- Bootstrap, Font Awesome Style -->
+      <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- Homebrew Javascript -->
       <script src="js/script.js"></script>
       <!-- JQuery, Popper, Bootstrap Libraries -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </head>
@@ -69,7 +70,7 @@ session_start();
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>
-              <!-- dissapear on desktop / appear on mobile -->
+              <!-- dissapear on desktop / appear on mobile -->                      
               <li class="nav-item desktop-hide">
                 <a class="nav-link" href="#">Missions</a>
               </li>
@@ -106,7 +107,7 @@ session_start();
               ?>
 
             </ul>
-            <form class="form-inline my-2 my-lg-0" action="searchResults.php" method="POST">
+            <form class="form-inline my-2 my-lg-0" action="blog/searchResults.php" method="POST">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -121,7 +122,7 @@ session_start();
   <!-- <a href="javascript:void(0)" id="navclosebtn" onclick="closeNav()">&times;</a> -->
   <!-- <a href="#" class="navicon" id="expicon">Expeditions</a> -->
   <a href="#" class="navicon" id="newsicon">News</a>
-  <a href="#" class="navicon" id="mbricon">Membership</a>        
+  <a href="membership.php" class="navicon" id="mbricon">Membership</a>        
   <a href="store/store_index.php" class="navicon" id="storeicon">Store</a>
   <a href="blog/blog.php" class="navicon" id="discourseicon">Discourse</a>
   <!-- <a href="blog/blog.php" class='far fa-comments'> Discourse</a> -->

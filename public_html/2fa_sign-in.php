@@ -13,11 +13,11 @@
     if (!isset($_POST['code'])){
         //code not entered
     }else if($result){
-        echo '<section><p>You\'re authorized.</p></section>';
+        echo '<p class="valid">You\'re authorized.</p>';
         $_SESSION['valid_user'] = $_SESSION['username'];
         require('footer.php');
     }else{
-        echo '<section><p>You\'re not authorized.</p></section>';
+        echo '<p class="invalid">You\'re not authorized.</p>';
         require('footer.php');
     }
 ?>

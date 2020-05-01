@@ -6,12 +6,12 @@ function toggleNav() {
     (document.getElementById("websiteNav").style.width = "280px",
     document.getElementById("main").style.marginRight = "21%");
 }
-function closeNav() {
-    document.getElementById("websiteNav").style.width = "0";
-    document.getElementById("main").style.marginRight = "0%";
-}
+// function closeNav() {
+//     document.getElementById("websiteNav").style.width = "0";
+//     document.getElementById("main").style.marginRight = "0%";
+// }
 
-// //event listening for form errors
+//event listening for form errors
 // window.addEventListener('load', function () {
 //     const fields = document.getElementsByClassName('highlightable');
 //         for (let i = 0; i < fields.length; i++) {
