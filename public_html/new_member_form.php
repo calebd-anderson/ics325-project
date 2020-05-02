@@ -151,6 +151,7 @@
 <!-- Contact Info -->
         <div class="tab"><h5>Contact Info:</h5>
             <p><input class="form-control" type="email" placeholder="E-mail..." name="email" oninput="this.className = 'form-control'"></p>
+            <!-- <input autocomplete="email" aria-invalid="false" name="email" placeholder="" type="email" class="Input Input--nowrap PressableContext Padding-horizontal--12 Padding-vertical--8 PressableContext--cursor--text PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--regular PressableContext--height PressableContext--height--large PressableContext--radius--all PressableContext--width PressableContext--width--maximized TextInput-element TextInput-element--align--left PressableContext Padding-horizontal--12 Padding-vertical--8 PressableContext--cursor--text PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--regular PressableContext--height PressableContext--height--large PressableContext--radius--all PressableContext--width PressableContext--width--maximized" value="ande4905@gmail.com" style="color: rgb(60, 66, 87);"> -->
             <p><input class="form-control" type="text" placeholder="Address..." name="addr" oninput="this.className = 'form-control'"></p>
             <p><input class="phone_us form-control" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = 'form-control'"></p>
         </div>
