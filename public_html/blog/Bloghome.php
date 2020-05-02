@@ -8,7 +8,9 @@ include_js: false
 --- -->
 <?php
     require('header.php');
+    
 ?>
+
 <div class="container">
   <header class="blog-header py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
@@ -137,29 +139,11 @@ include_js: false
       </div>
 
       <div class="p-4">
-        <h4 class="font-italic">Archives</h4>
-        <ol class="list-unstyled mb-0">
-          <li><a href="#">March 2014</a></li>
-          <li><a href="#">February 2014</a></li>
-          <li><a href="#">January 2014</a></li>
-          <li><a href="#">December 2013</a></li>
-          <li><a href="#">November 2013</a></li>
-          <li><a href="#">October 2013</a></li>
-          <li><a href="#">September 2013</a></li>
-          <li><a href="#">August 2013</a></li>
-          <li><a href="#">July 2013</a></li>
-          <li><a href="#">June 2013</a></li>
-          <li><a href="#">May 2013</a></li>
-          <li><a href="#">April 2013</a></li>
-        </ol>
-      </div>
-
-      <div class="p-4">
         <h4 class="font-italic">Elsewhere</h4>
         <ol class="list-unstyled">
-          <li><a href="#">GitHub</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
+          <li><a href="https://github.com/calebTree/ICS325_Project">GitHub</a></li>
+          <li><a href="https://twitter.com/AntarcticReport?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></li>
+          <li><a href="https://www.facebook.com/AusAntarctic/?__tn__=%2Cd%2CP-R&eid=ARCjbMk6cUaE0LWoH4h3XMQhwtBM2jeadu59JwzYswv48bEo89_6OnwBgZERCHnYTK7SKpLrgewOt84o">Facebook</a></li>
         </ol>
       </div>
     </aside><!-- /.blog-sidebar -->
