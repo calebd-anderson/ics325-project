@@ -60,7 +60,7 @@ CREATE TABLE `member_blog` (
   PRIMARY KEY (`blogID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
--- Payments table schema
+-- Payments table
 CREATE TABLE IF NOT EXISTS `payment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `item_number` varchar(255) NOT NULL,
