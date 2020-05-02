@@ -8,6 +8,15 @@ body {
   font-family: Georgia, serif;
   padding-top: 50px;
 }
+
+#pageContainer {
+  position: relative;
+  min-height: 100%;
+}
+#content-wrap{
+  padding-bottom: 200px;
+}
+
 article{
   margin: 2%;
 }
@@ -242,8 +251,12 @@ input[type=email]:focus {
 
 /*#region-------Footer Styles-------*/
 footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  margin: auto;
+  height: 200px;
+
+
   /* padding: 10px; */
 }
 .resources {

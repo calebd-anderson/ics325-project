@@ -55,21 +55,7 @@ session_start();
                 </svg> Help
                 </a>
               </li>
-              <li class="nav-item dropdown desktop_show">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
               <!-- dissapear on desktop / appear on mobile -->
-              <li class="nav-item desktop-hide">
-                <a class="nav-link" href="#">Missions</a>
-              </li>
               <li class="nav-item desktop-hide">
                 <a class="nav-link" href="blog.php">
                 <svg class="bi bi-chat-quote" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -110,11 +96,7 @@ session_start();
                 </svg> Write a Post</a>
               </li>
             </ul>
-<<<<<<< HEAD
-            <form class="form-inline my-2 my-lg-0" action="../searchResults.php">
-=======
             <form class="form-inline my-2 my-lg-0" action="searchResults.php" method="POST">
->>>>>>> c2ac636eabb4a02b13565690e59fdf0f97085ea8
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -132,7 +114,7 @@ session_start();
   <a href="#" class="navicon" id="newsicon">News</a>
   <a href="../membership.php" class="navicon" id="mbricon">Membership</a>
   <a href="../store/store_index.php" class="navicon" id="storeicon">Store</a>
-  <a href="blog.php" class="navicon" id="discourseicon">Discourse</a>
+  <a href="BlogHome.php" class="navicon" id="discourseicon">Discourse</a>
   <!-- <a href="blog/blog.php" class='far fa-comments'> Discourse</a> -->
   <!-- <a href="my_robThree_2FA.php" id="">2FA Demo</a> -->
 </div>
