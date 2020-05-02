@@ -41,9 +41,10 @@
         </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+              <!-- <li class="nav-item active">
 
-              </li>
+              </li> -->
+              <!-- About -->
               <li class="nav-item">
                 <a class="nav-link" href="About.php">
                   <svg class="bi bi-clipboard" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -51,6 +52,7 @@
                     <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h3a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5zm-3-1A1.5 1.5 0 005 1.5v1A1.5 1.5 0 006.5 4h3A1.5 1.5 0 0011 2.5v-1A1.5 1.5 0 009.5 0h-3z" clip-rule="evenodd"/>
                   </svg> About</a>
               </li>
+              <!-- Help -->
               <li class="nav-item">
                 <a class="nav-link" href="Contact.php">
                 <svg class="bi bi-question-diamond" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -58,6 +60,18 @@
                   <path d="M5.25 6.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
                 </svg> Help
                 </a>
+              </li>
+              <!-- Dropdown Menu -->
+              <li class="nav-item dropdown desktop_show">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
               </li>
               <!-- dissapear on desktop / appear on mobile -->                      
               <li class="nav-item desktop-hide">
@@ -90,7 +104,6 @@
                   echo '<li class="nav-item"><a class="nav-link" href="sign_in_form.php"><i class="fa fa-fw fa-user"></i> Login</a></li>';
                 }
               ?>
-
             </ul>
             <form class="form-inline my-2 my-lg-0" action="blog/searchResults.php" method="POST">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="Search">
