@@ -1,7 +1,7 @@
 <?php
   $servername = "localhost";
-  $SQLuser = "***REMOVED***";
-  $SQLpswd = "***REMOVED***";
+  $SQLuser = "root";
+  $SQLpswd = "";
   $dbname = "***REMOVED***";
 
   //key encrypts secret
