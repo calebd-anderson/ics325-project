@@ -1,6 +1,4 @@
-<?php
-    include("header.php");
-?>
+<?php require('header.php') ?>
 <div id="pageContainer">
     <div id="content-wrap">
         <?php
@@ -14,13 +12,13 @@
 
         $output = '';
 
+
         //sets it to grab search input//
-        if (isset($_POST['Search']) && !empty($_POST['Search'])) {
-            if (preg_replace("[^a-zA-Z0-9_ %\[\]\.\(\)%&-]s","", $_POST['Search'])) {
-                $squery = $_POST['Search'];
-            }
+        if(isset($_GET['ID'])) {
+
+            $id = mysqli_real_escape_string($db, $_GET['ID']);
             //query db for items that match the search term//
-            $sql = "SELECT * FROM member_blog WHERE title LIKE '%" . $squery . "%' OR body LIKE '%" . $squery  ."%' ";
+            $sql = "SELECT * FROM member_blog WHERE blogID LIKE '%" . $id . "%'";
             $result = mysqli_query($db, $sql);
             $count = mysqli_num_rows($result);
             if ($count == 0 || $count == null) {
@@ -33,13 +31,15 @@
                     $body = $row["body"];
                     $id = $row["blogID"];
 
-                    echo "<div><a href='detail.php?ID={$id}'>". htmlspecialchars($title)."</a>"."</div>";
+                    echo "<div>".htmlspecialchars($title)."<br>".htmlspecialchars($body)."</div>";
                 }
             }
-        }else {
-        echo "Please enter a search word.";
+        
+            $db->close();
+        } else {
+            header("Location: Bloghome.php");
+            exit();
         }
-        $db->close();
         ?>
     </div>
     </div>
