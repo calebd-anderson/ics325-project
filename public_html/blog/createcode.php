@@ -1,6 +1,6 @@
 <?php
 
-require("../header.php"); 
+require("header.php"); 
 
 require '../../SQLcreds.inc';
 $db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);

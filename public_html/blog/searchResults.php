@@ -1,8 +1,19 @@
 <?php
     include("header.php");
 ?>
+<style>
+    .display-4 {
+        text-align: center;  
+        color: #737373; 
+    }
+    .sPost{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+</style>
 <div id="pageContainer">
     <div id="content-wrap">
+        <p class="display-4">Search Results</p>
         <?php
         require '../../SQLcreds.inc';
         $db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
@@ -28,16 +39,19 @@
                 echo $output;
             }
             else {
-                while ($row = $result->fetch_assoc()) {
-                    $title = $row["title"];
-                    $body = $row["body"];
-                    $id = $row["blogID"];
-
-                    echo "<div><a href='detail.php?ID={$id}'>". htmlspecialchars($title)."</a>"."</div>";
-                }
+                foreach($result as $result):?>
+                 <div class="sPost">
+                     <div class="container-md">
+                         <h4 class="mb-4 font-italic"><a href="detail.php?ID=<?php echo $result['blogID'] ?>"><?php echo $result['title'] ?></a></h4>
+                         <p class="lead border-bottom">
+                             <?php echo html_entity_decode(substr($result['body'], 0, 150) . '...') ?>
+                        </p>
+                     </div>
+                </div>
+                <?php endforeach;
             }
         }else {
-        echo "Please enter a search word.";
+        echo "<p class='display-4'>"."Please enter a search word."." </p>";
         }
         $db->close();
         ?>
