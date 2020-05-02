@@ -1,4 +1,32 @@
-<?php include("header.php"); ?>
+<?php include("header.php"); 
+
+require '../../SQLcreds.inc';
+$db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
+        if(mysqli_connect_errno()){
+            echo "<p>Error: Could not connect to database.<br/>
+                Please try again later.</p>";
+            exit;
+        }
+
+$output = '';
+
+function getPublishedPosts(){
+    global $db;
+    $sql = SELECT "SELECT * FROM member_blog WHERE blogID=true";
+    $result = mysqli_query($db, $sql);
+
+    $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    return $posts;
+}
+$db->close();
+
+
+?>
+<?php
+    include('../footer.php');
+?>
+?>
+
 <body id="main">
 <!-- Top Bar -->
 
@@ -48,58 +76,15 @@
         <h1 class="title">New Beginnings</h1>
         </center>
         <div class="post-content">
-            <p> Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.
-            </p>
-            <p>
-                Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.
-            </p>
-            <p>
-                Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.
-            </p>
-            <p> Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.
-            </p>
-            <p>
-                Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.
-            </p>
-            <p>
-                Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.Welcome to my first post, im very excited to begin this 
-                journey with you, the internet!I am Dr. Neil Mancer, I am the lead scientist on the Chasing Antartica
-                expedition. Thank you for donating to our cause, this personal blog is one of the few benefits obtainable by
-                donating to the expedition.
-            </p>
+            require '../../SQLcreds.inc';
+$db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
+        if(mysqli_connect_errno()){
+            echo "<p>Error: Could not connect to database.<br/>
+                Please try again later.</p>";
+            exit;
+        }
+
+$output = '';
 
         </div>
         <div class="sidebar-single">
