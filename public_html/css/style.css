@@ -14,7 +14,7 @@ body {
   min-height: 100%;
 }
 #content-wrap{
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 article{
@@ -35,7 +35,7 @@ article{
   left: 16px !important;
 }
 /* .carousel-item{
-  position: relative;
+  
 } */
 cite{
   background-color: black;
