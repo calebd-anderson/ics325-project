@@ -55,6 +55,18 @@ session_start();
                 </svg> Help
                 </a>
               </li>
+              <!-- Dropdown Menu -->
+              <li class="nav-item dropdown desktop_show">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
               <!-- dissapear on desktop / appear on mobile -->
               <li class="nav-item desktop-hide">
                 <a class="nav-link" href="blog.php">
