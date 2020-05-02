@@ -1,5 +1,9 @@
 <?php
   require('header.php');
+  // $memberID = $_SESSION['memberID'];
+  // echo '<p>Your member ID: '.$_SESSION['memberID'].'</p>';
+  // echo '<p>Your member ID: '.gettype($memberID).'</p>';
+  // echo '<p>Your POST memberID type: '.gettype($_POST['memberID']).'</p>';
 ?>
 <!-- page content -->
 <body>
