@@ -1,5 +1,5 @@
 <?php 
-    require("header.php"); 
+    include("header.php"); 
 ?>
 
 <style>    
@@ -78,7 +78,9 @@ right: 20px;
                     <a href="Bloghome.php" class="btn read-more">Access Blog</a>
                 </div>
         </div>
-
+    </div>
+</body>
+    
 <?php
     require("../footer.php");
 ?>
