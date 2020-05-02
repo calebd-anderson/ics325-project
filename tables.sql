@@ -60,15 +60,34 @@ CREATE TABLE `member_blog` (
   PRIMARY KEY (`blogID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
--- Payments table schema
+-- w/ FK
 CREATE TABLE IF NOT EXISTS `payment` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `item_number` varchar(255) NOT NULL,
-  `item_name` varchar(255) NOT NULL,
-  `payment_status` varchar(255) NOT NULL,
-  `payment_amount` double(10,2) NOT NULL,
-  `payment_currency` varchar(255) NOT NULL,
-  `txn_id` varchar(255) NOT NULL,
-  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-);
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`memberID` INT(10) UNSIGNED,
+	`item_number` varchar(255) NOT NULL,
+	`item_name` varchar(255) NOT NULL,
+	`payment_status` varchar(255) NOT NULL,
+	`payment_amount` double(10,2) NOT NULL,
+	`payment_currency` varchar(255) NOT NULL,
+	`txn_id` varchar(255) NOT NULL,
+	`create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`),
+	INDEX (memberID),
+	FOREIGN KEY(memberID) REFERENCES member_creds(memberID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+)	ENGINE = InnoDB;
+
+-- w/o FK
+CREATE TABLE IF NOT EXISTS `payment` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`memberID` INT(10) UNSIGNED,
+	`item_number` varchar(255) NOT NULL,
+	`item_name` varchar(255) NOT NULL,
+	`payment_status` varchar(255) NOT NULL,
+	`payment_amount` double(10,2) NOT NULL,
+	`payment_currency` varchar(255) NOT NULL,
+	`txn_id` varchar(255) NOT NULL,
+	`create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`)
+)	ENGINE = InnoDB;
