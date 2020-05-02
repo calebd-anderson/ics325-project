@@ -1,7 +1,7 @@
 <?php
 namespace PhpPot\Service;
 
-require_once 'vendor/stripe/autoload.php';
+require_once '../../vendor/autoload.php';
 
 use \Stripe\Stripe;
 use \Stripe\Customer;
