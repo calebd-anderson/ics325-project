@@ -1,8 +1,6 @@
 <?php
 include 'header.php';
 ?>
-<div id="pageContainer">
-  <div id="content-wrap">
     <?php
       $usernameErr = $pswdErr = '';
       $valid = true;
@@ -142,11 +140,7 @@ include 'header.php';
           $conn->close();
         }
     ?>
-  </div>
   <?php include 'footer.php'; ?>
-</div>
-
-
 
 <script>  
   //caps-lock detect

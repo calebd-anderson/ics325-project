@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class DBController
 {
     private $host = "localhost";
@@ -9,9 +9,31 @@ class DBController
 
     private $conn;
 
+    public $username;
+    public $memberID;
+
+    // assign logged-in user memberID to local variable
+    // $query3 = "DELETE FROM member_contact WHERE memberID = LAST_INSERT_ID();";
+    // $stmt3 = $conn->prepare($query3);
+    // $stmt3->execute();
+
     function __construct()
     {
         $this->conn = $this->connectDB();
+        $this->username = $_SESSION['username'];
+        $this->memberID = $this->get_memberID();
+    }
+
+    function get_memberID(){
+        $conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        $username = $this->username;
+        $memberID = (int)$conn->query("SELECT memberID FROM member_creds WHERE username = '$username'")->fetch_object()->memberID;
+        return $memberID;
+    }
+
+    function get_Username(){
+        $username = $_SESSION['username'];
+        return $username;
     }
 
     function connectDB()
@@ -57,4 +79,5 @@ class DBController
         $sql->execute();
     }
 }
+
 ?>
