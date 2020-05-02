@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include("header.php"); 
 
 require '../../SQLcreds.inc';
@@ -27,6 +28,9 @@ $db->close();
 ?>
 ?>
 
+=======
+<?php include("../header.php"); ?>
+>>>>>>> 8c62b6cb51e7b07189dfdb06f7a31bdafff9cec3
 <body id="main">
 <!-- Top Bar -->
 
