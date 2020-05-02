@@ -2,7 +2,6 @@
     require('header.php');
 ?>
 
-
 <style> 
 
 .admin-content .btn
