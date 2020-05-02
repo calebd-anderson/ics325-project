@@ -1,4 +1,26 @@
-<?php require('header.php') ?>
+<?php require('header.php') ?> 
+
+<style>
+#pageContainer {
+    border: 23px solid #adb1b8;
+    padding: 20px;
+}
+#text{
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+#body{
+    text-align: center;
+    padding: 40px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+
+</style>
 <div id="pageContainer">
     <div id="content-wrap">
         <?php
@@ -31,7 +53,8 @@
                     $body = $row["body"];
                     $id = $row["blogID"];
 
-                    echo "<div>".htmlspecialchars($title)."<br>".htmlspecialchars($body)."</div>";
+                    echo "<div id='text'><h3>".htmlspecialchars($title)."</h3>"."<br>". "</div>";
+                    echo "<div id='body'>"."<p class='lead'>".htmlspecialchars($body)."</p>"."</div>";
                 }
             }
         
