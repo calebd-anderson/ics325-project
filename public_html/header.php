@@ -109,11 +109,7 @@
   <a href="#" class="navicon" id="newsicon">News</a>
   <a href="membership.php" class="navicon" id="mbricon">Membership</a>        
   <a href="store/store_index.php" class="navicon" id="storeicon">Store</a>
-<<<<<<< HEAD
-  <a href="blog/Bloghome.php" class="navicon" id="discourseicon">Discourse</a>
-=======
   <a href="blog/BlogHome.php" class="navicon" id="discourseicon">Discourse</a>
->>>>>>> 8c62b6cb51e7b07189dfdb06f7a31bdafff9cec3
   <!-- <a href="blog/blog.php" class='far fa-comments'> Discourse</a> -->
   <!-- <a href="my_robThree_2FA.php" id="">2FA Demo</a> -->
 </div>

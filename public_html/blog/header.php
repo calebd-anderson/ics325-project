@@ -106,6 +106,7 @@ session_start();
           </div>
         </nav>
       </article>
+    </body>
 
 <!-- navbar -->
 <div id="websiteNav" class="sidenav">        
