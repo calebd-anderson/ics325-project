@@ -1,7 +1,7 @@
-body {
+/* body {
     font-family: Arial;
     width: 550px;
-}
+} */
 
 #frmStripePayment {
     max-width: 300px;
@@ -11,6 +11,7 @@ body {
 }
 
 .test-data {
+    width: 550px;
     margin-top: 40px;
 }
 
@@ -61,7 +62,7 @@ body {
 }
 
 select.demoSelectBox {
-    height: 35px;
+    /* height: 35px; */
     margin-right: 10px;
 }
 

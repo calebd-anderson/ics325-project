@@ -1,4 +1,5 @@
 <?php
+include('header.php');
 use \PhpPot\Service\StripePayment;
 
 require_once "config.php";
@@ -32,11 +33,8 @@ if (!empty($_POST["token"])) {
     }
 }
 ?>
-<html>
-<head>
-<link href="style.css" rel="stylesheet" type="text/css"/ >
-</head>
-<body>
+<div class="container center form-group">
+<!-- body -->
     <?php if(!empty($successMessage)) { ?>
     <div id="success-message"><?php echo $successMessage; ?></div>
     <?php  } ?>
@@ -68,7 +66,7 @@ if (!empty($_POST["token"])) {
                         <select name="month" id="month"
                             class="demoSelectBox">
                             <option value="08">08</option>
-                            <option value="09">9</option>
+                            <option value="09">09</option>
                             <option value="10">10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
@@ -165,9 +163,10 @@ if (!empty($_POST["token"])) {
             
         </table>
     </div>
+</div>
+<!-- close body -->
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script src="vendor/jquery/jquery-3.2.1.min.js"
-        type="text/javascript"></script>
+    <!-- <script src="vendor/jquery/jquery-3.2.1.min.js" type="text/javascript"></script> -->
     <script>
 function cardValidation () {
     var valid = true;
@@ -245,5 +244,6 @@ function stripePay(e) {
     }
 }
 </script>
-</body>
-</html>
+<?php
+include('../footer.php');
+?>
