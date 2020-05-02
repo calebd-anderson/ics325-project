@@ -91,7 +91,7 @@ include_js: false
               <div class="mb-1 text-muted">February 15th</div>
               <p class="mb-auto">Hello everyone, my name is Dr. Lee Sang-Hyeok. I have lived in Japan for the majority of my life. When I was younger, I use to watch a ton of anime. When I would watch them,
                I would always be jealous of the adventures that they would go on. I always told myself, "One day, I'll be the one going on an adventure."</p>
-              <p><?php echo "<a href='detail.php?ID={$blog3id}'>" ?>Continue reading</p>
+              <p><?php echo "<a href='detail.php?ID={$blog3id}'>" ?>Continue reading<?php echo "</a>"?></p>
             </div>
             <div class="col-auto d-none d-lg-block">
             <!-- {% include icons/placeholder.svg width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" %} -->
