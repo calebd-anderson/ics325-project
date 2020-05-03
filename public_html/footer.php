@@ -1,24 +1,46 @@
-<footer>
-<div class="container-fluid">
 <br>
-    <div class="row">
-        <div class="resources col">
-            <h5>Open source projects and tutorials used to make this website:</h5>
-            <a target="_blank" href='https://github.com/RobThree/TwoFactorAuth'>RobThree2FA</a><br />
-            <!-- <a target="_blank" href='https://greensock.com/'>GreenSock Animation</a><br /> -->
-            <a target="_blank" href='https://fonts.google.com/?selection.family=Montserrat'>Google Fonts</a><br />
-            <a target="_blank" href='https://html5boilerplate.com/'>HTML5 Boilerplate</a><br />
-            <a target="_blank" href="https://www.w3schools.com/">w3schools tutorials</a><br />
-            <a target="_blank" href="https://phppot.com/jquery/live-username-availability-check-using-php-and-jquery-ajax/">Username Avail Check</a><br />
-            <a target="_blank" href="https://getbootstrap.com/">Bootstrap</a><br />
-            <a target="_blank" href="https://igorescobar.github.io/jQuery-Mask-Plugin/">Phone # Mask</a><br />
-            <a target="_blank" href="http://bootstrap-show-password.wenzhixin.net.cn/home/">Bootstrap Show Password</a>
+<footer>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      Level 1: .col-sm-9
+      <div class="row">
+        <div class="col-8 col-sm-6">
+          Level 2: .col-8 .col-sm-6
         </div>
-        <div class="Icon_links col">
+        <div class="col-4 col-sm-6">
+          Level 2: .col-4 .col-sm-6
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="row resources">
+            <div class="col">
+                <h5>Open source projects and tutorials used to make this website:</h5>
+                <a target="_blank" href='https://github.com/RobThree/TwoFactorAuth'>RobThree2FA</a><br />
+                <!-- <a target="_blank" href='https://greensock.com/'>GreenSock Animation</a><br /> -->
+                <a target="_blank" href='https://fonts.google.com/?selection.family=Montserrat'>Google Fonts</a><br />
+                <a target="_blank" href='https://html5boilerplate.com/'>HTML5 Boilerplate</a><br />
+                <a target="_blank" href="https://www.w3schools.com/">w3schools tutorials</a><br />
+                <a target="_blank" href="https://phppot.com/jquery/live-username-availability-check-using-php-and-jquery-ajax/">Username Avail Check</a><br />
+            </div>
+            <div class="col">
+                <a target="_blank" href="https://getbootstrap.com/">Bootstrap</a><br />
+                <a target="_blank" href="https://igorescobar.github.io/jQuery-Mask-Plugin/">Phone # Mask</a><br />
+                <a target="_blank" href="http://bootstrap-show-password.wenzhixin.net.cn/home/">Bootstrap Show Password</a><br />
+                <a target="_blank" href="https://phppot.com/php/stripe-payment-gateway-integration-using-php/">Stripe Integration</a><br />
+                <a target="_blank" href="https://phppot.com/php/paypal-payment-gateway-integration-in-php/">PayPal Integration</a>
+            </div>
+        </div>
+        <div style="padding:25px;" class="Icon_links col">
             <div>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/payungkead" title="Payungkead">Payungkead</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             <div>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/smalllikeart" title="smalllikeart">smalllikeart</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             <div>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             <div>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <!-- <div>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div> -->
         </div>
     </div>
     <div class="row">
@@ -35,6 +57,7 @@
         </div>
     </div>
 </div>
+<!-- </div> -->
 </footer>
 </body>
 </html>

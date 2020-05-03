@@ -33,45 +33,42 @@ if (!empty($_POST["token"])) {
     }
 }
 ?>
-<div class="container center form-group">
-<!-- body -->
-    <?php if(!empty($successMessage)) { ?>
-    <div id="success-message"><?php echo $successMessage; ?></div>
-    <?php  } ?>
-    <div id="error-message"></div>
-                
-            <form id="frmStripePayment" action=""
-                method="post">
+<div style="width:950px;" class="container form-group">
+    <div class="row">
+        <div class="col-md">
+            <!-- Form -->
+            <?php if(!empty($successMessage)) { ?>
+            <div id="success-message"><?php echo $successMessage; ?></div>
+            <?php  } ?>
+            <div id="error-message"></div>
+            <form id="frmStripePayment" action="" method="post">
                 <div class="field-row">
-                    <label>Card Holder Name</label> <span
-                        id="card-holder-name-info" class="info"></span><br>
-                    <input type="text" id="name" name="name"
-                        class="demoInputBox">
+                    <label>Amount</label> <span id="amount" class="info"></span><br>
+                    <input type="number" id="amount" name="amount" class="demoInputBox">
                 </div>
                 <div class="field-row">
-                    <label>Email</label> <span id="email-info"
-                        class="info"></span><br> <input type="text"
-                        id="email" name="email" class="demoInputBox">
+                    <label>Card Holder Name</label> <span id="card-holder-name-info" class="info"></span><br>
+                    <input type="text" id="name" name="name" class="demoInputBox">
                 </div>
                 <div class="field-row">
-                    <label>Card Number</label> <span
-                        id="card-number-info" class="info"></span><br> <input
-                        type="text" id="card-number" name="card-number"
-                        class="demoInputBox">
+                    <label>Email</label> <span id="email-info" class="info"></span><br>
+                    <input type="text" id="email" name="email" class="demoInputBox">
+                </div>
+                <div class="field-row">
+                    <label>Card Number</label> <span id="card-number-info" class="info"></span><br> 
+                    <input type="text" id="card-number" name="card-number" class="demoInputBox">
                 </div>
                 <div class="field-row">
                     <div class="contact-row column-right">
-                        <label>Expiry Month / Year</label> <span
-                            id="userEmail-info" class="info"></span><br>
-                        <select name="month" id="month"
-                            class="demoSelectBox">
+                        <label>Expiry Month / Year</label><span id="userEmail-info" class="info"></span><br>
+                        <select name="month" id="month" class="demoSelectBox">
                             <option value="08">08</option>
                             <option value="09">09</option>
                             <option value="10">10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
-                        </select> <select name="year" id="year"
-                            class="demoSelectBox">
+                        </select> 
+                        <select name="year" id="year" class="demoSelectBox">
                             <option value="18">2018</option>
                             <option value="19">2019</option>
                             <option value="20">2020</option>
@@ -88,83 +85,78 @@ if (!empty($_POST["token"])) {
                         </select>
                     </div>
                     <div class="contact-row cvv-box">
-                        <label>CVC</label> <span id="cvv-info"
-                            class="info"></span><br> <input type="text"
-                            name="cvc" id="cvc"
-                            class="demoInputBox cvv-input">
+                        <label>CVC</label><span id="cvv-info" class="info"></span><br>
+                        <input type="text" name="cvc" id="cvc" class="demoInputBox cvv-input">
                     </div>
                 </div>
                 <div>
-                    <input type="submit" name="pay_now" value="Submit"
-                        id="submit-btn" class="btnAction"
-                        onClick="stripePay(event);">
-
+                    <input type="submit" name="pay_now" value="Submit" id="submit-btn" class="btnAction" onClick="stripePay(event);">
                     <div id="loader">
                         <img alt="loader" src="LoaderIcon.gif">
                     </div>
                 </div>
-                <input type='hidden' name='amount' value='0.5'> <input
-                    type='hidden' name='currency_code' value='USD'> <input
-                    type='hidden' name='item_name' value='Test Product'>
-                <input type='hidden' name='item_number'
-                    value='PHPPOTEG#1'>
+                <input type='hidden' name='currency_code' value='USD'>
+                <input type='hidden' name='item_name' value='Test Product'>
+                <input type='hidden' name='item_number'value='PHPPOTEG#1'>
             </form>
-    <div class="test-data">
-        <h3>Test Card Information</h3>
-        <p>Use these test card numbers with valid expiration month
-            / year and CVC code for testing with this demo.</p>
-        <table class="tutorial-table" cellspacing="0" cellpadding="0" width="100%">
-            <tr>
-                <th>CARD NUMBER</th>
-                <th>BRAND</th>
-            </tr>
-            <tr>
-                <td>4242424242424242</td>
-                <td>Visa</td>
-            </tr>
-            <tr>
-                <td>4000056655665556</td>
-                <td>Visa (debit)</td>
-            </tr>
-            
-            <tr>
-                <td>5555555555554444</td>
-                <td>Mastercard</td>
-            </tr>
-            
-            <tr>
-                <td>5200828282828210</td>
-                <td>Mastercard (debit)</td>
-            </tr>
-            
-            <tr>
-                <td>378282246310005</td>
-                <td>American Express</td>
-            </tr>
-            
-            <tr>
-                <td>6011111111111117</td>
-                <td>Discover</td>
-            </tr>
-            
-            <tr>
-                <td>30569309025904</td>
-                <td>Diners Club</td>
-            </tr>
-            
-            <tr>
-                <td>3566002020360505</td>
-                <td>JCB</td>
-            </tr>
-            <tr>
-                <td>6200000000000005</td>
-                <td>UnionPay</td>
-            </tr>
-            
-        </table>
+        </div>
+        <!-- Test Data -->
+        <div class="col-md">
+            <div class="test-data">
+                <h5>Test Card Information</h5>
+                <p>Use these test card numbers with valid expiration month / year and CVC code for testing with this demo.</p>
+                <table class="tutorial-table" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <th>CARD NUMBER</th>
+                        <th>BRAND</th>
+                    </tr>
+                    <tr>
+                        <td>4242424242424242</td>
+                        <td>Visa</td>
+                    </tr>
+                    <tr>
+                        <td>4000056655665556</td>
+                        <td>Visa (debit)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5555555555554444</td>
+                        <td>Mastercard</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5200828282828210</td>
+                        <td>Mastercard (debit)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>378282246310005</td>
+                        <td>American Express</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6011111111111117</td>
+                        <td>Discover</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>30569309025904</td>
+                        <td>Diners Club</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3566002020360505</td>
+                        <td>JCB</td>
+                    </tr>
+                    <tr>
+                        <td>6200000000000005</td>
+                        <td>UnionPay</td>
+                    </tr>            
+                </table>
+            </div>
+        </div>
     </div>
 </div>
-<!-- close body -->
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <!-- <script src="vendor/jquery/jquery-3.2.1.min.js" type="text/javascript"></script> -->
     <script>

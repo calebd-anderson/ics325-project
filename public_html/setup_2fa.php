@@ -50,7 +50,7 @@
         
 <?php
     } else {
-        echo "<article><p>No 2FA for you.</p></article>";
+        echo "<article><p>Redirecting to your account page.</p></article>";
         $query = "UPDATE member_creds SET secret = NULL WHERE username = '$username'";
         $stmt = $conn->prepare($query);
         $stmt->execute();
