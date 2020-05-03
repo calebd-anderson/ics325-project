@@ -137,7 +137,7 @@
 <div id="websiteNav" class="sidenav">        
   <!-- <a href="javascript:void(0)" id="navclosebtn" onclick="closeNav()">&times;</a> -->
   <!-- <a href="#" class="navicon" id="expicon">Expeditions</a> -->
-  <a href="#" class="navicon" id="newsicon">News</a>
+  <!-- <a href="#" class="navicon" id="newsicon">News</a> -->
   <a href="membership.php" class="navicon" id="mbricon">Membership</a>        
   <a href="store/store_index.php" class="navicon" id="storeicon">Store</a>
   <a href="blog/Bloghome.php" class="navicon" id="discourseicon">Discourse</a>
