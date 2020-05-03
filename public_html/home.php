@@ -69,6 +69,36 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <div id="section_space">
+        <div class="flex_Body">
+          <div class="image_flex">
+            <img src="images/exp.jpg" width="400" height="300">
+          </div>
+          <div class="text_flex"> 
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
+            <div class="button_loc" align="center"><a class="art_but" href="add-website-here" target="_blank" ><span>Go to Article</a></div>
+          </div>
+        </div>
+        <div class="flex_Body">
+          <div class="text_flex"> 
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
+            <div class="button_loc" align="center"><a class="art_but" href="add-website-here" target="_blank" ><span>Go to Article</a></div>
+          </div>
+          <div class="image_flex">
+            <img src="images/AntarticaVoyage.jpg" width="400" height="300">
+          </div>
+        </div>
+        <div class="flex_Body">
+          <div class="image_flex">
+            <img src="images/IceAndSnow.jpg" width="400" height="300">
+          </div>
+          <div class="text_flex"> 
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p>
+            <div class="button_loc" align="center"><a class="art_but" href="add-website-here" target="_blank" ><span>Go to Article</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
 <?php
   require('footer.php');
 ?>
