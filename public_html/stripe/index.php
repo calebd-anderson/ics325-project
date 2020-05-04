@@ -1,5 +1,28 @@
 <?php
 include('header.php');
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(-1);
+echo '<div class="container">';
+//   test if required cURL is enabled
+if (extension_loaded("curl")) {
+    // cURL is loaded...
+} else {
+    // cURL is not loaded...
+    echo '<strong style="color:red;">cURL is not loaded. </strong></br>';
+    echo '<strong>Required extension to record the payment in the database is not enabled on the server.</strong>';
+    echo '<p>Pressing submit will give an error.</p>';
+    // echo phpinfo();
+  }
+//   test if required mbstring is enabled
+if (extension_loaded("mbstring")) {
+    //mbstring is loaded...
+} else {
+    echo '<strong style="color:red;">mbstring is not loaded. </strong></br>';
+    echo '<strong>Required extension to record the payment in the database is not enabled on the server.</strong>';
+    // echo phpinfo();
+}
+echo'</div>';
 use \PhpPot\Service\StripePayment;
 
 require_once "config.php";
@@ -33,7 +56,7 @@ if (!empty($_POST["token"])) {
     }
 }
 ?>
-<div style="width:950px;" class="container form-group">
+<div style="width:950px; margin-top:75px;" class="container form-group">
     <div class="row">
         <div class="col-md">
             <!-- Form -->
