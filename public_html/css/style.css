@@ -6,7 +6,7 @@
 body {
   /* background-image: url('../images/bac_2.jpg'); */
   font-family: Georgia, serif;
-  padding-top: 50px;
+  /* margin-top: 55px; */
 }
 
 #pageContainer {
@@ -159,6 +159,7 @@ input[type=email]:focus {
   font-size: 36px;
 }
 #main {
+  margin-top: 65px;
   transition: margin-right .5s;
   /* padding: 16px; */
 }

@@ -2,10 +2,15 @@
 function toggleNav() {
     document.getElementById("websiteNav").style.width == "280px" ?
     (document.getElementById("websiteNav").style.width = "0",
-    document.getElementById("main").style.marginRight = "0%") : 
+    document.getElementById("main").style.marginRight = "0") : 
     (document.getElementById("websiteNav").style.width = "280px",
-    document.getElementById("main").style.marginRight = "21%");
+    document.getElementById("main").style.marginRight = "280px");
 }
+
+// function toggleNav() {
+//     document.getElementById("mySidenav").style.width = "250px";
+//     document.getElementById("main").style.marginLeft = "250px";
+//   }
 // function closeNav() {
 //     document.getElementById("websiteNav").style.width = "0";
 //     document.getElementById("main").style.marginRight = "0%";
