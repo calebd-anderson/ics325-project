@@ -41,6 +41,16 @@
             
     // $sql = "UPDATE payment SET memberID = '$memberID' WHERE txn_id = '$txn_id'";
     // $db->query($sql);
+    echo '<div class="container">';
+    // echo phpinfo();
+    if (extension_loaded("curl")) {
+        // cURL is loaded...
+    } else {
+        // cURL is not loaded...
+        echo '<strong style="color:red;">cURL is not loaded. </strong></br>';
+        echo '<strong>Required extension to record the payment in the database is not enabled on the server.</strong>';
+        echo '<p>However the sandbox payment will still work.</p>';
+      }
 ?>
 <!-- <h2>I Will Manage Your Membership</h2> -->
 <!--
@@ -53,17 +63,12 @@
         0pd*jS0M
     </p>   
 <div id="payment-box" class="text-center">
-        <!-- <img src="paypal/images/camera.jpg" /> -->
         <h4 class="txt-title">One Time Payment</h4>
-        <!-- <div class="txt-price">$50.00</div> -->
         <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type='hidden' name='business' value='sb-dwdy31641136@business.example.com'> 
             <input type='hidden' name='item_name' value='Donation'> 
             <input type='hidden' name='item_number' value='DONA#N1'>
-            <!-- <input type='hidden' name='memberID' value='<?php //$memberID ?>'> -->
-            <!-- <input type='hidden' name='memberID' value='1'> -->
-            <!-- <input type='currency' name='amount' placeholder='Type an amount...'/> -->
-
+<!-- Payment Amount Options -->
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="amount" id="inlineRadio1" value="5">
                 <label class="form-check-label" for="inlineRadio1">$5.00</label>
@@ -80,12 +85,12 @@
                 <input class="form-check-input" type="radio" name="amount" id="inlineRadio4" value="50">
                 <label class="form-check-label" for="inlineRadio4">$50.00</label>
             </div>
-
+<!-- PayPal Callbacks -->
             <input type='hidden' name='no_shipping' value='1'> 
             <input type='hidden' name='currency_code' value='USD'>
-            <input type='hidden' name='notify_url' value='http://ics325.calebdanderson.net/paypal/notify.php'>
-            <input type='hidden' name='cancel_return' value='http://ics325.calebdanderson.net/paypal/cancel.php'>
-            <input type='hidden' name='return' value='http://ics325.calebdanderson.net/paypal/return.php'>
+            <input type='hidden' name='notify_url' value='http://sp-cfsics.metrostate.edu/~ics325sp200104/paypal/notify.php'>
+            <input type='hidden' name='cancel_return' value='http://sp-cfsics.metrostate.edu/~ics325sp200104/paypal/cancel.php'>
+            <input type='hidden' name='return' value='http://sp-cfsics.metrostate.edu/~ics325sp200104/paypal/return.php'>
             <input type="hidden" name="cmd" value="_xclick"> 
             <input type="submit" name="pay_now" id="pay_now" Value="Pay Now">
         </form>
@@ -93,11 +98,12 @@
 
 <!-- <script src="js/jquery.mask.min.js"></script> -->
 <script>
-    //phone mask
+    //money mask
     // $(document).ready(function(){
     //     $('.money').mask('000,000,000,000,000.00', {reverse: true});
     // });
 </script>
 <?php
+  echo '</div>';
     include('../footer.php');
 ?>
