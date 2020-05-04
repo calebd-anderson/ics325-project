@@ -9,6 +9,7 @@
     }
     $sql = "SELECT * FROM products";
 ?>
+<div class="container-fluid">
 <h1><span class="bigl">C</span>hasing<span class="bigl"> A</span>rctic<span class="bigl"> M</span>erchandise</h1>
 <form method="post" action="store_index.php?action=add&code=<?php echo @$product_array[$key]["code"]; ?>">
 <?php
@@ -53,6 +54,8 @@
     // $stack = array("orange", "banana");
     // array_push($stack, "apple", "raspberry");
     // print_r($stack);
-
+?>
+</div>
+<?php
     include('../footer.php');
 ?>
