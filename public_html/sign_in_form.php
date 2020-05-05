@@ -134,9 +134,11 @@ include 'header.php';
       </form>
     <?php    
         }
-      } else{
+      } else {
+          echo '<div style="margin-top:75px" class="container">';
           echo'<fieldset class="fieldset"><h1>Go Away!</h1>';
           echo '<p>You are not authorized to use this resource.</p></fieldset>';
+          echo '</div>';
           $conn->close();
         }
     ?>

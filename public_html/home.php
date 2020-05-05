@@ -14,7 +14,7 @@
       <div class="carousel-item active">
         <img src="images/Iceberg3.jpg" class="d-block w-100" alt="..." height="550">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Welcome to Chasing Antartica NPO 501(c)</h5>
+          <h5>Welcome to Chasing Antarctica NPO 501(c)</h5>
           <p>This website provides up to date information on environmental issues.</p>
         </div>
         <p class="disabled bottom-left"><cite>Photo by Mathieu Perrier on Unsplash</cite></p>
