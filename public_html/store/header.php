@@ -126,7 +126,7 @@
                 <a class="nav-link" href="checkout.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
               </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0" action="blog/searchResults.php" method="POST">
+          <form class="form-inline my-2 my-lg-0" action="../blog/searchResults.php" method="POST">
             <input class="form-control mr-sm-2" type="search" placeholder="Search the Blog" aria-label="Search" name="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>

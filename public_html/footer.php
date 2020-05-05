@@ -52,7 +52,11 @@
                 </svg> Other info</a>.
             </p>
             <p>
-                Send me an e-mail: caleb.anderson@my.metrostate.edu
+              Email us:</br>
+              Chang, Biensur biensur.chang@my.metrostate.edu </br>
+              Thao, Tong tong.thao@my.metrostate.edu </br>
+              Caleb Anderson caleb.anderson@my.metrostate.edu 
+            </p>
             </p>
         </div>
     </div>
