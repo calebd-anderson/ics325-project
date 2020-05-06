@@ -23,7 +23,7 @@
 
 <?php
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['oldpswd']) and isset($_POST['newpswd'])){
-        require('../SQLcreds.inc');
+        require('../../SQLcreds.inc');
         $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -47,5 +47,5 @@
             echo "<p class='invalid'>Invalid password combo.</p>";
         }
     }
-    include('footer.php');
+    include('../footer.php');
 ?>

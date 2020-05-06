@@ -3,5 +3,5 @@
 ?>
 <h1>I Will Change Your Email</h1>
 <?php
-    include('footer.php');
+    include('../footer.php');
 ?>

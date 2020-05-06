@@ -1,7 +1,7 @@
 <?php
     require 'header.php';
     require('setup_2fa.inc');
-    require('../SQLcreds.inc');
+    require('../../SQLcreds.inc');
     $secret = $_SESSION["secret"];
     $tfa = unserialize($_SESSION["tfa"]);
     $code = $_POST['code'];
@@ -48,5 +48,5 @@
         }        
     }
     echo '</fieldset>';
-    include('footer.php');
+    include('../footer.php');
 ?>

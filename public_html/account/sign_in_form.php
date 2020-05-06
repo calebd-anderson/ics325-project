@@ -28,7 +28,7 @@ include 'header.php';
         }
 
         if($valid){
-          require '../SQLcreds.inc';
+          require '../../SQLcreds.inc';
           // Create connection
           $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
           // Check connection
@@ -48,19 +48,32 @@ include 'header.php';
           // }
         }
       }
-      //sanatize input
+      //sanatize input function
       function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
       }
+    
+    // reCaptcha validation setup
+    $curlx = curl_init();
+    curl_setopt($curlx, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+    curl_setopt($curlx, CURLOPT_HEADER, 0);
+    curl_setopt($curlx, CURLOPT_RETURNTRANSFER, 1); 
+    curl_setopt($curlx, CURLOPT_POST, 1);    
+    $post_data = 
+    [
+        'secret' => '***REMOVED***', //<--- your reCaptcha secret key
+        'response' => $_POST['g-recaptcha-response']
+    ];    
+    curl_setopt($curlx, CURLOPT_POSTFIELDS, $post_data);    
+    $resp = json_decode(curl_exec($curlx));    
+    curl_close($curlx);
 
     //display sign-in form if form has not been submited
-    // if (!($_SERVER["REQUEST_METHOD"] == "POST") || !$valid) {
     if (!isset($pswd) || !isset($username) || !$valid) {
     ?>
-
     <fieldset class="fieldset">
       <legend>Please Log In</legend>
       <form method="post" action="sign_in_form.php" id="mainForm">
@@ -80,16 +93,38 @@ include 'header.php';
           <input type="checkbox" value="remember-me"> Remember me
         </label>
         </div>
+      <!-- reCaptcha -->
+        <div id="html_element"></div>
+        <br/>
         <p><button type="submit" name="submit" class="btn btn-primary">Log In</button></p>
+        <!-- <input type="submit" value="Submit"> -->
       </form>
     </fieldset>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>    
     <!-- <script src="js/fields.js"></script> -->
     <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+    <!-- client recaptcha validation -->
+    <script>
+      document.getElementById("mainForm").addEventListener("submit",function(evt)
+      {
+      var response = grecaptcha.getResponse();
+      if(response.length == 0) 
+      { 
+        //reCaptcha not verified
+        alert("Please verify you are human!"); 
+        evt.preventDefault();
+        return false;
+      }
+      //captcha verified
+      //do the rest of your validations here
+      });
+    </script>
 
     <?php
-
     //if sibmitted check password and username
-    } else if(password_verify($pswd, $value) && $valid) {
+    } else if(($resp->success) && (password_verify($pswd, $value)) && ($valid)) {
       // visitor's name and password combination are correct
       //extract and decrypt secret
       $sql = "SELECT AES_DECRYPT(secret, UNHEX('$key')) FROM member_creds WHERE username = '$username' LIMIT 1";
@@ -102,25 +137,25 @@ include 'header.php';
       $_SESSION['email'] = $email;
       $result -> free_result();
       $conn->close();
-
-      if(!$secret == null){
-        echo '<fieldset class="fieldset"><legend>Please Log In</legend>';
-        echo '<p>2FA is enabled on this account. Enter the code from the authenticator app to log in.</p>';    
-    ?>
+        //Check if 2FA is enabled
+        if(!$secret == null){
+          echo '<fieldset class="fieldset"><legend>Please Log In</legend>';
+          echo '<p>2FA is enabled on this account. Enter the code from the authenticator app to log in.</p>';    
+      ?>
           <form method="post" action="2fa_sign-in.php" id="mainForm">
-          <p><label for="code">Code: </label>
-            <input type="text" name="code" id="id" size="15"/></p>
-          <p><button type="submit" name="submit" class="btn btn-primary">Verify Code</button></p>
-          </fieldset>
+            <p><label for="code">Code: </label>
+              <input type="text" name="code" id="id" size="15"/></p>
+            <p><button type="submit" name="submit" class="btn btn-primary">Verify Code</button></p>
+            </fieldset>
           </form>
-    <?php
-        $_SESSION['secret'] = $secret;
-      }
-      if($secret == null){
-        $_SESSION['valid_user'] = $username;
-        echo '<section><h2>You\'re Signed In</h2>
-        <p>I bet you\'re glad you can see this secret page.</p>';
-        echo '<strong>Multi-factor authentication has not been setup on this account.</strong>';// (the secret field in the database is empty)
+      <?php
+          $_SESSION['secret'] = $secret;
+          // if or else if ????
+        } else if($secret == null){
+            $_SESSION['valid_user'] = $username;
+            echo '<section><h2>You\'re Signed In</h2>
+            <p>I bet you\'re glad you can see this secret page.</p>';
+            echo '<strong>Multi-factor authentication has not been setup on this account.</strong>';// (the secret field in the database is empty)
     ?>
       <p>Try one of these great apps to setup multi-factor authentication:</p>
       <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en"><img src="https://lh3.googleusercontent.com/HPc5gptPzRw3wFhJE1ZCnTqlvEvuVFBAsV9etfouOhdRbkp-zNtYTzKUmUVPERSZ_lAL=s180" alt="Google Authenticator" width="100" height="auto"></a>
@@ -133,16 +168,17 @@ include 'header.php';
       </section>
       </form>
     <?php    
-        }
-      } else {
-          echo '<div style="margin-top:75px" class="container">';
-          echo'<fieldset class="fieldset"><h1>Go Away!</h1>';
-          echo '<p>You are not authorized to use this resource.</p></fieldset>';
-          echo '</div>';
-          $conn->close();
-        }
+      }
+        } else {
+          //failed login
+            echo '<div style="margin-top:75px" class="container">';
+            echo'<fieldset class="fieldset"><h1>Go Away!</h1>';
+            echo '<p>You are not authorized to use this resource.</p></fieldset>';
+            echo '</div>';
+            $conn->close();
+          }
     ?>
-  <?php include 'footer.php'; ?>
+  <?php include '../footer.php'; ?>
 
 <script>  
   //caps-lock detect

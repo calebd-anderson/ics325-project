@@ -4,6 +4,6 @@
     //destroy all session variables
     session_unset();
     // unset($_SESSION["username"]);
-    header("Location:home.php");
+    header("Location:../home.php");
     session_destroy();
 ?>
