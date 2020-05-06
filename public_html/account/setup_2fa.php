@@ -1,6 +1,9 @@
 <?php
+ini_set('display_startup_errors',1); 
+ini_set('display_errors',1);
+error_reporting(-1);
     include 'header.php';
-    require '../SQLcreds.inc';
+    require '../../SQLcreds.inc';
 
     // Create connection
     $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
@@ -60,7 +63,7 @@
         $conn->close();
         echo '<meta http-equiv="Refresh" content="0; url=account.php" />';
     }    
-    include('footer.php');
+    include('../footer.php');
    
     // echo '<p> Your session ID: '.session_id().'</p>';  
     //     try {

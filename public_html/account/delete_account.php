@@ -1,6 +1,6 @@
 <?php
     include('header.php');
-    require('../SQLcreds.inc');
+    require('../../SQLcreds.inc');
     $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -18,5 +18,5 @@
 ?>
 <!-- <h1>I Will Delete Your Account</h1> -->
 <?php
-    include('footer.php');
+    include('../footer.php');
 ?>

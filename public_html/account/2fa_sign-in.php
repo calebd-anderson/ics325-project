@@ -15,9 +15,9 @@
     }else if($result){
         echo '<p class="valid">You\'re authorized.</p>';
         $_SESSION['valid_user'] = $_SESSION['username'];
-        require('footer.php');
+        require('../footer.php');
     }else{
         echo '<p class="invalid">You\'re not authorized.</p>';
-        require('footer.php');
+        require('../footer.php');
     }
 ?>

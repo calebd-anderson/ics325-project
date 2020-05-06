@@ -1,6 +1,6 @@
 <?php
   require('header.php');
-  require('../SQLcreds.inc');
+  require('../../SQLcreds.inc');
       $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
@@ -107,5 +107,5 @@
 </div> -->
 
 <?php
-  require('footer.php');
+  require('../footer.php');
 ?>

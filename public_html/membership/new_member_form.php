@@ -76,7 +76,7 @@
                 $addr = test_input($_POST['addr']);
                 
                 if($valid){
-                    require '../SQLcreds.inc';
+                    require '../../SQLcreds.inc';
                     $db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
                     if(mysqli_connect_errno()){
                         echo "<p>Error: Could not connect to database.<br/>
@@ -144,46 +144,39 @@
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="stepForm">
             <p style="color: red;"><?php echo $formErr; ?></p>
         <!-- Name -->
-                <div class="tab"><h5>Name:</h5>
-                    <div style="color: red;"><?php echo $fNameErr; ?></div>
-                    <p><input class="form-control" type="text" name="fname" placeholder="First name..." oninput="this.className = 'form-control'"></p>
-                    <span style="color: red;"><?php echo $lNameErr; ?></span>
-                    <p><input class="form-control" type="text" name="lname" placeholder="Last name..." oninput="this.className = 'form-control'"></p>
-                </div>
+            <div class="tab"><h5>Name:</h5>
+                <div style="color: red;"><?php echo $fNameErr; ?></div>
+                <p><input class="form-control" type="text" name="fname" placeholder="First name..." oninput="this.className = 'form-control'"></p>
+                <span style="color: red;"><?php echo $lNameErr; ?></span>
+                <p><input class="form-control" type="text" name="lname" placeholder="Last name..." oninput="this.className = 'form-control'"></p>
+            </div>
         <!-- Contact Info -->
-                <div class="tab"><h5>Contact Info:</h5>
-                    <p><input class="form-control" type="email" placeholder="E-mail..." name="email" oninput="this.className = 'form-control'"></p>
-                    <!-- <input autocomplete="email" aria-invalid="false" name="email" placeholder="" type="email" class="Input Input--nowrap PressableContext Padding-horizontal--12 Padding-vertical--8 PressableContext--cursor--text PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--regular PressableContext--height PressableContext--height--large PressableContext--radius--all PressableContext--width PressableContext--width--maximized TextInput-element TextInput-element--align--left PressableContext Padding-horizontal--12 Padding-vertical--8 PressableContext--cursor--text PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--regular PressableContext--height PressableContext--height--large PressableContext--radius--all PressableContext--width PressableContext--width--maximized" value="ande4905@gmail.com" style="color: rgb(60, 66, 87);"> -->
-                    <p><input class="form-control" type="text" placeholder="Address..." name="addr" oninput="this.className = 'form-control'"></p>
-                    <p><input class="phone_us form-control" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = 'form-control'"></p>
-                </div>
+            <div class="tab"><h5>Contact Info:</h5>
+                <p><input class="form-control" type="email" placeholder="E-mail..." name="email" oninput="this.className = 'form-control'"></p>
+                <!-- <input autocomplete="email" aria-invalid="false" name="email" placeholder="" type="email" class="Input Input--nowrap PressableContext Padding-horizontal--12 Padding-vertical--8 PressableContext--cursor--text PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--regular PressableContext--height PressableContext--height--large PressableContext--radius--all PressableContext--width PressableContext--width--maximized TextInput-element TextInput-element--align--left PressableContext Padding-horizontal--12 Padding-vertical--8 PressableContext--cursor--text PressableContext--display--inlineFlex PressableContext--fontLineHeight--20 PressableContext--fontSize--14 PressableContext--fontWeight--regular PressableContext--height PressableContext--height--large PressableContext--radius--all PressableContext--width PressableContext--width--maximized" value="ande4905@gmail.com" style="color: rgb(60, 66, 87);"> -->
+                <p><input class="form-control" type="text" placeholder="Address..." name="addr" oninput="this.className = 'form-control'"></p>
+                <p><input class="phone_us form-control" type="tel" placeholder="Phone..." name="us_phone" pattern="^[0-9-+\s()]*$" oninput="this.className = 'form-control'"></p>
+            </div>
         <!-- Login -->
-                <div class="tab"><h5>Login Info:</h5>
-                        <p>
-                            <input class="form-control" type="text" id="username" placeholder="Username..."
-                                name="username" maxlength="25"  onBlur="checkAvailability()"
-                                oninput="this.className = 'form-control'"/>
-                            <span class="fa fa-cog fa-spin" id="loaderIcon" style="font-size:24px; display:none; color:#0084f0;"></span>
-                            <span id="user-availability-status"></span>
-                            <span class="status-not-available"><?php echo $usernameErr;?></span>
-                            <small id="emailHelp" class="form-text text-muted">Pick a unique username. Letters, numbers and underscore allowed.</small>
-                        </p>
-                        <p>
-                            <input id="pswd" class="form-control" tabindex="0" placeholder="Password..." type="password"
-                                name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Try to pick something that’s not easy to guess." 
-                                oninput="this.className = 'form-control'"/>
-                            <small class="form-text text-muted">We store your password securely. Minimum of 8 characters. Must contain numbers, as well as upper and lower case letters.</small>
-                            <span style="color: red;"><?php echo $pswdErr;?></span>
-                        </p>
-                        <p id="CapsLk">WARNING! Caps lock is ON.</p>
-                        <div id="message" class="js-fade">
-                            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                            <p id="number" class="invalid">A <b>number</b></p>
-                            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-                        </div>
-                    </div>
+            <div class="tab"><h5>Login Info:</h5>
+                <p><input class="form-control" type="text" id="username" placeholder="Username..." name="username" maxlength="25"  onBlur="checkAvailability()" oninput="this.className = 'form-control'"/>
+                    <span class="fa fa-cog fa-spin" id="loaderIcon" style="font-size:24px; display:none; color:#0084f0;"></span>
+                    <span id="user-availability-status"></span>
+                    <span class="status-not-available"><?php echo $usernameErr;?></span>
+                    <small id="emailHelp" class="form-text text-muted">Pick a unique username. Letters, numbers and underscore allowed.</small>
+                </p>
+                <p><input id="pswd" class="form-control" tabindex="0" placeholder="Password..." type="password" name="pswd" maxlength="100" size="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" data-animation="true" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Try to pick something that’s not easy to guess." oninput="this.className = 'form-control'"/>
+                    <small class="form-text text-muted">We store your password securely. Minimum of 8 characters. Must contain numbers, as well as upper and lower case letters.</small>
+                    <span style="color: red;"><?php echo $pswdErr;?></span>
+                </p>
+                <p id="CapsLk">WARNING! Caps lock is ON.</p>
+                <div id="message" class="js-fade">
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                </div>
+            </div>
         <!-- Buttons -->
                 <div style="overflow:auto;">
                     <div style="float:right;">
