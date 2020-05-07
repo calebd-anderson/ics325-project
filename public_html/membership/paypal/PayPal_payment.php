@@ -105,5 +105,5 @@
 </script>
 <?php
   echo '</div>';
-    include('../footer.php');
+    include('../../footer.php');
 ?>
