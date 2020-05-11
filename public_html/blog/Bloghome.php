@@ -119,7 +119,7 @@ include_js: false
             <hr>
             <p>Like in any project, quest, or adventure, there are many mountains and obstacles that need to be climbed over. 
                 Our first and largest mountain to climb over is... The expense... First, lets enjoy this cute photo of a penguin.
-                <br> <br> <img src="penguin.jpg" alt="Whoops!" width="600" height="400">
+                <br> <br> <img src="penguin.jpg" alt="Whoops!" width="600" height="400" class="img-fluid">
                 <br> <br>
                 We knew if we wanted to go on this expedition, the cost of it would be our biggest hurdle. We are in the process of presenting our expedition proposal to many other
             organizations that are in support of researching climate change, Antarctica, and the secrets hidden under the ice. </p>
