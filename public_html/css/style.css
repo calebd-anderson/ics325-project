@@ -207,9 +207,9 @@ input[type=email]:focus {
   font-size: 110%;
 }
 
-
 .button_loc {
   padding-top: 2em;
+  padding-bottom: 2em;
   top: 50%;
   left: 50%;
 }
