@@ -1,8 +1,8 @@
 <?php
 include('header.php');
-ini_set('display_startup_errors',1);
-ini_set('display_errors',1);
-error_reporting(-1);
+// ini_set('display_startup_errors',1);
+// ini_set('display_errors',1);
+// error_reporting(-1);
 echo '<div class="container">';
 //   test if required cURL is enabled
 if (extension_loaded("curl")) {
@@ -260,5 +260,5 @@ function stripePay(e) {
 }
 </script>
 <?php
-include('../footer.php');
+include('../../footer.php');
 ?>
