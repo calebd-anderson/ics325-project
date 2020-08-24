@@ -71,12 +71,13 @@ include 'header.php';
     $resp = json_decode(curl_exec($curlx));    
     curl_close($curlx);
 
-    //display sign-in form if form has not been submited
+    //display sign-in form if form has not successfully = been submited
     if (!isset($pswd) || !isset($username) || !$valid) {
     ?>
     <fieldset class="fieldset">
       <legend>Please Log In</legend>
       <form method="post" action="sign_in_form.php" id="mainForm">
+      <?php echo $recaptchaErr; ?>
         <p>
           <label for="name">Username:</label>
           <input type="text" name="username" id="name" size="20" class="form-control"/>
@@ -89,9 +90,9 @@ include 'header.php';
           <p id="CapsLk">WARNING! Caps lock is ON.</p>
         </p>
         <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
         </div>
       <!-- reCaptcha -->
         <div id="html_element"></div>
@@ -100,8 +101,7 @@ include 'header.php';
         <!-- <input type="submit" value="Submit"> -->
       </form>
     </fieldset>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>    
     <!-- <script src="js/fields.js"></script> -->
     <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
@@ -123,8 +123,9 @@ include 'header.php';
     </script>
 
     <?php
+
     //if sibmitted check password and username
-    } else if(($resp->success) && (password_verify($pswd, $value)) && ($valid)) {
+    } else if((password_verify($pswd, $value)) && ($valid)) {
       // visitor's name and password combination are correct
       //extract and decrypt secret
       $sql = "SELECT AES_DECRYPT(secret, UNHEX('$key')) FROM member_creds WHERE username = '$username' LIMIT 1";
@@ -169,10 +170,18 @@ include 'header.php';
       </form>
     <?php    
       }
+        } else if (!$resp->success){
+          //failed recaptcha
+          echo '<div style="margin-top:75px" class="container">';
+          echo '<fieldset class="fieldset"><h1>Go Away!</h1>';
+          echo '<p>Please verify you are human.</p></fieldset>';
+          echo '</div>';
+          $conn->close();
+
         } else {
-          //failed login
+            //failed login
             echo '<div style="margin-top:75px" class="container">';
-            echo'<fieldset class="fieldset"><h1>Go Away!</h1>';
+            echo '<fieldset class="fieldset"><h1>Go Away!</h1>';
             echo '<p>You are not authorized to use this resource.</p></fieldset>';
             echo '</div>';
             $conn->close();
