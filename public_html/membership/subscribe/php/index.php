@@ -2,7 +2,7 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Stripe\Stripe;
-require '/var/www/***REMOVED***.com/vendor/autoload.php';
+require '/var/www/arctic_expd.com/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::create(__DIR__);
 $dotenv->load();
