@@ -60,7 +60,7 @@
         
             $db->close();
         } else {
-            header("Location: Bloghome.php");
+            header("Location: bloghome.php");
             exit();
         }
         ?>

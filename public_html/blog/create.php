@@ -1,78 +1,64 @@
-<?php
-    require('../header.php');
-    
-?>
-
+<?php require('header.php'); ?>
 
 <style> 
-.admin-wrapper 
-    {
+.admin-wrapper {
     display: flex;
     height: calc(100%);
-    }
-.admin-wrapper .left-sidebar
-    {
+}
+.admin-wrapper .left-sidebar {
     flex: 2;
     height: 100%;
     border: 1px solid black;
     background-color: #adb1b8;
-    }
-.admin-wrapper .left-sidebar ul
-{
+}
+.admin-wrapper .left-sidebar ul {
     list-style: none;
     margin: 6px;
     padding: 0px;
-  
-
 }
-.admin-wrapper .left-sidebar ul li a
-{
+.admin-wrapper .left-sidebar ul li a {
     padding: 18px;
     display: block;
     border-bottom: 1px solid black;
 }
-.admin-wrapper .left-sidebar ul li a:hover 
-{
+.admin-wrapper .left-sidebar ul li a:hover {
     background:  #6f7378;
 }
-.admin-wrapper .admin-content 
-    {
+.admin-wrapper .admin-content {
     flex: 8;
     height: 100%;
     border: 1px solid black;
     padding: 40px 100px 100px;
     overflow-y: scroll;
-    }
-.admin-content .btn
-{
-background-color: #adb1b8;
 }
-.admin-content .page-title{
+.admin-content .btn {
+    background-color: #adb1b8;
+}
+.admin-content .page-title {
     text-align: center;
     margin-bottom: 1.5rem;
 }
-table{
+table {
     width: 100%;
     font-size: 1.1rem;
-
 }
 th, td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #adb1b8'
 }
-.edit{
+.edit {
     color: green;
 }
-.delete{
+.delete {
     color: red;
 }
-.publish{
+.publish {
     color: blue;
 }
 .edit:hover,
 .delete:hover,
-.edit:hover{
+.edit:hover {
     text-decoration: underline;
 }
 form div {
@@ -84,34 +70,31 @@ form div {
 </style>
 
 <div class="admin-wrapper">
-<!-- Left bar -->
-    <div class="left-sidebar">
-    <ul>
-        <li><a href="blogadmin.php">Manage Posts</a></li>
-    </div>
-<!-- Admin -->
+    <!-- Admin -->
     <div class="admin-content">
         <div class="button-group">
             <a href="blogadmin.php" class="btn">Return to Manage Post</a>
-           
-    </div>
+        </div>
 
-    <div class="content">
-        <h2 class="page-title">Manage Posts</h2>
+        <div class="content">
+            <h2 class="page-title">Manage Posts</h2>
             <form action="createcode.php" method="POST">
                 <div>
                         <label>Title</label>
                         <textarea name="title" id="title" cols="80" rows="1"></textarea>
                 </div>
                 <div>
-                        <label>Body</label>
-                        
+                        <label>Body</label>                        
                         <textarea name="body" id="body" cols="80" rows="10"></textarea>
                 </div>
                <div>
                    <input type="submit" class="btn" value="Submit"></input>
                 </div>
+            </form>
+        </div>
     </div>
 </div>
+<script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+<?php require('../footer.php'); ?>
+

@@ -77,7 +77,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <!-- Blog -->
-                <a class="nav-link" href="Bloghome.php">
+                <a class="nav-link" href="bloghome.php">
                   <svg class="bi bi-chat-quote" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M2.678 11.894a1 1 0 01.287.801 10.97 10.97 0 01-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 01.71-.074A8.06 8.06 0 008 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 01-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 00.244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 01-2.347-.306c-.52.263-1.639.742-3.468 1.105z" clip-rule="evenodd"/>
                     <path d="M7.468 7.667c0 .92-.776 1.666-1.734 1.666S4 8.587 4 7.667C4 6.747 4.776 6 5.734 6s1.734.746 1.734 1.667z"/>
@@ -102,7 +102,7 @@
               </div>
             </li>
             <?php
-              if (isset($_SESSION['valid_user'])){
+              if (isset($_SESSION['valid_user'])) {
                 echo '<span class="nav-link disabled">Welcome: '.$_SESSION['valid_user'].'</span>';
                 echo '<a class="nav-link" href="../account/account.php">
                   <svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -112,13 +112,13 @@
                   </svg> My Account
                 </a>';
                 echo '<a class="nav-link" href="../account/logout.php"><i class="fa fa-fw fa-sign-out"></i> Log Off</a>';
-              }else{
-                // echo '';
+              } else {
                 echo '<li class="nav-item"><a class="nav-link" href="../account/sign_in_form.php"><svg class="bi bi-person-lines-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7 1.5a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5zm-2-3a.5.5 0 01.5-.5h4a.5.5 0 010 1h-4a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h4a.5.5 0 010 1h-4a.5.5 0 01-.5-.5zm2 9a.5.5 0 01.5-.5h2a.5.5 0 010 1h-2a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
                 </svg> Login</a></li>';
               }
-            ?>            <li class="nav-item">              
+            ?>
+            <li class="nav-item">
               <a class="nav-link" href="blogadmin.php">
                 <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
@@ -144,5 +144,5 @@
   <!-- <a href="#" class="navicon" id="newsicon">News</a> -->
   <a href="../membership/membership.php" class="navicon" id="mbricon">Membership</a>        
   <a href="../store/store_index.php" class="navicon" id="storeicon">Store</a>
-  <a href="Bloghome.php" class="navicon" id="discourseicon">Discourse</a>
+  <a href="bloghome.php" class="navicon" id="discourseicon">Discourse</a>
 </div>
