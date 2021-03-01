@@ -4,9 +4,7 @@
   overflow: auto;
 }
 body {
-  /* background-image: url('../images/bac_2.jpg'); */
   font-family: Georgia, serif;
-  /* margin-top: 55px; */
 }
 
 #pageContainer {
@@ -20,24 +18,23 @@ body {
 article{
   margin: 2%;
 }
+
 @media screen and (min-width:991.98px){
   section{
-    /* margin: auto; */
     margin: 2%;
     width: 75%;
     border: 3px solid green;
     padding: 10px;
   }
 }
+
 .bottom-left {
   position: absolute !important;
   bottom: 8px !important;
   left: 16px !important;
 }
-/* .carousel-item{
-  
-} */
-cite{
+
+cite {
   background-color: black;
   color: white;
 }
@@ -95,12 +92,10 @@ input[type=email]:focus {
       display:none;
   }
 }
-#navbtn{
+#navbtn {
   font-size:20px;
   cursor: pointer;
-  /* color: rgb(135, 135, 136); */
   float: right;
-  /* padding-right: 10px; */
   margin: 10px;
 }
 #navbtn:hover{
@@ -108,33 +103,32 @@ input[type=email]:focus {
 }  
 #websiteNav {   
   border:solid 1px;
-  background-image: url(../images/bac_2.jpg);
+  background-image: url(../images/prairie.png);
   height: 100%;
   width: 0;
   position: fixed;
-  /* top: 0; */
   right: 0;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 2%;
 }
-.navicon{
+.navicon {
   background-position: 10px center;
   background-repeat: no-repeat;
   background-size: 50px auto;
   text-align: center;
   position: relative;
 }
-#expicon{
+#expicon {
   background-image: url("../images/expd.png");
 }
-#newsicon{
+#newsicon {
   background-image: url("../images/news.png");
 }  
-#mbricon{
+#mbricon {
   background-image: url("../images/membership.png");
 }
-#storeicon{
+#storeicon {
   background-image: url("../images/web-store.png");
 }
 #discourseicon{
@@ -144,7 +138,7 @@ input[type=email]:focus {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   display: block;
   transition: 0.2s;
 }
@@ -165,7 +159,7 @@ input[type=email]:focus {
 }
 /*#endregion-------SideNav Styles-------*/
 
-/*#region-----Home.php Styles-----*/
+/*#region-----home.php Styles-----*/
 .banner {
   margin-bottom: 20px;
   background-color: #80ff80;
@@ -173,17 +167,7 @@ input[type=email]:focus {
   padding-top: 10px;
   padding-bottom: 50px;
 }
-.carouselHeader {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  border-top: 1px solid;
-}
-.carousel-container{
-  margin: auto;
-  width: 85%;
-  padding: 10px;
-}
-/*#endregion-------Home.php Styles-------*/
+/*#endregion-------home.php Styles-------*/
 
 #section_space {
   padding-top: 4em;
@@ -253,10 +237,6 @@ input[type=email]:focus {
 /*#region-------Footer Styles-------*/
 footer {
   width: 100%;
-  
-
-
-  /* padding: 10px; */
 }
 .resources {
   text-align: left;
@@ -275,22 +255,7 @@ footer {
 /*#endregion-------Footer Styles-------*/
 
 /*About Us*/
-.about_Image {
-  position: relative;
-  text-align: center;
-  color: grey;
-}
-
-.about_Header {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  top: 100px;
-  transform: translate(-50%, -50%);
-  font-size: 150%;
-}
-
-.about_Us {
+.about {
   margin: auto;
   width: 75%;
   padding-top:4em;

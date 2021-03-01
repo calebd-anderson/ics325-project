@@ -6,7 +6,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
       <meta charset="utf-8">
-      <title>Chasing Antartica</title>
+      <title>Environment NPO</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="page icon" href="favicon.ico" />
       <!-- Homebrew Style -->
@@ -56,14 +56,14 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <!-- About -->
-                <a class="nav-link" href="About.php">
+                <a class="nav-link" href="about.php">
                   <svg class="bi bi-clipboard" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 00-2 2V14a2 2 0 002 2h10a2 2 0 002-2V3.5a2 2 0 00-2-2h-1v1h1a1 1 0 011 1V14a1 1 0 01-1 1H3a1 1 0 01-1-1V3.5a1 1 0 011-1h1v-1z" clip-rule="evenodd"/>
                     <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h3a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5zm-3-1A1.5 1.5 0 005 1.5v1A1.5 1.5 0 006.5 4h3A1.5 1.5 0 0011 2.5v-1A1.5 1.5 0 009.5 0h-3z" clip-rule="evenodd"/>
                   </svg> About
                 </a>
                 <!-- Contact -->
-                <a class="nav-link" href="Contact.php">
+                <a class="nav-link" href="contact.php">
                   <svg class="bi bi-envelope" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M14 3H2a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM2 2a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H2z" clip-rule="evenodd"/>
                     <path fill-rule="evenodd" d="M.071 4.243a.5.5 0 01.686-.172L8 8.417l7.243-4.346a.5.5 0 01.514.858L8 9.583.243 4.93a.5.5 0 01-.172-.686z" clip-rule="evenodd"/>
@@ -85,7 +85,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <!-- Blog -->
-                <a class="nav-link" href="blog/Bloghome.php">
+                <a class="nav-link" href="blog/bloghome.php">
                   <svg class="bi bi-chat-quote" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M2.678 11.894a1 1 0 01.287.801 10.97 10.97 0 01-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 01.71-.074A8.06 8.06 0 008 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 01-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 00.244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 01-2.347-.306c-.52.263-1.639.742-3.468 1.105z" clip-rule="evenodd"/>
                     <path d="M7.468 7.667c0 .92-.776 1.666-1.734 1.666S4 8.587 4 7.667C4 6.747 4.776 6 5.734 6s1.734.746 1.734 1.667z"/>
@@ -140,11 +140,11 @@
       </nav>
     </article>
 
-<div id="websiteNav" class="sidenav">        
+<div id="websiteNav" class="sidenav">
   <!-- <a href="javascript:void(0)" id="navclosebtn" onclick="closeNav()">&times;</a> -->
   <!-- <a href="#" class="navicon" id="expicon">Expeditions</a> -->
   <!-- <a href="#" class="navicon" id="newsicon">News</a> -->
   <a href="membership/membership.php" class="navicon" id="mbricon">Membership</a>        
   <a href="store/store_index.php" class="navicon" id="storeicon">Store</a>
-  <a href="blog/Bloghome.php" class="navicon" id="discourseicon">Discourse</a>
+  <a href="blog/bloghome.php" class="navicon" id="discourseicon">Discourse</a>
 </div>

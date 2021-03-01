@@ -140,7 +140,7 @@
             }
             if(!($_SERVER["REQUEST_METHOD"] == "POST") || !$valid){
         ?>
-        <fieldset class="fieldset"><legend style="font-family: Raleway;">Chasing Arctic - Register</legend>
+        <fieldset class="fieldset"><legend style="font-family: Raleway;">Environment NPO - Register</legend>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="stepForm">
             <p style="color: red;"><?php echo $formErr; ?></p>
         <!-- Name -->
