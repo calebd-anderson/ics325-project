@@ -51,9 +51,10 @@
                 </svg> Other info</a>.
             </p>
             <p>
-              Email me:</br>
-              caleb.anderson@my.metrostate.edu 
-            </p>
+              Email us:</br>
+              Caleb Anderson: <a href = "mailto: caleb.anderson@my.metrostate.edu">caleb.anderson@my.metrostate.edu</a> </br>
+              Thao Tong: <a href = "mailto: tong.thao@my.metrostate.edu">tong.thao@my.metrostate.edu</a> </br>
+              Chang Biensur: <a href = "mailto: biensur.chang@my.metrostate.edu">biensur.chang@my.metrostate.edu</a>
             </p>
         </div>
     </div>
