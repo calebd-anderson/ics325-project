@@ -6,10 +6,11 @@ error_reporting(-1);
     require '../../SQLcreds.inc';
 
     // Create connection
-    $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    $conn = mysqli_init();
+    mysqli_ssl_set($conn,NULL,NULL, $cert, NULL, NULL);
+    mysqli_real_connect($conn, 'ics325-mysqldb.mysql.database.azure.com', $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
+    if (mysqli_connect_errno()) {
+      die('Failed to connect to MySQL: '.mysqli_connect_error());
     }
     $username = $_SESSION['username'];
     $sql = "SELECT AES_DECRYPT(secret, UNHEX('$key')) FROM member_creds WHERE username = '$username' LIMIT 1";

@@ -24,9 +24,11 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['oldpswd']) and isset($_POST['newpswd'])){
         require('../../SQLcreds.inc');
-        $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        $conn = mysqli_init();
+        mysqli_ssl_set($conn,NULL,NULL, $cert, NULL, NULL);
+        mysqli_real_connect($conn, 'ics325-mysqldb.mysql.database.azure.com', $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
+        if (mysqli_connect_errno()) {
+          die('Failed to connect to MySQL: '.mysqli_connect_error());
         }
         //session username
         $username = $_SESSION['username'];                
