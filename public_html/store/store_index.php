@@ -4,7 +4,7 @@
 
     $mysqli = mysqli_init();
     mysqli_ssl_set($mysqli,NULL,NULL, $cert, NULL, NULL);
-    mysqli_real_connect($mysqli, 'ics325-mysqldb.mysql.database.azure.com', $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
+    mysqli_real_connect($mysqli, $servername, $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
         exit();
