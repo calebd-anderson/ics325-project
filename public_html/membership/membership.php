@@ -10,7 +10,7 @@
         </svg> Create an Account
     </a>
     <a href="paypal/PayPal_payment.php" class="btn btn-secondary"><img src="http://paypal.com/favicon.ico"/> PayPal One Time Payment</a>
-    <a href="stripe/index.php" class="btn btn-secondary"><img src="https://stripe.com/favicon.ico"/> Stripe Payment</a>
+    <a href="stripe/" class="btn btn-secondary"><img src="https://stripe.com/favicon.ico"/> Stripe Payment</a>
 </div>
 
 <?php
