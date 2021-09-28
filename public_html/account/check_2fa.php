@@ -15,11 +15,11 @@
     echo (($result === true) ? '<span style="color:#0c0">OK</span>' : '<span style="color:#c00">FAIL</span>');
     
     if($result){
-        $db = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
-        if(mysqli_connect_errno()){
-            echo "<p>Error: Could not connect to database.<br/>
-                Please try again later.</p>";
-            exit;
+        $db = mysqli_init();
+        mysqli_ssl_set($db,NULL,NULL, $cert, NULL, NULL);
+        mysqli_real_connect($db, 'ics325-mysqldb.mysql.database.azure.com', $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
+        if (mysqli_connect_errno()) {
+          die('Failed to connect to MySQL: '.mysqli_connect_error());
         }
 
         //https://www.w3schools.com/php/php_mysql_prepared_statements.asp
