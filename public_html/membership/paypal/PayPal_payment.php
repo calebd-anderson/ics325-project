@@ -45,6 +45,7 @@
     // echo phpinfo();
     if (extension_loaded("curl")) {
         // cURL is loaded...
+        echo '<strong style="color:green;">cURL is loaded.</strong></br>';
     } else {
         // cURL is not loaded...
         echo '<strong style="color:red;">cURL is not loaded. </strong></br>';
@@ -88,9 +89,9 @@
 <!-- PayPal Callbacks -->
             <input type='hidden' name='no_shipping' value='1'> 
             <input type='hidden' name='currency_code' value='USD'>
-            <input type='hidden' name='notify_url' value='ics325.azurewebsites.net/membership/paypal/notify.php'>
-            <input type='hidden' name='cancel_return' value='ics325.azurewebsites.net/membership/paypal/cancel.php'>
-            <input type='hidden' name='return' value='ics325.azurewebsites.net/membership/paypal/return.php'>
+            <input type='hidden' name='notify_url' value='https://ics325.azurewebsites.net/membership/paypal/notify.php'>
+            <input type='hidden' name='cancel_return' value='https://ics325.azurewebsites.net/membership/paypal/cancel.php'>
+            <input type='hidden' name='return' value='https://ics325.azurewebsites.net/membership/paypal/return.php'>
             <input type="hidden" name="cmd" value="_xclick"> 
             <input type="submit" name="pay_now" id="pay_now" Value="Pay Now">
         </form>
