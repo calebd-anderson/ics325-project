@@ -1,12 +1,10 @@
 <?php
-    require_once 'autoload.php';
-    require_once '../2fa_lib/Providers/Qr/MyProvider.php';
+    require_once '../../vendor/autoload.php';
+    //require_once '/var/www/html/wwwroot/vendor/autoload.php';
 
-    Loader::register('../2fa_lib','RobThree\\Auth');
-    use RobThree\Auth;
+    use RobThree\Auth\TwoFactorAuth;
 
-    $mp = new Auth\Providers\Qr\MyProvider();
-    $tfa = new Auth\TwoFactorAuth('Chasing the Arctic Consulting', 6, 30, 'sha1', $mp);
+    $tfa = new TwoFactorAuth('Chasing the Arctic Consulting', 6, 30, 'sha1');
 
     $secret = $tfa->createSecret();
 ?>
