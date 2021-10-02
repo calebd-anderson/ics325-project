@@ -1,11 +1,3 @@
-<!-- ---
-layout: examples
-title: Blog Template
-extra_css:
-  - "https://fonts.googleapis.com/css?family=Playfair+Display:700,900"
-  - "blog.css"
-include_js: false
---- -->
 <?php
     require('header.php');
 ?>
