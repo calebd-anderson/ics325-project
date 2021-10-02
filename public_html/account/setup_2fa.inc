@@ -1,6 +1,6 @@
 <?php
-    require_once '../../vendor/autoload.php';
-    //require_once '/var/www/html/wwwroot/vendor/autoload.php';
+    //require_once '../../vendor/autoload.php';
+    require_once '/var/www/html/wwwroot/vendor/autoload.php';
 
     use RobThree\Auth\TwoFactorAuth;
 
