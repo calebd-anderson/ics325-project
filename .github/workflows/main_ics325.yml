@@ -14,7 +14,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
+      - name: Reveal GPG Secrets
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" > ./private_key.gpg
+          # Import private key and avoid the "Inappropriate ioctl for device" error
+          gpg --batch --yes --pinentry-mode loopback --import private_key.gpg
+          git secret reveal
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
