@@ -25,7 +25,8 @@
     if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['oldpswd']) and isset($_POST['newpswd'])){
         require('../../SQLcreds.inc');
         $conn = mysqli_init();
-        mysqli_ssl_set($conn,NULL,NULL, $cert, NULL, NULL);
+        if (!str_contains($_SERVER['SERVER_NAME'], 'localhost'))
+            mysqli_ssl_set($conn, NULL, NULL, $cert, NULL, NULL);
         mysqli_real_connect($conn, $servername, $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
         if (mysqli_connect_errno()) {
           die('Failed to connect to MySQL: '.mysqli_connect_error());
