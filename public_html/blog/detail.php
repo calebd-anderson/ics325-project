@@ -26,7 +26,8 @@
         <?php
         require '../../SQLcreds.inc';
         $db = mysqli_init();
-        mysqli_ssl_set($db,NULL,NULL, $cert, NULL, NULL);
+        if (!str_contains($_SERVER['SERVER_NAME'], 'localhost'))
+            mysqli_ssl_set($db, NULL, NULL, $cert, NULL, NULL);
         mysqli_real_connect($db, 'ics325-mysqldb.mysql.database.azure.com', $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
         if (mysqli_connect_errno()) {
           die('Failed to connect to MySQL: '.mysqli_connect_error());
