@@ -14,6 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install git-secret
+        run: |
+          sudo sh -c "echo 'deb https://gitsecret.jfrog.io/artifactory/git-secret-deb git-secret main' >> /etc/apt/sources.list"
+          wget -qO - 'https://gitsecret.jfrog.io/artifactory/api/gpg/key/public' | sudo apt-key add -
+          sudo apt-get update && sudo apt-get install -y git-secret
+
       - uses: actions/checkout@v4
 
       - name: Reveal GPG Secrets
