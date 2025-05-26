@@ -12,4 +12,21 @@
 ```
 git secret reveal
 ```
+  - After modifying any of the following source files:
+
+>SQLcreds.inc  
+u_nameavaildbctrl.php  
+public_html/membership/stripe/config.php
+public_html/account/sign_in_form.php
+public_html/membership/paypal/DBController.php
+public_html/membership/stripe/DBController.php
+
+Run:
+```
+git secret hide
+```
+Then commit the encrypted files.
+```
+git commit -a
+```
 5. TODO: Database migrations ...
