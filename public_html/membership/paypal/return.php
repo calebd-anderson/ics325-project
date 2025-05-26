@@ -21,5 +21,5 @@ include('header.php');
         shopping with us!
     </p>
 <?php
-include('../footer.php');
+include('../../footer.php');
 ?>
