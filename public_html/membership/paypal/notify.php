@@ -33,9 +33,9 @@ foreach ($myPost as $key => $value) {
 // Post IPN data back to PayPal to validate the IPN data is genuine
 // Without this step anyone can fake IPN data
 if(USE_SANDBOX == true) {
-	$paypal_url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+	$paypal_url = "https://ipnpb.sandbox.paypal.com/cgi-bin/webscr";
 } else {
-	$paypal_url = "https://www.paypal.com/cgi-bin/webscr";
+	$paypal_url = "https://ipnpb.paypal.com/cgi-bin/webscr";
 }
 $ch = curl_init($paypal_url);
 if ($ch == FALSE) {
@@ -119,7 +119,6 @@ if (strcmp ($res, "VERIFIED") == 0) {
 	    error_log(date('[Y-m-d H:i e] '). "Vdddddddddddderified IPN: $req ". PHP_EOL, 3, LOG_FILE);
 	} 
 	// process payment and mark item as paid.
-	
 	
 	if(DEBUG == true) {
 		error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
