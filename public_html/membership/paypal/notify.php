@@ -45,6 +45,7 @@ curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
+curl_setopt($ch, CURLOPT_SSLVERSION, 6);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
@@ -57,7 +58,10 @@ if(DEBUG == true) {
 //curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
 // Set TCP timeout to 30 seconds
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+	'User-Agent: PHP-IPN-Verification-Script',
+	'Connection: Close',
+));
 // CONFIG: Please download 'cacert.pem' from "http://curl.haxx.se/docs/caextract.html" and set the directory path
 // of the certificate as shown below. Ensure the file is readable by the webserver.
 // This is mandatory for some environments.
@@ -65,7 +69,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 //curl_setopt($ch, CURLOPT_CAINFO, $cert);
 $res = curl_exec($ch);
 if (curl_errno($ch) != 0) // cURL error
-	{
+{
 	if(DEBUG == true) {	
 		error_log(date('[Y-m-d H:i e] '). "Can't connect to PayPal to validate IPN message: " . curl_error($ch) . PHP_EOL, 3, LOG_FILE);
 	}
