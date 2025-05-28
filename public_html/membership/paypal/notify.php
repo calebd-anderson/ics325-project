@@ -10,6 +10,7 @@ $ipn = new PaypalIPN();
 
 // Use the sandbox endpoint during testing.
 $ipn->useSandbox();
+$ipn->usePHPCerts();
 $verified = $ipn->verifyIPN();
 
 // CONFIG: Please download 'cacert.pem' from "http://curl.haxx.se/docs/caextract.html" and set the directory path
