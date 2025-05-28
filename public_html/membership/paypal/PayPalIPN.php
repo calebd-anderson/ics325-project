@@ -1,5 +1,11 @@
 <?php
 
+// CONFIG: Enable debug mode. This means we'll log requests into 'ipn.log' in the same directory.
+// Especially useful if you encounter network errors or other intermittent problems with IPN (validation).
+// Set this to 0 once you go live or don't require logging.
+define("DEBUG", 0);
+define("LOG_FILE", "ipn.log");
+
 class PaypalIPN
 {
     /** @var bool Indicates if the sandbox endpoint is used. */
@@ -119,6 +125,10 @@ class PaypalIPN
         //curl_setopt($ch, CURLOPT_PROXY, $proxy);
         //curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
         curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
+        if(DEBUG == true) {
+            curl_setopt($ch, CURLOPT_HEADER, 1);
+            curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
+        }
         // Set TCP timeout to 30 seconds
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -129,8 +139,19 @@ class PaypalIPN
         if ( ! ($res)) {
             $errno = curl_errno($ch);
             $errstr = curl_error($ch);
+
+            if(DEBUG == true) {	
+                error_log(date('[Y-m-d H:i e] '). "Can't connect to PayPal to validate IPN message: " . $errstr . PHP_EOL, 3, LOG_FILE);
+            }
+
             curl_close($ch);
             throw new Exception("cURL error: [$errno] $errstr");
+        } else {
+            // Log the entire HTTP response if debug is switched on.
+            if(DEBUG == true) {
+                error_log(date('[Y-m-d H:i e] '). "HTTP request of validation request:". curl_getinfo($ch, CURLINFO_HEADER_OUT) ." for IPN payload: $req" . PHP_EOL, 3, LOG_FILE);
+                error_log(date('[Y-m-d H:i e] '). "HTTP response of validation request: $res" . PHP_EOL, 3, LOG_FILE);
+            }
         }
 
         $info = curl_getinfo($ch);
@@ -143,8 +164,16 @@ class PaypalIPN
 
         // Check if PayPal verifies the IPN data, and if so, return true.
         if ($res == self::VALID) {
+            if(DEBUG == true) {
+                error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req". PHP_EOL, 3, LOG_FILE);
+            }
             return true;
         } else {
+            // log for manual investigation
+            // Add business logic here which deals with invalid IPN messages
+            if(DEBUG == true) {
+                error_log(date('[Y-m-d H:i e] '). "Invalid IPN: $req" . PHP_EOL, 3, LOG_FILE);
+            }
             return false;
         }
     }
