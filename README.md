@@ -3,6 +3,8 @@
 - [TOTP MFA](https://en.wikipedia.org/wiki/Time-based_one-time_password) leveraging [an open source  library](https://github.com/RobThree/TwoFactorAuth) and [composer](https://getcomposer.org/).
 - Secret hiding (experimental research) using [git-secret](https://sobolevn.me/git-secret/).
   - recommend using `.env` [phpdotenv](https://github.com/vlucas/phpdotenv) instead
+- [PayPal IPN](https://developer.paypal.com/api/nvp-soap/ipn/IPNIntro/) integration
+- [Stripe](https://stripe.com/) payment integration
 
 ## Development
 1. Clone the repo
