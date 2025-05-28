@@ -1,57 +1,17 @@
 <?php
     include('header.php');
 
-    // ini_set('display_startup_errors',1);
-    // ini_set('display_errors',1);
-    // error_reporting(-1);
-
-    // include("paypal/DBController.php");
-    // $db = new DBController();
-    // $memberID = $db->memberID;
-    
-    // // assign logged-in user memberID to local variable
-	// require('../SQLcreds.inc');
-    // $conn = new mysqli($servername, $SQLuser, $SQLpswd, $dbname);
-    // if ($conn->connect_error) {
-    //     die("Connection failed: " . $conn->connect_error);
-    // }
-    // $username = $_SESSION['username'];
-    // $memberID = (int)$conn->query("SELECT memberID FROM member_creds WHERE username = '$username'")->fetch_object()->memberID;
-    // $query3 = "DELETE FROM member_contact WHERE memberID = LAST_INSERT_ID();";
-    // $stmt3 = $conn->prepare($query3);
-    // $stmt3->execute();
-    // $_SESSION['memberID'] = (int)$memberID;
-    // $_SESSION['memberID'] = $memberID;
-    // $memberID = (int)$_SESSION['memberID'];
-    // echo '<p>Your member ID type: '.gettype($_SESSION['memberID']).'</p>';
-    // echo '<p>Your member ID: '.$_SESSION['memberID'].'</p>';
-    // $memberID = (int)$memberID;
-    // $memberID = (int)NULL;
-    // echo '<p>Your memberID type: '.gettype($memberID).'</p>';
-    // echo '<p>Your memberID: '.$memberID.'</p>';
-    // echo '<p>Your session ID: '.session_id().'</p>';
-    // session_start();
-    // $memberID = $_SESSION['memberID'];
-    // $string = "string";
-    // $param_value_arr = array($string, $memberID);
-    // echo '<p>memberID: '.$memberID.'</p>';
-    // echo '<p>memberID type: '.gettype($memberID).'</p>';
-    // echo '<p>memberID array type: '.gettype($param_value_arr[1]).'</p>';
-    // echo '<p>string array type: '.gettype($param_value_arr[0]).'</p>';
-            
-    // $sql = "UPDATE payment SET memberID = '$memberID' WHERE txn_id = '$txn_id'";
-    // $db->query($sql);
     echo '<div class="container">';
-    // echo phpinfo();
     if (extension_loaded("curl")) {
         // cURL is loaded...
-        echo '<strong style="color:green;">cURL is loaded.</strong></br>';
+        if (str_contains($_SERVER['SERVER_NAME'], 'localhost'))
+            echo '<strong style="color:green;">cURL is loaded.</strong></br>';
     } else {
         // cURL is not loaded...
         echo '<strong style="color:red;">cURL is not loaded. </strong></br>';
         echo '<strong>Required extension to record the payment in the database is not enabled on the server.</strong>';
         echo '<p>However the sandbox payment will still work.</p>';
-      }
+    }
 ?>
 <!-- <h2>I Will Manage Your Membership</h2> -->
 <!--
@@ -59,9 +19,7 @@
     - amount select
 -->
     <p>
-        <h6>For testing purposes use these credentials when checking out:</h6>
-        sb-yvwrt1637485@personal.example.com</br>
-        0pd*jS0M
+      ** Testing Only (using PayPal Sandbox) **
     </p>   
 <div id="payment-box" class="text-center">
         <h4 class="txt-title">One Time Payment</h4>
