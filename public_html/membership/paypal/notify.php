@@ -131,4 +131,5 @@ if (strcmp ($res, "VERIFIED") == 0) {
 		error_log(date('[Y-m-d H:i e] '). "Invalid IPN: $req" . PHP_EOL, 3, LOG_FILE);
 	}
 }
+header("HTTP/1.1 200 OK");
 ?>
