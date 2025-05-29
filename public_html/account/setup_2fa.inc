@@ -6,7 +6,7 @@
 
     use RobThree\Auth\TwoFactorAuth;
 
-    $tfa = new TwoFactorAuth('Chasing the Arctic Consulting', 6, 30, 'sha1');
+    $tfa = new TwoFactorAuth('Climate Consulting NPO', 6, 30, 'sha1');
 
     $secret = $tfa->createSecret();
 ?>
