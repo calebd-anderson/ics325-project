@@ -1,46 +1,46 @@
 <?php
-    require('header.php');
+require('header.php');
 ?>
 <div id="pageContainer">
   <div id="content-wrap">
     <div class="container">
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">            
-        </div>
+          <div class="col-4 pt-1">
+          </div>
       </header>
       <?php
-        require '../../SQLcreds.inc';
-        $db = mysqli_init();
-        if (!str_contains($_SERVER['SERVER_NAME'], 'localhost'))
-          mysqli_ssl_set($db, NULL, NULL, $cert, NULL, NULL);
-        mysqli_real_connect($db, $servername, $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
-        if (mysqli_connect_errno()) {
-          die('Failed to connect to MySQL: '.mysqli_connect_error());
-        }
+      require '../../SQLcreds.inc';
+      $db = mysqli_init();
+      if (!str_contains($_SERVER['SERVER_NAME'], 'localhost'))
+        mysqli_ssl_set($db, NULL, NULL, $cert, NULL, NULL);
+      mysqli_real_connect($db, $servername, $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
+      if (mysqli_connect_errno()) {
+        die('Failed to connect to MySQL: ' . mysqli_connect_error());
+      }
 
-        $sql = "SELECT * FROM member_blog";
-        $result = mysqli_query($db, $sql);
-        while ($row = $result->fetch_assoc()) {
-          $resultarray[] = $row;
-        }
-        list($blog1,$blog2,$blog3,$blog4) = $resultarray;
-        extract($blog1);
-        $blog1title =  $title;
-        $blog1id = $blogID;
-        $blog1body = $body;
-        extract($blog2);
-        $blog2title =  $title;
-        $blog2id = $blogID;
-        $blog2body = $body;
-        extract($blog3);
-        $blog3title =  $title;
-        $blog3id = $blogID;
-        $blog3body = $body;
-        extract($blog4);
-        $blog4title =  $title;
-        $blog4id = $blogID;
-        $blog4body = $body;        
+      $sql = "SELECT * FROM member_blog";
+      $result = mysqli_query($db, $sql);
+      while ($row = $result->fetch_assoc()) {
+        $resultarray[] = $row;
+      }
+      list($blog1, $blog2, $blog3, $blog4) = $resultarray;
+      extract($blog1);
+      $blog1title =  $title;
+      $blog1id = $blogID;
+      $blog1body = $body;
+      extract($blog2);
+      $blog2title =  $title;
+      $blog2id = $blogID;
+      $blog2body = $body;
+      extract($blog3);
+      $blog3title =  $title;
+      $blog3id = $blogID;
+      $blog3body = $body;
+      extract($blog4);
+      $blog4title =  $title;
+      $blog4id = $blogID;
+      $blog4body = $body;
       ?>
 
       <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
@@ -49,7 +49,7 @@
           <p class="lead my-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dui odio, accumsan vel pharetra lacinia, ultricies ac lacus. Curabitur luctus, nisl ut ultrices vehicula, felis purus hendrerit odio, faucibus accumsan magna velit ac sem. Aenean quam tellus, sollicitudin et felis egestas, lacinia sodales urna.
           </p>
-          <p class="lead mb-0"><?php echo "<a href='detail.php?ID={$blog1id}' class='text-white font-weight-bold'>" ?>Continue reading...<?php echo "</a>"?></p>
+          <p class="lead mb-0"><?php echo "<a href='detail.php?ID={$blog1id}' class='text-white font-weight-bold'>" ?>Continue reading...<?php echo "</a>" ?></p>
         </div>
       </div>
 
@@ -63,7 +63,7 @@
               <p class="card-text mb-auto">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dui odio, accumsan vel pharetra lacinia, ultricies ac lacus. Curabitur luctus, nisl ut ultrices vehicula, felis purus hendrerit odio, faucibus accumsan magna velit ac sem. Aenean quam tellus, sollicitudin et felis egestas, lacinia sodales urna.
               </p>
-              <p><?php echo "<a href='detail.php?ID={$blog2id}'>" ?>Continue reading<?php echo "</a>";?></p>
+              <p><?php echo "<a href='detail.php?ID={$blog2id}'>" ?>Continue reading<?php echo "</a>"; ?></p>
             </div>
             <div class="col-auto d-none d-lg-block">
             </div>
@@ -76,8 +76,8 @@
               <h3 class="mb-0">My Personal Story.</h3>
               <div class="mb-1 text-muted">February 15th</div>
               <p class="mb-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dui odio, accumsan vel pharetra lacinia, ultricies ac lacus. Curabitur luctus, nisl ut ultrices vehicula, felis purus hendrerit odio, faucibus accumsan magna velit ac sem. Aenean quam tellus, sollicitudin et felis egestas, lacinia sodales urna.              </p>
-              <p><?php echo "<a href='detail.php?ID={$blog3id}'>" ?>Continue reading<?php echo "</a>"?></p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dui odio, accumsan vel pharetra lacinia, ultricies ac lacus. Curabitur luctus, nisl ut ultrices vehicula, felis purus hendrerit odio, faucibus accumsan magna velit ac sem. Aenean quam tellus, sollicitudin et felis egestas, lacinia sodales urna. </p>
+              <p><?php echo "<a href='detail.php?ID={$blog3id}'>" ?>Continue reading<?php echo "</a>" ?></p>
             </div>
             <div class="col-auto d-none d-lg-block">
             </div>
@@ -98,9 +98,9 @@
             <p class="blog-post-meta">May 5th, 2020 by Biensur Chang</a></p>
 
             <p>
-                We decided to create a blog because we want our donators and our fans to be a part of our journey. Every dollar counts, so sharing our experiences and allowing you
-                to be a part of the struggles and accomplisments on our mission is the least we could do. We want to be as transparent as possible and let the people at home know
-                the difficulty in starting an expedition and hopefully show you the beauty and excitement that Antarctica has in stored for us.
+              We decided to create a blog because we want our donators and our fans to be a part of our journey. Every dollar counts, so sharing our experiences and allowing you
+              to be a part of the struggles and accomplisments on our mission is the least we could do. We want to be as transparent as possible and let the people at home know
+              the difficulty in starting an expedition and hopefully show you the beauty and excitement that Antarctica has in stored for us.
             </p>
             <hr>
             <blockquote>
@@ -123,7 +123,7 @@
             <ul>
               <li>The Blog Homepage is up!</li>
               <li>Accounts have been troubleshooted, please report any bugs or glitches.</li>
-              <!-- <li>The Chasing Antarctica store is up! Check it out!</li> -->
+              <!-- <li>The Climate Consulting Store is up! Check it out!</li> -->
               <li>We have our first few blog posts up! Please give them a read!
               </li>
             </ul>
@@ -148,7 +148,8 @@
           </div><!-- /.blog-post -->
 
           <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Back to Top</a>
+            <a class="btn btn-outline-primary" href="#">Older</a>
+            <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
           </nav>
 
         </div><!-- /.blog-main -->
@@ -157,7 +158,7 @@
           <div class="p-4">
             <h4 class="font-italic">Elsewhere</h4>
             <ol class="list-unstyled">
-            <li><a href="https://github.com/calebTree/ICS325_Project">GitHub</a></li>
+              <li><a href="https://github.com/calebTree/ICS325_Project">GitHub</a></li>
               <li><a href="https://twitter.com/AntarcticReport?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></li>
               <li><a href="https://www.facebook.com/AusAntarctic/?__tn__=%2Cd%2CP-R&eid=ARBqAUrz2-cw2iuHkFFDCZn1V62lySqeQY57cjbWG_CwxJ3rCCgnuQwnHy9RDtiH0itXPi5oZAX4YiEI">Facebook</a></li>
             </ol>
@@ -166,13 +167,12 @@
 
       </div><!-- /.row -->
       <div class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-   
-       </div>
+        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      </div>
 
     </main><!-- /.container -->
   </div>
   <?php
-      require('../footer.php');
+  require('../footer.php');
   ?>
 </div>
