@@ -1,6 +1,7 @@
 vendor
 sql
 stuff
+.vscode
 # git secret
 .gitsecret/keys/random_seed
 !*.secret
