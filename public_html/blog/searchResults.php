@@ -19,7 +19,7 @@
         $db = mysqli_init();
         if (!str_contains($_SERVER['SERVER_NAME'], 'localhost')) {
             // production config
-            $cert = "/var/www/html/wwwroot/DigiCertGlobalRootCA.crt.pem";
+            $cert = "/var/www/html/wwwroot/DigiCertGlobalRootG2.crt.pem";
             mysqli_ssl_set($db, NULL, NULL, $cert, NULL, NULL);
         }
         mysqli_real_connect($db, $servername, $SQLuser, $SQLpswd, $dbname, 3306, MYSQLI_CLIENT_SSL);
