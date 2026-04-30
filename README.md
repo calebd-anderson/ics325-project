@@ -7,10 +7,17 @@
 - [Stripe](https://stripe.com/) payment integration
 
 ## Development
-1. Clone the repo
-2. Install [git-secret](https://sobolevn.me/git-secret/installation)
-3. Collaboarte with the project admin to have your [gpg public key](https://www.devdungeon.com/content/gpg-tutorial) added to the keyring
-4. Once you are added to the keyring; decrypt the secrets:
+1. Clone [the repo](https://github.com/calebd-anderson/ics325-project).
+
+### git-secret
+2. Install [git-secret](https://sobolevn.me/git-secret/installation).
+3. Collaboarte with the project admin to have your [gpg public key](https://www.devdungeon.com/content/gpg-tutorial) added to the keyring.
+> [!NOTE]  
+> Review [using gpg](https://sobolevn.me/git-secret/#using-gpg) for steps on generating a key-pair, exporting the public key and transfering the public key.
+```
+git secret tell email@address.id
+```
+4. Once you are added to the keyring - decrypt the secrets:
 ```
 git secret reveal
 ```
