@@ -11,7 +11,7 @@
 
 ### git-secret
 2. Install [git-secret](https://sobolevn.me/git-secret/installation).
-3. Collaboarte with the project admin to have your [gpg public key](https://www.devdungeon.com/content/gpg-tutorial) added to the keyring.
+3. Collaboarte with the project admin to have your [gpg public key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) added to the keyring.
 > [!NOTE]  
 > Review [using gpg](https://sobolevn.me/git-secret/#using-gpg) for steps on generating a key-pair, exporting the public key and transfering the public key.
 ```
