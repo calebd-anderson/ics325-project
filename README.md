@@ -38,4 +38,10 @@ Then commit the encrypted files.
 ```
 git commit -a
 ```
-5. TODO: Database migrations ...
+
+### Setup XAMPP
+1. Download [XAMPP](https://www.apachefriends.org/).
+2. Follow the `Configure Virtual Hosts` How-To Guide `C:/xampp/htdocs/dashboard/docs/configure-vhosts.pdf`.
+
+### Setup MySQL database
+1. TODO
